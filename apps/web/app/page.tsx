@@ -9,6 +9,12 @@ export const metadata: Metadata = {
     title: "Rubric",
     description: "Rubric is building the new definition of prod.",
   },
+  twitter: {
+    title: "Rubric",
+    description: "Rubric is building the new definition of prod.",
+    card: "summary_large_image",
+    creator: "@tedspare",
+  },
 };
 
 export default function Page() {
