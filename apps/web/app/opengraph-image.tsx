@@ -14,7 +14,7 @@ export const size = {
 
 const backgroundColor = config.theme.extend.colors["off-white"] || "white";
 const fontImport = fetch(
-  new URL("./CalSans-SemiBold.ttf", import.meta.url)
+  "https://rubriclab.com/_next/static/media/CalSans-SemiBold.162bf645.ttf"
 ).then((res) => res.arrayBuffer());
 
 type Props = {

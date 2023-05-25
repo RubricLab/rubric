@@ -1,11 +1,11 @@
 import "ui/globals.css";
 import "./styles.css";
-// import localFont from "next/font/local";
+import localFont from "next/font/local";
 
-// const calSans = localFont({
-//   src: "./CalSans-SemiBold.ttf",
-//   variable: "--font-cal-sans",
-// });
+const calSans = localFont({
+  src: "./CalSans-SemiBold.ttf",
+  variable: "--font-cal-sans",
+});
 
 export default function RootLayout({
   children,
@@ -13,8 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      {/* <html lang="en" className={`${calSans.variable}`}> */}
+    <html lang="en" className={`${calSans.variable}`}>
       <body>{children}</body>
     </html>
   );
