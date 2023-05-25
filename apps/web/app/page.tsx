@@ -1,6 +1,11 @@
 import { Button, Header } from "ui";
 import BackgroundGrid from "./components/BackgroundGrid";
 
+export const metadata = {
+  title: "Rubric",
+  description: "Rubric is building the new definition of prod.",
+};
+
 export default function Page() {
   return (
     <div className="h-full w-full center bg-off-white flex-col relative overflow-y-hidden">
