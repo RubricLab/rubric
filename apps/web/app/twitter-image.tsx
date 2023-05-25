@@ -14,7 +14,7 @@ export const size = {
 
 const backgroundColor = config.theme.extend.colors["off-white"] || "white";
 const fontImport = fetch(
-  new URL("public/fonts/CalSans-SemiBold.ttf", import.meta.url)
+  new URL("./fonts/CalSans-SemiBold.ttf", import.meta.url)
 ).then((res) => res.arrayBuffer());
 
 type Props = {

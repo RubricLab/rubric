@@ -7,6 +7,9 @@ module.exports = {
       colors: {
         "off-white": "#E2DCDB",
       },
+      fontFamily: {
+        "cal-sans": ["var(--font-cal-sans)"],
+      },
     },
   },
 };

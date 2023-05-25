@@ -1,0 +1,7 @@
+html {
+  @apply bg-off-white;
+}
+
+h1 {
+  @apply font-cal-sans;
+}
