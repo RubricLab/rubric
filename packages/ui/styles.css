@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply w-screen h-screen overflow-x-hidden overflow-y-scroll;
+  }
   h1 {
     @apply text-8xl tracking-tight font-medium;
   }
@@ -19,7 +22,7 @@
     @apply text-lg;
   }
   button {
-    @apply text-lg px-4 py-2 font-medium;
+    @apply text-lg px-4 py-2 font-medium leading-6;
   }
   a {
     @apply hover:underline hover:text-blue-500;
