@@ -3,7 +3,7 @@ import "./styles.css";
 import localFont from "next/font/local";
 
 const calSans = localFont({
-  src: "./fonts/CalSans-SemiBold.ttf",
+  src: "./CalSans-SemiBold.ttf",
   variable: "--font-cal-sans",
 });
 
