@@ -2,9 +2,11 @@ import { Button, Header } from "ui";
 
 export default function Page() {
   return (
-    <>
-      <Header text="Web" />
-      <Button />
-    </>
+    <div className="h-screen w-screen center relative">
+      <div className="center flex-col">
+        <Header text="Rubric" />
+        <Button />
+      </div>
+    </div>
   );
 }

@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-8xl tracking-tight font-medium;
+  }
+  h2 {
+    @apply text-6xl tracking-tight;
+  }
+  h3 {
+    @apply text-4xl tracking-tight;
+  }
+  h4 {
+    @apply text-2xl tracking-tight;
+  }
+  p {
+    @apply text-lg;
+  }
+  button {
+    @apply text-lg px-4 py-2 font-medium;
+  }
+  a {
+    @apply hover:underline hover:text-blue-500;
+  }
+}
+
+@layer utilities {
+  .center {
+    @apply flex items-center justify-center;
+  }
+}
