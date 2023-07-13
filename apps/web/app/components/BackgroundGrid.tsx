@@ -20,6 +20,7 @@ function BackgroundGrid({
       className={className}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1000 1000"
+      preserveAspectRatio="xMidYMid slice" // slice means scale the SVG to cover the entire viewport, possibly cropping the SVG in the process
       {...props}
     >
       <g>

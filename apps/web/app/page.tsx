@@ -1,6 +1,8 @@
-import { Button, Header } from "ui";
+import { Header } from "ui";
 import BackgroundGrid from "./components/BackgroundGrid";
 import { Metadata } from "next";
+import NavBar from "./components/NavBar";
+import Counter from "./components/Counter";
 
 export const metadata: Metadata = {
   title: "Rubric",
@@ -13,17 +15,25 @@ export const metadata: Metadata = {
     title: "Rubric",
     description: "Rubric is building the new definition of prod.",
     card: "summary_large_image",
-    creator: "@tedspare",
+    creator: "@rubriclabs",
   },
 };
 
 export default function Page() {
   return (
-    <div className="h-full w-full center bg-off-white flex-col relative overflow-y-hidden">
-      <BackgroundGrid className="absolute translate-y-10 w-full" />
-      <div className="center flex-col space-y-4 z-10">
-        <Header text="Rubric" />
-        <Button />
+    <div className="min-h-screen h-full w-full flex bg-off-white flex-col relative">
+      <NavBar />
+      <BackgroundGrid className="absolute h-full w-full" />
+
+      <div className="justify-between h-full flex flex-col max-w-3xl z-10">
+        {/* Section: Hero */}
+        <div className="flex min-h-screen p-10 justify-end flex-col gap-3">
+          <Header text="Rubric" />
+          <p className="text-6xl font-extralight">
+            We are a lean team of developers & designers that build software
+            end-to-end.
+          </p>
+        </div>
       </div>
     </div>
   );
