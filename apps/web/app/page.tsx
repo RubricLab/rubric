@@ -29,7 +29,7 @@ export default function Page() {
         {/* Section: Hero */}
         <div className="flex min-h-screen p-10 justify-end flex-col gap-3">
           <Header text="Rubric" />
-          <p className="text-6xl font-extralight">
+          <p className="text-3xl sm:text-6xl md:text-6xl font-extralight">
             We are a lean team of developers & designers that build software
             end-to-end.
           </p>
