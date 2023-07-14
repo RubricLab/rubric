@@ -1,5 +1,7 @@
 # Rubric Monorepo
 
+### Home of Rubric Labs
+
 This repo contains Rubric's landing page, UI library, docs, and code config.
 
 This makes it easier to
