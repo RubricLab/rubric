@@ -1,7 +1,7 @@
 import BackgroundGrid from "../components/BackgroundGrid";
 import { Metadata } from "next";
 import NavBar from "../components/NavBar";
-import { Button, Header } from "ui";
+import { ComingSoonButton, Header } from "ui";
 
 export const metadata: Metadata = {
   title: "Projects | Rubric",
@@ -25,7 +25,7 @@ export default function Projects() {
       <BackgroundGrid className="absolute h-full w-full" />
       <div className="z-10 center h-full flex flex-col gap-5">
         <Header text="Projects" />
-        <Button />
+        <ComingSoonButton />
       </div>
     </div>
   );

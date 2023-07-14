@@ -1,8 +1,6 @@
 "use client";
 
-import * as React from "react";
-
-export const Button = () => {
+export const ComingSoonButton = () => {
   return (
     <button
       className="bg-orange-600 text-white rounded-full"
