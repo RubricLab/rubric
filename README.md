@@ -2,7 +2,7 @@
 
 This repo contains Rubric's landing page, UI library, docs, and code config.
 
-This makes it easier to:
+This makes it easier to
 
 - Share code across projects
 - Coordinate global style changes with a single PR
