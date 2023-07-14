@@ -1,7 +1,7 @@
 import BackgroundGrid from "../components/BackgroundGrid";
 import { Metadata } from "next";
 import NavBar from "../components/NavBar";
-import { Header } from "ui";
+import { ComingSoonButton, Header } from "ui";
 
 export const metadata: Metadata = {
   title: "Blog | Rubric",
