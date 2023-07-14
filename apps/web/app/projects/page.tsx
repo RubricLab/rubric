@@ -2,19 +2,20 @@ import BackgroundGrid from "../components/BackgroundGrid";
 import { Metadata } from "next";
 import NavBar from "../components/NavBar";
 import { ComingSoonButton, Header } from "ui";
+import Constants from "../../utils/constants";
 
 export const metadata: Metadata = {
-  title: "Projects | Rubric",
-  description: "Rubric is building the new definition of prod.",
+  title: `Projects | ${Constants.META.title}`,
+  description: Constants.META.desc,
   openGraph: {
-    title: "Projects | Rubric",
-    description: "Rubric is building the new definition of prod.",
+    title: `Projects | ${Constants.META.title}`,
+    description: Constants.META.desc,
   },
   twitter: {
-    title: "Projects | Rubric",
-    description: "Rubric is building the new definition of prod.",
+    title: `Projects | ${Constants.META.title}`,
+    description: Constants.META.desc,
     card: "summary_large_image",
-    creator: "@rubriclabs",
+    creator: Constants.META.twitter,
   },
 };
 

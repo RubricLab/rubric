@@ -3,19 +3,20 @@ import BackgroundGrid from "./components/BackgroundGrid";
 import { Metadata } from "next";
 import NavBar from "./components/NavBar";
 import Image from "next/image";
+import Constants from "../utils/constants";
 
 export const metadata: Metadata = {
-  title: "Rubric",
-  description: "Rubric is building the new definition of prod.",
+  title: Constants.META.title,
+  description: Constants.META.desc,
   openGraph: {
-    title: "Rubric",
-    description: "Rubric is building the new definition of prod.",
+    title: Constants.META.title,
+    description: Constants.META.desc,
   },
   twitter: {
-    title: "Rubric",
-    description: "Rubric is building the new definition of prod.",
+    title: Constants.META.title,
+    description: Constants.META.desc,
     card: "summary_large_image",
-    creator: "@rubriclabs",
+    creator: Constants.META.twitter,
   },
 };
 
@@ -27,11 +28,11 @@ const team = [
 
 export default function Page() {
   return (
-    <div className="min-h-screen h-full w-full flex bg-off-white flex-col relative xl:items-center">
+    <div className="min-h-screen h-full w-full flex bg-off-white flex-col relative 2xl:items-center">
       <NavBar />
       <BackgroundGrid className="fixed h-full w-full" />
 
-      <div className="justify-between h-full flex flex-col z-10 max-w-5xl">
+      <div className="flex flex-col z-10 2xl:max-w-5xl">
         {/* Section: Hero */}
         <div className="flex min-h-screen p-10 justify-end flex-col gap-3 max-w-3xl">
           <Header text="Rubric" />
