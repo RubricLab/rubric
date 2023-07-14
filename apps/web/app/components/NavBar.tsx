@@ -10,7 +10,7 @@ export default function NavBar() {
       <div
         className={`${
           pathname === "/" ? "justify-end" : "justify-between"
-        } flex text-orange-500`}
+        } flex text-orange-500 text-lg sm:text-2xl lg:text-3xl`}
       >
         {pathname !== "/" && (
           <Link href="/">
@@ -30,7 +30,9 @@ export default function NavBar() {
 
       {pathname === "/" && (
         <div className="items-end flex flex-col">
-          <span className="text-sm font-thin">© Rubric Labs Inc.</span>
+          <span className="text-sm sm:text-base lg:text-lg font-thin">
+            © Rubric Labs Inc.
+          </span>
         </div>
       )}
     </nav>
