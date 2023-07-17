@@ -5,7 +5,7 @@ import {schemaTypes} from './schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'Rubric Blog',
+  title: 'Rubric Website',
   projectId: '98ffjfuo',
   dataset: 'production',
   plugins: [deskTool(), visionTool()],
