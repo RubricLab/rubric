@@ -16,6 +16,7 @@ This monorepo includes the following packages/apps:
 
 ### Apps and Packages
 
+- `blog-studio`: [Sanity](https://sanity.io/) studio for adding content to the `web` project
 - `docs`: a [Next.js](https://nextjs.org/) app
 - `web`: another [Next.js](https://nextjs.org/) app
 - `ui`: a stub React component library shared by both `web` and `docs` applications
