@@ -6,7 +6,7 @@ export default function NavBar() {
   const pathname = usePathname();
 
   return (
-    <nav className="absolute flex flex-col top-0 z-20 w-full p-5 gap-1">
+    <nav className="absolute flex flex-col top-0 2xl:left-1/2 2xl:-translate-x-1/2 z-20 w-full p-5 gap-1 2xl:max-w-6xl">
       <div
         className={`${
           pathname === "/" ? "justify-end" : "justify-between"

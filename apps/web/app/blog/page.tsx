@@ -21,13 +21,9 @@ export const metadata: Metadata = {
 
 export default function Blog() {
   return (
-    <div className="min-h-screen h-full w-full flex bg-off-white flex-col relative">
-      <NavBar />
-      <BackgroundGrid className="absolute h-full w-full" />
-      <div className="z-10 center h-full flex flex-col gap-5">
-        <Header text="Blog" />
-        <ComingSoonButton />
-      </div>
+    <div className="center h-full flex flex-col gap-5">
+      <Header text="Blog" />
+      <ComingSoonButton />
     </div>
   );
 }
