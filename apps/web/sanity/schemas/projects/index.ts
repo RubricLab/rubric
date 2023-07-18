@@ -1,5 +1,5 @@
 // Schema for Projects object
-const projectSchema = {
+const project = {
   name: "project",
   title: "Projects",
   type: "document",
@@ -42,4 +42,4 @@ const projectSchema = {
   ],
 };
 
-export default projectSchema;
+export default project;

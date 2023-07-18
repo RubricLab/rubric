@@ -2,6 +2,8 @@ import { ContactButton, Header } from "ui";
 import { Metadata } from "next";
 import Image from "next/image";
 import Constants from "../utils/constants";
+import { getHomePageCopy } from "../sanity/sanity-utils";
+import { PortableText } from "@portabletext/react";
 
 export const metadata: Metadata = {
   title: Constants.META.title,
@@ -24,15 +26,15 @@ const team = [
   { name: "Ted", src: "ted.jpeg", desc: "The Doer" },
 ];
 
-export default function Page() {
+export default async function Home() {
+  const copy = await getHomePageCopy();
   return (
     <div className="flex flex-col">
       {/* Section: Hero */}
       <div className="flex min-h-screen justify-end flex-col gap-3 pb-5 max-w-3xl">
-        <Header text="Rubric" />
+        <Header text={copy[0].hero.title} />
         <p className="text-3xl sm:text-6xl md:text-6xl font-extralight">
-          We are a lean team of developers & designers who build software
-          end-to-end.
+          {copy[0].hero.subtitle}
         </p>
       </div>
 
@@ -64,31 +66,7 @@ export default function Page() {
 
           {/* What we do */}
           <div className="flex flex-col gap-3 font-light text-xl">
-            <p>
-              Our goal is to turn your ideas into pixel-perfect reality.{" "}
-              <b>
-                We&apos;re speedy, efficient, and cover everything from
-                wireframes to code.
-              </b>{" "}
-              Got a concept? We&apos;re here to make it shine. User experience?
-              That&apos;s our jam. We build cool, intuitive digital spaces your
-              users won&apos;t want to leave.{" "}
-            </p>
-            <p>
-              <b>
-                Our home turf is frontend but we&apos;re game for everything
-              </b>{" "}
-              — full-stack desktop, mobile apps, you name it. Years spent in the
-              startup world have given us street-smarts. We&apos;ve learned the
-              ropes and can turn your vision into the next big thing. We partner
-              with a few select clients each quarter, giving them our full
-              attention.
-            </p>
-
-            <p>
-              Got an idea? Get in touch. Let&apos;s make something amazing,
-              together.
-            </p>
+            <PortableText value={copy[0].desc} />
           </div>
 
           <div className="flex justify-end">
