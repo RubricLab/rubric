@@ -31,7 +31,7 @@ export default function Page() {
       <div className="flex min-h-screen justify-end flex-col gap-3 pb-5 max-w-3xl">
         <Header text="Rubric" />
         <p className="text-3xl sm:text-6xl md:text-6xl font-extralight">
-          We are a lean team of developers & designers that build software
+          We are a lean team of developers & designers who build software
           end-to-end.
         </p>
       </div>

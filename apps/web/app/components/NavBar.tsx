@@ -10,7 +10,7 @@ export default function NavBar() {
       <div
         className={`${
           pathname === "/" ? "justify-end" : "justify-between"
-        } flex text-orange-500 text-lg sm:text-2xl lg:text-3xl`}
+        } flex text-orange-600 text-lg sm:text-2xl lg:text-3xl`}
       >
         {pathname !== "/" && (
           <Link href="/" className="text-black font-bold">
@@ -18,7 +18,7 @@ export default function NavBar() {
           </Link>
         )}
 
-        <div className="flex gap-3">
+        <div className="flex gap-4">
           <Link href="/projects" className="font-light hover:opacity-80">
             Projects
           </Link>
