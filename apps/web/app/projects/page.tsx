@@ -34,7 +34,7 @@ export default async function Projects() {
             target="_blank"
           >
             {/* Name */}
-            <div className="flex justify-between w-full">
+            <div className="flex justify-between w-full items-center">
               <h3>{project.name}</h3>
               <ArrowUpRightIcon className="w-10 h-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
