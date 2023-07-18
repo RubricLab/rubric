@@ -5,7 +5,7 @@ import BackgroundGrid from "./components/BackgroundGrid";
 
 export const runtime = "edge";
 
-export const alt = "Rubric logo with subtitle: coming soon";
+export const alt = "Rubric logo with subtitle: We build software.";
 export const contentType = "image/png";
 export const size = {
   width: 1200,

@@ -5,7 +5,7 @@ import BackgroundGrid from "./components/BackgroundGrid";
 
 export const runtime = "edge";
 
-export const alt = "Rubric logo with subtitle: coming soon";
+export const alt = "Rubric logo with subtitle: We build software.";
 export const contentType = "image/png";
 export const size = {
   width: 1200,
@@ -47,7 +47,7 @@ export default async function Image({ params }: Props) {
         />
         <div style={{ fontSize: 128 }}>Rubric</div>
         <div style={{ fontSize: 48, color: colors["orange"]["700"] }}>
-          Coming soon.
+          We build software.
         </div>
       </div>
     ),
