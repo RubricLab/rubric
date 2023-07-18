@@ -10,10 +10,10 @@
     @apply text-6xl sm:text-7xl md:text-8xl tracking-tight font-medium;
   }
   h2 {
-    @apply text-4xl sm:text-5xl md:text-6xl tracking-tight;
+    @apply text-4xl sm:text-5xl md:text-6xl tracking-tight font-medium;
   }
   h3 {
-    @apply text-2xl sm:text-3xl md:text-4xl tracking-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl tracking-tight font-medium;
   }
   h4 {
     @apply text-xl md:text-2xl tracking-tight;
