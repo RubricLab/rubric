@@ -1,7 +1,5 @@
 import { ContactButton, Header } from "ui";
-import BackgroundGrid from "./components/BackgroundGrid";
 import { Metadata } from "next";
-import NavBar from "./components/NavBar";
 import Image from "next/image";
 import Constants from "../utils/constants";
 
