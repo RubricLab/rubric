@@ -3,6 +3,7 @@ import "./styles.css";
 import localFont from "next/font/local";
 import NavBar from "./components/NavBar";
 import BackgroundGrid from "./components/BackgroundGrid";
+import ToastProvider from "ui/ToastProvider";
 
 const calSans = localFont({
   src: "./CalSans-SemiBold.ttf",
@@ -21,6 +22,7 @@ export default function RootLayout({
     >
       <BackgroundGrid className="fixed h-full w-full" />
       <NavBar />
+      <ToastProvider />
       <body className="z-10 2xl:max-w-6xl w-full p-5 pt-0">{children}</body>
     </html>
   );
