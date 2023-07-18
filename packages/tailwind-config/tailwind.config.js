@@ -6,7 +6,12 @@ module.exports = {
     "../../apps/web/**/*.{jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "off-white": "#E2DCDB",
+        ...colors,
+      },
+    },
   },
   plugins: [],
 };

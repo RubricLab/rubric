@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "off-white": "#E2DCDB",
+        ...sharedConfig.theme.extend.colors,
       },
       fontFamily: {
         "cal-sans": ["var(--font-cal-sans)"],
