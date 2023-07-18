@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default async function Projects() {
   const projects = await getProjects();
   return (
-    <div className="gap-10 flex flex-col h-full xl:justify-center mt-20">
+    <div className="gap-10 flex flex-col h-full 2xl:justify-center mt-20">
       <h1>Projects</h1>
       {/* Projects */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 xl:pb-5">
