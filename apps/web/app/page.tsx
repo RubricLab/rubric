@@ -30,7 +30,7 @@ export default function Page() {
   return (
     <div className="flex flex-col">
       {/* Section: Hero */}
-      <div className="flex min-h-screen p-10 justify-end flex-col gap-3 max-w-3xl">
+      <div className="flex min-h-screen justify-end flex-col gap-3 pb-5 max-w-3xl">
         <Header text="Rubric" />
         <p className="text-3xl sm:text-6xl md:text-6xl font-extralight">
           We are a lean team of developers & designers that build software
@@ -39,7 +39,7 @@ export default function Page() {
       </div>
 
       {/* Section */}
-      <div className="flex min-h-screen p-10 items-end justify-end flex-col gap-3">
+      <div className="flex min-h-screen items-end justify-end pb-5 flex-col gap-3">
         <div className="flex flex-col max-w-xl gap-10">
           {/* Team */}
           <div className="flex justify-between">
