@@ -2,7 +2,7 @@ import React from "react";
 import tailwindConfig from "../../tailwind.config";
 
 const lineAttributes = {
-  stroke: tailwindConfig.theme.extend.colors["stone-300"] || "gray",
+  stroke: tailwindConfig.theme.extend.colors["stone"][400] || "gray",
   strokeWidth: 1,
   opacity: 0.8,
   fill: "none",
