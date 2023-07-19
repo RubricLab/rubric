@@ -26,14 +26,23 @@ export async function getProjects(): Promise<Project[]> {
 }
 
 // Get copy for home page
-export async function getHomePageCopy(): Promise<Home[]> {
+export async function getHomePageCopy(): Promise<Home> {
   // Groq fetch query
-  return sanity.fetch(
+  const result = await sanity.fetch(
     groq`*[_type == "home"]{
         _id,
         _createdAt,
         hero,
-        desc
+        desc,
+        "team": team[] | order(name asc){
+          "_key": _key,
+          "name": name,
+          "title": title,
+          "slug": slug.current,
+          "image": image.asset->url
+        }
     }`
   );
+  // Return first value
+  return result[0];
 }

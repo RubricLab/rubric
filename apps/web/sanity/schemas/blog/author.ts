@@ -1,34 +1,43 @@
-import { defineField, defineType } from "sanity";
-
 // Author of a blog post
-export default defineType({
+const author = {
   name: "author",
   title: "Author",
   type: "document",
   fields: [
-    defineField({
+    {
       name: "name",
       title: "Name",
       type: "string",
-    }),
-    defineField({
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
       options: {
         source: "name",
-        maxLength: 96,
       },
-    }),
-    defineField({
+    },
+    {
       name: "image",
       title: "Image",
       type: "image",
       options: {
         hotspot: true,
       },
-    }),
-    defineField({
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string",
+        },
+      ],
+    },
+    {
+      name: "title",
+      title: "Title",
+      type: "string",
+    },
+    {
       name: "bio",
       title: "Bio",
       type: "array",
@@ -40,7 +49,7 @@ export default defineType({
           lists: [],
         },
       ],
-    }),
+    },
   ],
   preview: {
     select: {
@@ -48,4 +57,6 @@ export default defineType({
       media: "image",
     },
   },
-});
+};
+
+export default author;

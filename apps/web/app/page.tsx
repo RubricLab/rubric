@@ -32,9 +32,9 @@ export default async function Home() {
     <div className="flex flex-col">
       {/* Section: Hero */}
       <div className="flex min-h-screen justify-end flex-col gap-3 pb-5 max-w-3xl">
-        <Header text={copy[0].hero.title} />
+        <Header text={copy.hero.title} />
         <p className="text-3xl sm:text-6xl md:text-6xl font-extralight">
-          {copy[0].hero.subtitle}
+          {copy.hero.subtitle}
         </p>
       </div>
 
@@ -43,14 +43,14 @@ export default async function Home() {
         <div className="flex flex-col max-w-xl gap-10">
           {/* Team */}
           <div className="flex justify-between">
-            {team.map((member) => (
+            {copy.team.map((member) => (
               <div
                 key={member.name}
                 className="w-20 h-20 sm:w-40 sm:h-40 relative group cursor-pointer"
               >
                 <div className="relative w-full h-full">
                   <Image
-                    src={`/images/${member.src}`}
+                    src={member.image}
                     alt={`${member.name}'s picture`}
                     fill
                     className="rounded-full grayscale group-hover:blur-sm"
@@ -58,7 +58,7 @@ export default async function Home() {
                 </div>
                 <p className="absolute flex flex-col top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-white">
                   <span className="text-sm text-gray-100">{member.name}</span>{" "}
-                  <span className="text-xs text-gray-300">{member.desc}</span>
+                  <span className="text-xs text-gray-300">{member.title}</span>
                 </p>
               </div>
             ))}
@@ -66,7 +66,7 @@ export default async function Home() {
 
           {/* What we do */}
           <div className="flex flex-col gap-3 font-light text-xl">
-            <PortableText value={copy[0].desc} />
+            <PortableText value={copy.desc} />
           </div>
 
           <div className="flex justify-end">

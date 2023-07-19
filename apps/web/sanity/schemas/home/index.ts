@@ -22,6 +22,12 @@ const homePage = {
       ],
     },
     {
+      name: "team",
+      title: "Team",
+      type: "array",
+      of: [{ type: "author" }],
+    },
+    {
       name: "desc",
       title: "Description",
       type: "array",
