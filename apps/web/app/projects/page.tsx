@@ -26,17 +26,17 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <div className="w-full px-6 py-5 rounded-md border border-stone-700/80 bg-off-white/90 flex group hover:bg-orange-400/80 transition-colors duration-300">
+    <Link
+      href={project.url}
+      target="_blank"
+      className="w-full px-6 py-5 rounded-md border border-stone-700/80 bg-off-white/90 flex group hover:bg-orange-400/80 transition-colors duration-300 text-black"
+    >
       <div className="flex justify-between w-full items-center">
         {/* Name */}
         <h3>{project.name}</h3>
         <ArrowUpRightIcon className="w-10 h-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        {/* Description */}
-        {/* <div>
-          <PortableText value={project.content} />
-        </div> */}
       </div>
-    </div>
+    </Link>
   );
 };
 
@@ -48,9 +48,7 @@ export default async function Projects() {
       {/* Projects */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 xl:pb-5">
         {projects.map((project: Project) => (
-          <Link key={project._id} href={project.url} target="_blank">
-            <ProjectCard project={project} />
-          </Link>
+          <ProjectCard key={project._id} project={project} />
         ))}
       </div>
     </div>

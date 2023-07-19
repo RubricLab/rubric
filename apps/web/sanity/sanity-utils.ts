@@ -12,8 +12,9 @@ const sanity = createClient({
 // Get copy for home page
 export async function getHomePageCopy(): Promise<Home> {
   // Groq fetch query
-  const result = await sanity.fetch(
-    groq`*[_type == "home"]{
+  return sanity.fetch(
+    // Returns an array, so default to first value
+    groq`*[_type == "home"][0]{
         _id,
         _createdAt,
         hero,
@@ -27,8 +28,6 @@ export async function getHomePageCopy(): Promise<Home> {
         }
     }`
   );
-  // Return first value
-  return result[0];
 }
 
 // Get projects
@@ -57,8 +56,26 @@ export async function getBlogPosts(): Promise<Post[]> {
         title,
         "slug": slug.current,
         "mainImage": mainImage.asset->url,
-        body,
         publishedAt
     }`
   );
+}
+
+// Get post
+export async function getBlogPost(slug: string): Promise<Post> {
+  // Groq fetch query
+  const result = await sanity.fetch(
+    // Returns an array, so default to first value
+    groq`*[_type == "post" && slug.current == $slug][0]{
+        _id,
+        _createdAt,
+        title,
+        "slug": slug.current,
+        "mainImage": mainImage.asset->url,
+        body,
+        publishedAt
+    }`,
+    { slug }
+  );
+  return result;
 }

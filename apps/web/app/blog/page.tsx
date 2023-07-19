@@ -34,7 +34,7 @@ const PostCard = ({ post }: PostCardProps) => {
     <Link
       key={post._id}
       href={`/blog/${post.slug}`}
-      className="flex flex-col border border-stone-700/80 bg-off-white/90 hover:bg-orange-400/80 transition-colors duration-400 rounded-md group relative"
+      className="flex flex-col border border-stone-700/80 bg-off-white/90 hover:bg-orange-400/80 transition-colors duration-400 rounded-md group relative text-black"
     >
       <ArrowUpRightIcon className="absolute top-2 right-2 w-14 h-14 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
       {/* Cover image */}
