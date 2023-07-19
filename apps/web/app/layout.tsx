@@ -18,12 +18,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${calSans.variable} min-h-screen h-full w-full flex flex-col relative 2xl:items-center`}
+      className={`${calSans.variable} min-h-screen h-full w-full flex flex-col relative items-center`}
     >
       <BackgroundGrid className="fixed h-full w-full" />
       <NavBar />
       <ToastProvider />
-      <body className="z-10 2xl:max-w-6xl w-full p-5 pt-0">{children}</body>
+      <body className="z-10 max-w-6xl w-full p-5 pt-0">{children}</body>
     </html>
   );
 }

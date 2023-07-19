@@ -1,7 +1,7 @@
 // Schema for Projects object
 const project = {
   name: "project",
-  title: "Projects",
+  title: "Project",
   type: "document",
   fields: [
     {

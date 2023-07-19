@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Constants from "../../utils/constants";
+import Constants from "../../lib/constants";
 import { getProjects } from "../../sanity/sanity-utils";
 import Link from "next/link";
 import { ArrowUpRightIcon } from "lucide-react";

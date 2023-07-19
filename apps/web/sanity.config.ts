@@ -1,7 +1,7 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import schemas from "../../packages/cms/schemas";
-import Constants from "./utils/constants";
+import Constants from "./lib/constants";
 
 // Sanity config file
 const config = defineConfig({

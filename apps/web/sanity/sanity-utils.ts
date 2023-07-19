@@ -1,6 +1,6 @@
 import { createClient, groq } from "next-sanity";
-import { Home, Project } from "../types/sanity";
-import Constants from "../utils/constants";
+import { Home, Post, Project } from "../types/sanity";
+import Constants from "../lib/constants";
 
 // Sanity client
 const sanity = createClient({
@@ -8,22 +8,6 @@ const sanity = createClient({
   dataset: Constants.SANITY.dataset,
   apiVersion: Constants.SANITY.apiVersion,
 });
-
-// Get projects
-export async function getProjects(): Promise<Project[]> {
-  // Groq fetch query
-  return sanity.fetch(
-    groq`*[_type == "project"]{
-        _id,
-        _createdAt,
-        name,
-        "slug": slug.current,
-        "image": image.asset->url,
-        url,
-        content
-    }`
-  );
-}
 
 // Get copy for home page
 export async function getHomePageCopy(): Promise<Home> {
@@ -45,4 +29,36 @@ export async function getHomePageCopy(): Promise<Home> {
   );
   // Return first value
   return result[0];
+}
+
+// Get projects
+export async function getProjects(): Promise<Project[]> {
+  // Groq fetch query
+  return sanity.fetch(
+    groq`*[_type == "project"]{
+        _id,
+        _createdAt,
+        name,
+        "slug": slug.current,
+        "image": image.asset->url,
+        url,
+        content
+    }`
+  );
+}
+
+// Get list of blog posts
+export async function getBlogPosts(): Promise<Post[]> {
+  // Groq fetch query
+  return sanity.fetch(
+    groq`*[_type == "post" && publishedAt < now()] | order(publishedAt desc){
+        _id,
+        _createdAt,
+        title,
+        "slug": slug.current,
+        "mainImage": mainImage.asset->url,
+        body,
+        publishedAt
+    }`
+  );
 }
