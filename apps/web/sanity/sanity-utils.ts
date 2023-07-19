@@ -1,12 +1,11 @@
 import { createClient, groq } from "next-sanity";
 import { Home, Post, Project } from "../types/sanity";
-import Constants from "../lib/constants";
 
 // Sanity client
 const sanity = createClient({
-  projectId: Constants.SANITY.projectId,
-  dataset: Constants.SANITY.dataset,
-  apiVersion: Constants.SANITY.apiVersion,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
 });
 
 // Get copy for home page
