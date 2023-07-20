@@ -1,12 +1,12 @@
 import "ui/globals.css";
 import "./styles.css";
-import localFont from "next/font/local";
+import localFont from "@next/font/local";
 import NavBar from "./components/NavBar";
 import BackgroundGrid from "./components/BackgroundGrid";
 import ToastProvider from "ui/ToastProvider";
 
 const calSans = localFont({
-  src: "./CalSans-SemiBold.ttf",
+  src: "../public/fonts/CalSans-SemiBold.ttf",
   variable: "--font-cal-sans",
 });
 
