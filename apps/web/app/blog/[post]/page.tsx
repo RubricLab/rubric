@@ -41,9 +41,9 @@ export default async function Post({ params }: PostProps) {
         />
       </div>
       <h2>{post.title}</h2>
-      <div className="flex flex-col gap-4">
+      {/* <div className="flex flex-col gap-4">
         <PortableText value={post.body} />
-      </div>
+      </div> */}
     </div>
   );
 }
