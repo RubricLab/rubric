@@ -1,24 +1,13 @@
 import { ContactButton, Header } from "ui";
 import { Metadata } from "next";
 import Image from "next/image";
-import { META } from "../lib/constants";
+import { DEFAULT_META } from "../lib/constants";
 import { getHomePageCopy } from "../sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import { Author } from "../types/sanity";
 
 export const metadata: Metadata = {
-  title: META.title,
-  description: META.desc,
-  openGraph: {
-    title: META.title,
-    description: META.desc,
-  },
-  twitter: {
-    title: META.title,
-    description: META.desc,
-    card: "summary_large_image",
-    creator: META.twitter,
-  },
+  ...DEFAULT_META,
 };
 
 type TeamMemberCardProps = {

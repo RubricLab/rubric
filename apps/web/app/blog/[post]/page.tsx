@@ -1,19 +1,17 @@
 import { Metadata } from "next";
-import { META } from "../../../lib/constants";
+import { DEFAULT_META, META } from "../../../lib/constants";
 import { getBlogPost } from "../../../sanity/sanity-utils";
 
 export const metadata: Metadata = {
+  ...DEFAULT_META,
   title: `Blog | ${META.title}`,
-  description: META.desc,
   openGraph: {
+    ...DEFAULT_META.openGraph,
     title: `Blog | ${META.title}`,
-    description: META.desc,
   },
   twitter: {
+    ...DEFAULT_META.twitter,
     title: `Blog | ${META.title}`,
-    description: META.desc,
-    card: "summary_large_image",
-    creator: META.twitter,
   },
 };
 
