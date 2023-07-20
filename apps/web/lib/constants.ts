@@ -6,4 +6,10 @@ const Constants = {
   },
 };
 
+export const MISC = {
+  FONTS: {
+    calSansURL: "https://rubriclab.com/fonts/CalSans-SemiBold.ttf",
+  },
+};
+
 export default Constants;

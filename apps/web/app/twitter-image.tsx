@@ -2,6 +2,7 @@ import { ImageResponse } from "next/server";
 import config from "../tailwind.config";
 import colors from "tailwindcss/colors";
 import BackgroundGrid from "./components/BackgroundGrid";
+import { MISC } from "../lib/constants";
 
 export const runtime = "edge";
 
@@ -13,9 +14,9 @@ export const size = {
 };
 
 const backgroundColor = config.theme.extend.colors["off-white"] || "white";
-const fontImport = fetch(
-  new URL("./CalSans-SemiBold.ttf", import.meta.url)
-).then((res) => res.arrayBuffer());
+const fontImport = fetch(MISC.FONTS.calSansURL).then((res) =>
+  res.arrayBuffer()
+);
 
 type Props = {
   params: object;

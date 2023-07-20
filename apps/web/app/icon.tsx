@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/server";
 import colors from "tailwindcss/colors";
 import config from "../tailwind.config";
+import { MISC } from "../lib/constants";
 
 export const runtime = "edge";
 
@@ -10,9 +11,9 @@ export const size = {
   height: 32,
 };
 
-const fontImport = fetch(
-  new URL("./CalSans-SemiBold.ttf", import.meta.url)
-).then((res) => res.arrayBuffer());
+const fontImport = fetch(MISC.FONTS.calSansURL).then((res) =>
+  res.arrayBuffer()
+);
 
 const offWhite = config.theme.extend.colors["off-white"] || "white";
 

@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^13.4.10",
     "@portabletext/react": "^3.0.4",
     "@prisma/client": "^4.14.1",
     "@sanity/image-url": "^1.0.2",
