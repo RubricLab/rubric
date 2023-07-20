@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Header } from "ui";
+import { ComingSoonButton, Header } from "ui";
 import { DEFAULT_META, META } from "../../lib/constants";
 import { getPosts } from "../../sanity/sanity-utils";
 import Link from "next/link";
@@ -59,12 +59,20 @@ export default async function Blog() {
   return (
     <div className="gap-10 flex flex-col h-full 2xl:justify-center mt-20">
       <Header text="Blog" />
+      {/* "Coming soon" if there are no posts */}
+      {posts.length === 0 && (
+        <div>
+          <ComingSoonButton />
+        </div>
+      )}
       {/* Posts */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {posts.map((post) => (
-          <PostCard key={post._id} post={post} />
-        ))}
-      </div>
+      {posts.length > 0 && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {posts.map((post) => (
+            <PostCard key={post._id} post={post} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
