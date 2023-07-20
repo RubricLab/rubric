@@ -46,8 +46,8 @@ export async function getProjects(): Promise<Project[]> {
   );
 }
 
-// Get list of blog posts
-export async function getBlogPosts(): Promise<Post[]> {
+// Get list of all blog posts
+export async function getPosts(): Promise<Post[]> {
   // Groq fetch query
   return sanity.fetch(
     groq`*[_type == "post" && publishedAt < now()] | order(publishedAt desc){
@@ -61,8 +61,8 @@ export async function getBlogPosts(): Promise<Post[]> {
   );
 }
 
-// Get post
-export async function getBlogPost(slug: string): Promise<Post> {
+// Get singular post from slug
+export async function getPost(slug: string): Promise<Post> {
   // Groq fetch query
   return sanity.fetch(
     // Returns an array, so default to first value

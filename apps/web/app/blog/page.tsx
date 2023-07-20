@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { Header } from "ui";
 import { DEFAULT_META, META } from "../../lib/constants";
-import { getBlogPosts } from "../../sanity/sanity-utils";
+import { getPosts } from "../../sanity/sanity-utils";
 import Link from "next/link";
 import Image from "next/image";
 import { Post } from "../../types/sanity";
@@ -55,7 +55,7 @@ const PostCard = ({ post }: PostCardProps) => {
 };
 
 export default async function Blog() {
-  const posts = await getBlogPosts();
+  const posts = await getPosts();
   return (
     <div className="gap-10 flex flex-col h-full 2xl:justify-center mt-20">
       <Header text="Blog" />

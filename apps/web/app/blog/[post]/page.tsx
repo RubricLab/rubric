@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import { DEFAULT_META, META } from "../../../lib/constants";
-import { getBlogPost } from "../../../sanity/sanity-utils";
+import { getPost } from "../../../sanity/sanity-utils";
+import Image from "next/image";
+import { PortableText } from "@portabletext/react";
 
 export const metadata: Metadata = {
   ...DEFAULT_META,
@@ -22,11 +24,11 @@ type PostProps = {
 // Blog post page
 export default async function Post({ params }: PostProps) {
   const slug = params.post;
-  const post = await getBlogPost(slug);
+  const post = await getPost(slug);
   return (
     <div className="gap-10 flex flex-col h-full mt-20">
       {/* Cover image */}
-      {/* <div className="relative w-full h-40">
+      <div className="relative w-full h-40">
         <Image
           src={post.mainImage}
           alt="Blog cover image"
@@ -35,11 +37,11 @@ export default async function Post({ params }: PostProps) {
           style={{ objectFit: "cover", objectPosition: "center" }}
           className="rounded-md"
         />
-      </div> */}
+      </div>
       <h2>{post.title}</h2>
-      {/* <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4">
         <PortableText value={post.body} />
-      </div> */}
+      </div>
     </div>
   );
 }
