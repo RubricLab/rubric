@@ -1,23 +1,23 @@
 import { ContactButton, Header } from "ui";
 import { Metadata } from "next";
 import Image from "next/image";
-import Constants from "../lib/constants";
+import { META } from "../lib/constants";
 import { getHomePageCopy } from "../sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import { Author } from "../types/sanity";
 
 export const metadata: Metadata = {
-  title: Constants.META.title,
-  description: Constants.META.desc,
+  title: META.title,
+  description: META.desc,
   openGraph: {
-    title: Constants.META.title,
-    description: Constants.META.desc,
+    title: META.title,
+    description: META.desc,
   },
   twitter: {
-    title: Constants.META.title,
-    description: Constants.META.desc,
+    title: META.title,
+    description: META.desc,
     card: "summary_large_image",
-    creator: Constants.META.twitter,
+    creator: META.twitter,
   },
 };
 

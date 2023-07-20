@@ -1,22 +1,22 @@
 import { Metadata } from "next";
-import Constants from "../../lib/constants";
+import { META } from "../../lib/constants";
 import { getProjects } from "../../sanity/sanity-utils";
 import Link from "next/link";
 import { ArrowUpRightIcon } from "lucide-react";
 import { Project } from "../../types/sanity";
 
 export const metadata: Metadata = {
-  title: `Projects | ${Constants.META.title}`,
-  description: Constants.META.desc,
+  title: `Projects | ${META.title}`,
+  description: META.desc,
   openGraph: {
-    title: `Projects | ${Constants.META.title}`,
-    description: Constants.META.desc,
+    title: `Projects | ${META.title}`,
+    description: META.desc,
   },
   twitter: {
-    title: `Projects | ${Constants.META.title}`,
-    description: Constants.META.desc,
+    title: `Projects | ${META.title}`,
+    description: META.desc,
     card: "summary_large_image",
-    creator: Constants.META.twitter,
+    creator: META.twitter,
   },
 };
 

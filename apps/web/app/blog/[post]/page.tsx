@@ -1,21 +1,19 @@
 import { Metadata } from "next";
-import Constants from "../../../lib/constants";
+import { META } from "../../../lib/constants";
 import { getBlogPost } from "../../../sanity/sanity-utils";
-import Image from "next/image";
-import { PortableText } from "@portabletext/react";
 
 export const metadata: Metadata = {
-  title: `Blog | ${Constants.META.title}`,
-  description: Constants.META.desc,
+  title: `Blog | ${META.title}`,
+  description: META.desc,
   openGraph: {
-    title: `Blog | ${Constants.META.title}`,
-    description: Constants.META.desc,
+    title: `Blog | ${META.title}`,
+    description: META.desc,
   },
   twitter: {
-    title: `Blog | ${Constants.META.title}`,
-    description: Constants.META.desc,
+    title: `Blog | ${META.title}`,
+    description: META.desc,
     card: "summary_large_image",
-    creator: Constants.META.twitter,
+    creator: META.twitter,
   },
 };
 

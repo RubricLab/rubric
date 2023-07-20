@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { Header } from "ui";
-import Constants from "../../lib/constants";
+import { META } from "../../lib/constants";
 import { getBlogPosts } from "../../sanity/sanity-utils";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,17 +9,17 @@ import { ArrowUpRightIcon } from "lucide-react";
 import { parseDate } from "../../lib/utils";
 
 export const metadata: Metadata = {
-  title: `Blog | ${Constants.META.title}`,
-  description: Constants.META.desc,
+  title: `Blog | ${META.title}`,
+  description: META.desc,
   openGraph: {
-    title: `Blog | ${Constants.META.title}`,
-    description: Constants.META.desc,
+    title: `Blog | ${META.title}`,
+    description: META.desc,
   },
   twitter: {
-    title: `Blog | ${Constants.META.title}`,
-    description: Constants.META.desc,
+    title: `Blog | ${META.title}`,
+    description: META.desc,
     card: "summary_large_image",
-    creator: Constants.META.twitter,
+    creator: META.twitter,
   },
 };
 
