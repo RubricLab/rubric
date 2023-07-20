@@ -63,7 +63,7 @@ export async function getBlogPosts(): Promise<Post[]> {
 // Get post
 export async function getBlogPost(slug: string): Promise<Post> {
   // Groq fetch query
-  const result = await sanity.fetch(
+  return sanity.fetch(
     // Returns an array, so default to first value
     groq`*[_type == "post" && slug.current == $slug][0]{
         _id,
@@ -76,5 +76,4 @@ export async function getBlogPost(slug: string): Promise<Post> {
     }`,
     { slug }
   );
-  return result;
 }
