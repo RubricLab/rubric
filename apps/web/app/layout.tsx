@@ -4,11 +4,22 @@ import localFont from "next/font/local";
 import NavBar from "./components/NavBar";
 import BackgroundGrid from "./components/BackgroundGrid";
 import ToastProvider from "ui/ToastProvider";
+import { META } from "../lib/constants";
 
 const calSans = localFont({
   src: "../public/fonts/CalSans-SemiBold.ttf",
   variable: "--font-cal-sans",
 });
+
+export const metadata = {
+  metadataBase: new URL(META.siteURL),
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-US": "/en-US",
+    },
+  },
+};
 
 export default function RootLayout({
   children,

@@ -4,6 +4,7 @@ export const META = {
   title: "Rubric",
   desc: "We are a lean team of developers & designers that build software end-to-end.",
   twitter: "@rubriclabs",
+  siteURL: "https://rubriclab.com",
 };
 
 export const DEFAULT_META: Metadata = {
