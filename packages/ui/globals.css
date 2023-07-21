@@ -25,7 +25,13 @@
     @apply text-lg px-4 py-2 font-medium leading-6;
   }
   a {
-    @apply hover:opacity-80 transition-colors duration-200;
+    @apply text-orange-500 hover:opacity-80 transition-colors duration-200;
+  }
+  blockquote {
+    @apply border-l-4 border-stone-500/80 pl-1 py-2;
+  }
+  code {
+    @apply bg-orange-200/60 w-full p-5 flex overflow-hidden border border-stone-700/80;
   }
 }
 

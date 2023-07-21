@@ -28,3 +28,13 @@ export type Author = {
   slug: string;
   image: string;
 };
+
+export type Post = {
+  _id: string;
+  _createdAt: Date;
+  title: string;
+  slug: string;
+  mainImage: string;
+  body: PortableTextBlock[];
+  publishedAt: Date;
+};

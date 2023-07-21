@@ -4,11 +4,22 @@ import localFont from "next/font/local";
 import NavBar from "./components/NavBar";
 import BackgroundGrid from "./components/BackgroundGrid";
 import ToastProvider from "ui/ToastProvider";
+import { META } from "../lib/constants";
 
 const calSans = localFont({
-  src: "./CalSans-SemiBold.ttf",
+  src: "../public/fonts/CalSans-SemiBold.ttf",
   variable: "--font-cal-sans",
 });
+
+export const metadata = {
+  metadataBase: new URL(META.siteURL),
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-US": "/en-US",
+    },
+  },
+};
 
 export default function RootLayout({
   children,
@@ -16,14 +27,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${calSans.variable} min-h-screen h-full w-full flex flex-col relative 2xl:items-center`}
-    >
-      <BackgroundGrid className="fixed h-full w-full" />
-      <NavBar />
-      <ToastProvider />
-      <body className="z-10 2xl:max-w-6xl w-full p-5 pt-0">{children}</body>
+    <html lang="en">
+      <body
+        className={`${calSans.variable} min-h-screen h-full w-full flex flex-col relative items-center`}
+      >
+        <BackgroundGrid className="fixed h-full w-full" />
+        <NavBar />
+        <ToastProvider />
+        <div className="z-10 max-w-6xl w-full p-5 pt-0">{children}</div>
+      </body>
     </html>
   );
 }

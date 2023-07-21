@@ -1,13 +1,34 @@
 import { createClient, groq } from "next-sanity";
-import { Home, Project } from "../types/sanity";
-import Constants from "../utils/constants";
+import { Home, Post, Project } from "../types/sanity";
 
 // Sanity client
 const sanity = createClient({
-  projectId: Constants.SANITY.projectId,
-  dataset: Constants.SANITY.dataset,
-  apiVersion: Constants.SANITY.apiVersion,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
+  useCdn: true,
 });
+
+// Get copy for home page
+export async function getHomePageCopy(): Promise<Home> {
+  // Groq fetch query
+  return sanity.fetch(
+    // Returns an array, so default to first value
+    groq`*[_type == "home"][0]{
+        _id,
+        _createdAt,
+        hero,
+        desc,
+        "team": team[] | order(name asc){
+          "_key": _key,
+          "name": name,
+          "title": title,
+          "slug": slug.current,
+          "image": image.asset->url
+        }
+    }`
+  );
+}
 
 // Get projects
 export async function getProjects(): Promise<Project[]> {
@@ -25,24 +46,35 @@ export async function getProjects(): Promise<Project[]> {
   );
 }
 
-// Get copy for home page
-export async function getHomePageCopy(): Promise<Home> {
+// Get list of all blog posts
+export async function getPosts(): Promise<Post[]> {
   // Groq fetch query
-  const result = await sanity.fetch(
-    groq`*[_type == "home"]{
+  return sanity.fetch(
+    groq`*[_type == "post" && publishedAt < now()] | order(publishedAt desc){
         _id,
         _createdAt,
-        hero,
-        desc,
-        "team": team[] | order(name asc){
-          "_key": _key,
-          "name": name,
-          "title": title,
-          "slug": slug.current,
-          "image": image.asset->url
-        }
+        title,
+        "slug": slug.current,
+        "mainImage": mainImage.asset->url,
+        publishedAt
     }`
   );
-  // Return first value
-  return result[0];
+}
+
+// Get singular post from slug
+export async function getPost(slug: string): Promise<Post> {
+  // Groq fetch query
+  return sanity.fetch(
+    // Returns an array, so default to first value
+    groq`*[_type == "post" && slug.current == $slug][0]{
+        _id,
+        _createdAt,
+        title,
+        "slug": slug.current,
+        "mainImage": mainImage.asset->url,
+        body,
+        publishedAt
+    }`,
+    { slug }
+  );
 }

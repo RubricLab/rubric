@@ -1,16 +1,16 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import schemas from "../../packages/cms/schemas";
-import Constants from "./utils/constants";
+import { visionTool } from "@sanity/vision";
 
 // Sanity config file
 const config = defineConfig({
-  projectId: Constants.SANITY.projectId,
-  dataset: Constants.SANITY.dataset,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   title: "Blog",
-  apiVersion: Constants.SANITY.apiVersion,
+  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
   basePath: "/studio", // URL at which Sanity studio will be hosted
-  plugins: [deskTool()],
+  plugins: [deskTool(), visionTool()],
   schema: { types: schemas },
 });
 
