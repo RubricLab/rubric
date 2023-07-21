@@ -31,7 +31,7 @@ export async function POST(request: Request, response: Response) {
 
     const feedback = json.actions[0].value
 
-    if (!feedback || !body) {
+    if (!feedback || !body || !title || !summary || !emoji || !bannerImgUrl || !bannerImgDescription) {
         return new NextResponse('ok')
     }
 

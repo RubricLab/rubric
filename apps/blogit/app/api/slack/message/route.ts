@@ -12,6 +12,13 @@ import users from '../../../../const/users'
 // export const runtime = 'edge'
 
 export async function POST(request: Request) {
+
+    // respond with challenge parameter on setup for slack verif
+    // const body = await request.json();
+    // if (body.challenge) {
+    //     return new NextResponse(body.challenge);
+    // }
+
     const json = await request.json()
 
     console.log('ping: ', json.event.type)

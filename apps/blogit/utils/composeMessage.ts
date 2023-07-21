@@ -23,7 +23,7 @@ export default (blogPost: BlogPost) => {
             accessory: {
                 type: "image",
                 image_url: blogPost.bannerImgUrl,
-                alt_text: blogPost.bannerImgDescription,
+                alt_text: blogPost.bannerImgDescription || "Banner Img",
             }
         },
         {
