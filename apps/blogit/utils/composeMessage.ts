@@ -25,9 +25,9 @@ export default (blogPost: BlogPost) => {
                 image_url: blogPost.bannerImgUrl,
                 alt_text: blogPost.bannerImgDescription,
             }
-        },  
+        },
         {
-            "type": "divider"
+            type: "divider"
         },
         {
             type: "section",
@@ -38,6 +38,13 @@ export default (blogPost: BlogPost) => {
         },
         {
             type: "divider"
+        },
+        {
+            type: "section",
+            text: {
+                type: "mrkdwn",
+                text: "<https://rubriclab.com/studio/desk/post|View in Rubric Studio>",
+            }
         },
         {
             dispatch_action: true,

@@ -31,19 +31,24 @@ export async function POST(request: Request, response: Response) {
 
     const feedback = json.actions[0].value
 
-    if (!feedback) {
+    if (!feedback || !body) {
         return new NextResponse('ok')
     }
 
-    const blogPostContext = createBlogPostContext({ title, summary, body, emoji, bannerImgUrl, bannerImgDescription })
+    const core = async () => {
 
-    const blogPost = await generateBlogPostWithFeedback(blogPostContext, feedback, author)
+        const blogPostContext = createBlogPostContext({ title, summary, body, emoji, bannerImgDescription })
 
-    const newBannerImgUrl = blogPost.changeBannerImg === 'true' ? (await generateImageFromDescription(blogPost.bannerImgDescription)).url : bannerImgUrl
+        const blogPost = await generateBlogPostWithFeedback(blogPostContext, feedback, author)
 
-    const message = composeMessage({ ...blogPost, bannerImgUrl: newBannerImgUrl })
+        const newBannerImgUrl = blogPost.changeBannerImg === 'true' ? (await generateImageFromDescription(blogPost.bannerImgDescription)).url : bannerImgUrl
 
-    await updateMessage(message, channel, json.message.ts)
+        const message = composeMessage({ ...blogPost, bannerImgUrl: newBannerImgUrl })
+
+        await updateMessage(message, channel, json.message.ts)
+    }
+
+    core()
 
     return new NextResponse('ok')
 }

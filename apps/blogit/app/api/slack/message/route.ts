@@ -14,7 +14,7 @@ import users from '../../../../const/users'
 export async function POST(request: Request) {
     const json = await request.json()
 
-    console.log('message ping: ', json.event.type)
+    console.log('ping: ', json.event.type)
 
     const { text, channel, thread_ts, user: author } = json.event
 
@@ -53,19 +53,24 @@ export async function POST(request: Request) {
 
     console.log('is thread')
 
-    const thread = await getThread(thread_ts, channel)
-    const threadContext = createThreadContext(thread, users)
+    const core = async () => {
+
+        const thread = await getThread(thread_ts, channel)
+        const threadContext = createThreadContext(thread, users)
 
 
-    const blogPost = await generateBlogPost(threadContext, text, author)
+        const blogPost = await generateBlogPost(threadContext, text, author)
 
-    const bannerImg = await generateImageFromDescription(blogPost.bannerImgDescription)
+        const bannerImg = await generateImageFromDescription(blogPost.bannerImgDescription)
 
-    blogPost.bannerImgUrl = bannerImg.url
+        blogPost.bannerImgUrl = bannerImg.url
 
-    const message = composeMessage(blogPost)
+        const message = composeMessage(blogPost)
 
-    await sendMessage(message, channel)
+        await sendMessage(message, channel)
+    }
+
+    core()
 
     return new NextResponse('ok')
 }
