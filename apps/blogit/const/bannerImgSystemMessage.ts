@@ -5,5 +5,7 @@ Make sure not to include any text in the image and make the image aesthetic and 
 
 The image must be grainy, film look, pantone and minimalist.
 
+Always use the design system: orange-500
+
 General Context: The design system of the company is low fi, high tech - think the movie her -> Blade runner with extra grain, very pantone, minimalist, understated.
 `
