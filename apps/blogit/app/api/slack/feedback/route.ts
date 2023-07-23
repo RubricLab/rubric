@@ -17,7 +17,7 @@ export async function POST(request: Request, response: Response) {
         }
     })
 
-    await new Promise(r => setTimeout(r, 1500));
+    await new Promise(r => setTimeout(r, 1000));
 
     return new NextResponse('ok')
 }
