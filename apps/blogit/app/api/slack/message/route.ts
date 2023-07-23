@@ -8,7 +8,6 @@ import generateImageFromDescription from '../../../../utils/generateImageFromDes
 
 // import getUsers from '../../../utils/getUsers';
 import users from '../../../../const/users'
-import challenge from '../../../../utils/challenge';
 
 // export const runtime = 'edge'
 
@@ -17,7 +16,9 @@ export async function POST(request: Request) {
     // respond with challenge parameter on setup for slack verif
     const json = await request.json()
 
-    challenge(json)
+    if (json.challenge) {
+        return new NextResponse(json.challenge);
+    }
 
     console.log('ping: ', json.event.type)
 
