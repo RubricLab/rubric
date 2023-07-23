@@ -13,12 +13,7 @@ import users from '../../../const/users'
 
 export async function POST(request: Request) {
 
-    // respond with challenge parameter on setup for slack verif
     const json = await request.json()
-
-    if (json.challenge) {
-        return new NextResponse(json.challenge);
-    }
 
     console.log('ping: ', json.event.type)
 
@@ -29,7 +24,6 @@ export async function POST(request: Request) {
         console.log('author is bot')
         return new NextResponse('ok')
     }
-    
     
     if (json.event.type !== 'message' || !text) {
         console.log('not a message')
