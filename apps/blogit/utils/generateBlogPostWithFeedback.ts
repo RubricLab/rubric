@@ -49,7 +49,7 @@ export default async (blogPostContext: string, feedback: string, author: string)
                     },
                     emoji: {
                         type: 'string',
-                        description: 'An emoji that represents the blog post. For example: 😅',
+                        description: 'An emoji that represents the blog post. For example: 😅. Even if the emoji passed is passed as text "musical_score", always replace it with the actual emoji 🎼',
                     },
                     changeBannerImg: {
                         type: 'string',
