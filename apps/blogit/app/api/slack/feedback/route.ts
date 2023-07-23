@@ -16,5 +16,8 @@ export async function POST(request: Request, response: Response) {
             'Content-Type': 'application/json'
         }
     })
+
+    await new Promise(r => setTimeout(r, 1500));
+
     return new NextResponse('ok')
 }
