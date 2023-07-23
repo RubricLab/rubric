@@ -67,9 +67,11 @@ export async function POST(request: Request) {
 
         const blogPost = await generateBlogPost(threadContext, text, author)
 
-        const bannerImg = await generateImageFromDescription(blogPost.bannerImgDescription)
+        // const bannerImg = await generateImageFromDescription(blogPost.bannerImgDescription)
 
-        blogPost.bannerImgUrl = bannerImg.url
+        // blogPost.bannerImgUrl = bannerImg.url
+
+        blogPost.bannerImgUrl = 'https://cdn.sanity.io/images/98ffjfuo/production/c4f4b2b486832d595a2fb5fccef4b3a46740115d-907x907.png?w=2000&fit=max&auto=format&dpr=2'
 
         const message = composeMessage(blogPost)
 

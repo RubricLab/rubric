@@ -41,7 +41,9 @@ export async function POST(request: Request, response: Response) {
 
         const blogPost = await generateBlogPostWithFeedback(blogPostContext, feedback, author)
 
-        const newBannerImgUrl = blogPost.changeBannerImg === 'true' ? (await generateImageFromDescription(blogPost.bannerImgDescription)).url : bannerImgUrl
+        // const newBannerImgUrl = blogPost.changeBannerImg === 'true' ? (await generateImageFromDescription(blogPost.bannerImgDescription)).url : bannerImgUrl
+
+        const newBannerImgUrl = bannerImgUrl
 
         const message = composeMessage({ ...blogPost, bannerImgUrl: newBannerImgUrl })
 
