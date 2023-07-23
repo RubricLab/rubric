@@ -13,6 +13,14 @@
       ],
       "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
+    "build:blogit": {
+      "env": [
+        "SLACK_SIGNING_SECRET",
+        "SLACK_BOT_TOKEN",
+        "SLACK_BOT_ID",
+        "OPENAI_API_KEY"
+      ]
+    },
     "lint": {},
     "dev": {
       "cache": false,
