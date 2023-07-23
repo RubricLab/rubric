@@ -2,8 +2,6 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
 
-    console.log('hi')
-
     const json = await request.json()
 
     // respond with challenge parameter on setup for slack verif
@@ -13,8 +11,7 @@ export async function POST(request: Request) {
 
     const url = request.headers.get('host')
 
-    console.log(`https://${url}/api/message`)
-
+    // We have to respond to slack within 3 seconds so we can't wait for the blog post to be generated
     fetch(`https://${url}/api/message`, {
         method: 'POST',
         body: JSON.stringify(json),
@@ -23,6 +20,7 @@ export async function POST(request: Request) {
         }
     })
 
+    // wait 1 second to give the serverless function time to send the post request. Realistically this could probably be like 10ms
     await new Promise(r => setTimeout(r, 1000));
 
     return new NextResponse('ok')
