@@ -55,9 +55,11 @@ export default async (threadContext: string, prompt: string, author: string) => 
                         type: 'string',
                         description: 'An emoji that represents the blog post. For example: 😅',
                     }
-                }
+                },
+                required: ['title', 'summary', 'body', 'bannerImgDescription', 'emoji']
             }
-        }]
+        }],
+        function_call: "composeBlogPost",
     })
 
     return JSON.parse((await response.json()).choices[0].message.function_call.arguments) as BlogPost

@@ -55,9 +55,11 @@ export default async (blogPostContext: string, feedback: string, author: string)
                         type: 'string',
                         description: 'true/false. Whether to change the banner image or not. Most often false.',
                     }
-                }
+                },
+                required: ['title', 'summary', 'body', 'bannerImgDescription', 'emoji', 'changeBannerImg']
             }
-        }]
+        }],
+        function_call: "composeBlogPost",
     })
 
     return JSON.parse((await response.json()).choices[0].message.function_call.arguments) as UpdatedBlogPost
