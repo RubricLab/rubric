@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
 
+    console.log('hi')
+
     const json = await request.json()
 
     // respond with challenge parameter on setup for slack verif

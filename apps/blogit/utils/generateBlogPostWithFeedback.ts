@@ -59,7 +59,7 @@ export default async (blogPostContext: string, feedback: string, author: string)
                 required: ['title', 'summary', 'body', 'bannerImgDescription', 'emoji', 'changeBannerImg']
             }
         }],
-        function_call: "composeBlogPost",
+        function_call: { name: "composeBlogPost" },
     })
 
     return JSON.parse((await response.json()).choices[0].message.function_call.arguments) as UpdatedBlogPost
