@@ -21,6 +21,8 @@ type PostProps = {
   params: { post: string };
 };
 
+export const revalidate = 60; // revalidate this page every 60 seconds
+
 // Blog post page
 export default async function Post({ params }: PostProps) {
   const slug = params.post;
