@@ -1,13 +1,13 @@
 import { ChatPostMessageArguments } from "@slack/web-api";
 import BlogPost from "../types/BlogPost";
 
-export default (blogPost: BlogPost) => {
+export default (blogPost: BlogPost, threadUrl: string) => {
     const blocks: ChatPostMessageArguments["blocks"] = [
         {
             type: "section",
             text: {
                 type: "mrkdwn",
-                text: `Hey it's me, <@${process.env.SLACK_BOT_ID}>! Here's a draft I created.`,
+                text: `Hey <@${blogPost.author.id}>! It's me, <@${process.env.SLACK_BOT_ID}>! Here's a draft I created from <${threadUrl}|your thread>:`,
             },
         },
         {
@@ -40,13 +40,6 @@ export default (blogPost: BlogPost) => {
             type: "divider"
         },
         {
-            type: "section",
-            text: {
-                type: "mrkdwn",
-                text: "<https://rubriclab.com/studio/desk/post|View in Rubric Studio>",
-            }
-        },
-        {
             dispatch_action: true,
             type: "input",
             element: {
@@ -64,6 +57,16 @@ export default (blogPost: BlogPost) => {
 				emoji: true
 			}
         },
+        {
+            type: "section",
+            text: {
+                type: "mrkdwn",
+                text: "<https://rubriclab.com/studio/desk/post|View in Rubric Studio>",
+            }
+        },
+        {
+            type: "divider",
+        }
         
     ]
 

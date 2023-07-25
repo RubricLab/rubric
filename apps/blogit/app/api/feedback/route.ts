@@ -4,14 +4,17 @@ import createBlogPostContext from '../../../utils/createBlogPostContext';
 import composeMessage from '../../../utils/composeMessage';
 import updateMessage from '../../../utils/updateMessage';
 import generateImageFromDescription from '../../../utils/generateImageFromDescription';
+import SimpleUser from '../../../types/SimpleUser';
 
 export async function POST(request: Request) {
    
     const json = await request.json()
 
-    const author = json.user.name
+    const author = {id: json.user.id, real_name: json.user.name}
 
     const channel = json.channel.id
+
+    const threadUrl = json.message.blocks[0].text.text.split('<').slice(-1)[0].split('|')[0]
 
     const titleSection = json.message.blocks[2]
 
@@ -33,7 +36,7 @@ export async function POST(request: Request) {
         return new NextResponse('ok')
     }
 
-    const blogPostContext = createBlogPostContext({ title, summary, body, emoji, bannerImgDescription })
+    const blogPostContext = createBlogPostContext({ title, summary, body, emoji, bannerImgDescription, author })
 
     const blogPost = await generateBlogPostWithFeedback(blogPostContext, feedback, author)
 
@@ -41,7 +44,7 @@ export async function POST(request: Request) {
 
     const newBannerImgUrl = bannerImgUrl
 
-    const message = composeMessage({ ...blogPost, bannerImgUrl: newBannerImgUrl })
+    const message = composeMessage({ ...blogPost, bannerImgUrl: newBannerImgUrl, author }, threadUrl)
 
     await updateMessage(message, channel, json.message.ts)
 

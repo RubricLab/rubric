@@ -2,9 +2,10 @@ import { ChatCompletionResponseMessageRoleEnum } from 'openai-edge'
 import BlogPost from '../types/BlogPost'
 import openAiClient from './openAiClient'
 import blogPostFromThreadSystemMessage from '../const/blogPostFromThreadSystemMessage'
+import SimpleUser from '../types/SimpleUser'
 
 
-export default async (threadContext: string, prompt: string, author: string) => {
+export default async (threadContext: string, prompt: string, author: SimpleUser) => {
 
     // System message
     const messages = [
@@ -17,7 +18,7 @@ export default async (threadContext: string, prompt: string, author: string) => 
             role: ChatCompletionResponseMessageRoleEnum.System
         },
         {
-            content: `Hey it's ${author}. Can you please write a short draft blog from this thread?`,
+            content: `Hey it's ${author.real_name}. Can you please write a short draft blog from this thread?`,
             role: ChatCompletionResponseMessageRoleEnum.User
         },
         {

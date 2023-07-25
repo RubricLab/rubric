@@ -8,6 +8,8 @@ import generateImageFromDescription from '../../../utils/generateImageFromDescri
 
 // import getUsers from '../../../utils/getUsers';
 import users from '../../../const/users'
+import getUserByUserName from '../../../utils/getUserByUserName';
+import getChatLink from '../../../utils/getChatLink';
 
 // export const runtime = 'edge'
 
@@ -17,13 +19,13 @@ export async function POST(request: Request) {
 
     console.log('ping: ', json.event.type)
 
-    const { text, channel, thread_ts, user: author } = json.event
+    const { text, channel, thread_ts, user: authorId } = json.event
 
     // console.log(text, channel, thread_ts, author)
 
 
     // avoid recursion
-    if (author === process.env.SLACK_BOT_ID) {
+    if (authorId === process.env.SLACK_BOT_ID) {
         console.log('author is bot')
         return new NextResponse('ok')
     }
@@ -58,8 +60,16 @@ export async function POST(request: Request) {
 
     const thread = await getThread(thread_ts, channel)
     const threadContext = createThreadContext(thread, users)
-
+    
     // console.log(threadContext)
+
+    const threadUrl = (await getChatLink(thread_ts, channel)).permalink
+
+    // console.log(threadUrl)
+
+    const author = getUserByUserName(users, authorId)
+
+    // console.log(author)
 
     const blogPost = await generateBlogPost(threadContext, text, author)
 
@@ -69,7 +79,7 @@ export async function POST(request: Request) {
 
     blogPost.bannerImgUrl = 'https://cdn.sanity.io/images/98ffjfuo/production/c4f4b2b486832d595a2fb5fccef4b3a46740115d-907x907.png?w=2000&fit=max&auto=format&dpr=2'
 
-    const message = composeMessage(blogPost)
+    const message = composeMessage({ ...blogPost, author }, threadUrl)
 
     await sendMessage(message, process.env.SLACK_BLOG_CHANNEL_ID || channel)
 
