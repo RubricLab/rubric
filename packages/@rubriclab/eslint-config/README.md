@@ -1,5 +1,7 @@
 # Rubric Labs ESLint Config
 
+Custom ESLint config for the Rubric Labs monorepo.
+
 This is [Rubric Labs](https://rubriclab.com)' first public package.
 
 It serves as a template for publishing packages under a larger, private monorepo.
