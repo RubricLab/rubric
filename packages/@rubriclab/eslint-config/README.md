@@ -10,6 +10,8 @@ To update the package, make a change then run `yarn workspace @rubriclab/eslint-
 
 To make a package public, make sure to update each dependent's **package.json**.
 
-This flow could be streamlined a lot. Ie., updated public packages could be automatically version-bumped and published upon merge to main.
+To streamline the process, simply run `yarn publish-packages` at the root. Select the modified package, optionally skip the major and minor versions, then write a summary of changes.
+
+More streamlining to come.
 
 Til then, happy publishing.
