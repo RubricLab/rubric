@@ -19,6 +19,9 @@ export async function POST(request: Request) {
 
     const { text, channel, thread_ts, user: author } = json.event
 
+    console.log(text, channel, thread_ts, author)
+
+
     // avoid recursion
     if (author === process.env.SLACK_BOT_ID) {
         console.log('author is bot')
@@ -56,6 +59,7 @@ export async function POST(request: Request) {
     const thread = await getThread(thread_ts, channel)
     const threadContext = createThreadContext(thread, users)
 
+    console.log(threadContext)
 
     const blogPost = await generateBlogPost(threadContext, text, author)
 

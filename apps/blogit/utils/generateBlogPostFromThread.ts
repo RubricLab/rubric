@@ -62,5 +62,17 @@ export default async (threadContext: string, prompt: string, author: string) => 
         function_call: {name: "composeBlogPost"},
     })
 
-    return JSON.parse((await response.json()).choices[0].message.function_call.arguments) as BlogPost
+    const json = await response.json()
+
+    const blogPost = json.choices[0].message.function_call.arguments.replace(/\n\n/g, "\\n\\n")
+
+    try {
+
+        return JSON.parse(blogPost) as BlogPost
+
+    } catch (e) {
+        console.error(e)
+        console.log(blogPost)
+        throw new Error('Failed to generate blog post from thread')
+    }
 }
