@@ -19,7 +19,7 @@ export async function POST(request: Request) {
 
     const { text, channel, thread_ts, user: author } = json.event
 
-    console.log(text, channel, thread_ts, author)
+    // console.log(text, channel, thread_ts, author)
 
 
     // avoid recursion
@@ -43,23 +43,23 @@ export async function POST(request: Request) {
     // const users = await getUsers(json.event.channel)
 
     if (!isBlogit) {
-        console.log('not blogit')
+        // console.log('not blogit')
         return new NextResponse('ok')
     }
 
     console.log('is blogit')
     
     if (!thread_ts) {
-        console.log('not thread')
+        // console.log('not thread')
         return new NextResponse('ok')
     }
 
-    console.log('is thread')
+    // console.log('is thread')
 
     const thread = await getThread(thread_ts, channel)
     const threadContext = createThreadContext(thread, users)
 
-    console.log(threadContext)
+    // console.log(threadContext)
 
     const blogPost = await generateBlogPost(threadContext, text, author)
 
@@ -71,7 +71,7 @@ export async function POST(request: Request) {
 
     const message = composeMessage(blogPost)
 
-    await sendMessage(message, channel)
+    await sendMessage(message, process.env.BLOG_CHANNEL_ID || channel)
 
     return new NextResponse('ok')
 }

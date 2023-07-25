@@ -71,8 +71,10 @@ export default async (threadContext: string, prompt: string, author: string) => 
         return JSON.parse(blogPost) as BlogPost
 
     } catch (e) {
+
         console.error(e)
         console.log(blogPost)
         throw new Error('Failed to generate blog post from thread')
+        
     }
 }
