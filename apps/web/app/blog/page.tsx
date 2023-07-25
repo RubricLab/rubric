@@ -25,6 +25,8 @@ type PostCardProps = {
   post: Post;
 };
 
+export const revalidate = 60; // revalidate this page every 60 seconds
+
 // Blog post card
 const PostCard = ({ post }: PostCardProps) => {
   const date = parseDate(post.publishedAt);
