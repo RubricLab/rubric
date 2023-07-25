@@ -71,7 +71,7 @@ export async function POST(request: Request) {
 
     const message = composeMessage(blogPost)
 
-    await sendMessage(message, process.env.BLOG_CHANNEL_ID || channel)
+    await sendMessage(message, process.env.SLACK_BLOG_CHANNEL_ID || channel)
 
     return new NextResponse('ok')
 }
