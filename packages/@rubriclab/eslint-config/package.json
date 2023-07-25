@@ -1,0 +1,20 @@
+{
+  "name": "@rubriclab/eslint-config",
+  "version": "0.0.2",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsup ./index.js --format cjs",
+    "dev": "turbo run build -- --watch"
+  },
+  "dependencies": {
+    "eslint-config-next": "^13.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-turbo": "^1.9.3",
+    "eslint-plugin-react": "7.28.0",
+    "tsup": "^7.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
