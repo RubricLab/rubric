@@ -1,4 +1,4 @@
-# @rubriclab/create-rubric-app
+# create-rubric-app
 
 ## 0.0.8
 

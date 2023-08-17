@@ -1,5 +1,5 @@
 {
-  "name": "@rubriclab/create-rubric-app",
+  "name": "create-rubric-app",
   "version": "0.0.8",
   "license": "MIT",
   "bin": {
