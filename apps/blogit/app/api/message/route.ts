@@ -1,87 +1,88 @@
-import { NextResponse } from 'next/server';
-import sendMessage from '../../../utils/sendMessage';
-import getThread from '../../../utils/getThread';
-import composeMessage from '../../../utils/composeMessage';
-import generateBlogPost from '../../../utils/generateBlogPostFromThread';
-import createThreadContext from '../../../utils/createThreadContext';
-import generateImageFromDescription from '../../../utils/generateImageFromDescription';
+import { NextResponse } from "next/server";
+import sendMessage from "../../../utils/sendMessage";
+import getThread from "../../../utils/getThread";
+import composeMessage from "../../../utils/composeMessage";
+import generateBlogPost from "../../../utils/generateBlogPostFromThread";
+import createThreadContext from "../../../utils/createThreadContext";
+import generateImageFromDescription from "../../../utils/generateImageFromDescription";
 
 // import getUsers from '../../../utils/getUsers';
-import users from '../../../const/users'
-import getUserByUserName from '../../../utils/getUserByUserName';
-import getChatLink from '../../../utils/getChatLink';
+import users from "../../../const/users";
+import getUserByUserName from "../../../utils/getUserByUserName";
+import getChatLink from "../../../utils/getChatLink";
 
 // export const runtime = 'edge'
 
 export async function POST(request: Request) {
+  const json = await request.json();
 
-    const json = await request.json()
+  console.log("ping: ", json.event.type);
 
-    console.log('ping: ', json.event.type)
+  const { text, channel, thread_ts, user: authorId } = json.event;
 
-    const { text, channel, thread_ts, user: authorId } = json.event
+  // console.log(text, channel, thread_ts, author)
 
-    // console.log(text, channel, thread_ts, author)
+  // avoid recursion
+  if (authorId === process.env.SLACK_BOT_ID) {
+    console.log("author is bot");
+    return new NextResponse("ok");
+  }
 
+  if (json.event.type !== "message" || !text) {
+    console.log("not a message");
+    return new NextResponse("ok");
+  }
 
-    // avoid recursion
-    if (authorId === process.env.SLACK_BOT_ID) {
-        console.log('author is bot')
-        return new NextResponse('ok')
-    }
-    
-    if (json.event.type !== 'message' || !text) {
-        console.log('not a message')
-        return new NextResponse('ok')
-    }
+  const isReferenced = new RegExp(["blogit", "blog it"].join("|"), "i").test(
+    text
+  );
 
-    const isReferenced = (new RegExp(['blogit','blog it'].join('|'), "i")).test(text)
+  const isMentioned = text.includes(`<@${process.env.SLACK_BOT_ID}>`);
 
-    const isMentioned = text.includes(`<@${process.env.SLACK_BOT_ID}>`)
+  const isBlogit = isReferenced || isMentioned;
 
-    const isBlogit = isReferenced || isMentioned
+  // removed because of rate limiting
+  // const users = await getUsers(json.event.channel)
 
-    // removed because of rate limiting
-    // const users = await getUsers(json.event.channel)
+  if (!isBlogit) {
+    // console.log('not blogit')
+    return new NextResponse("ok");
+  }
 
-    if (!isBlogit) {
-        // console.log('not blogit')
-        return new NextResponse('ok')
-    }
+  console.log("is blogit");
 
-    console.log('is blogit')
-    
-    if (!thread_ts) {
-        // console.log('not thread')
-        return new NextResponse('ok')
-    }
+  if (!thread_ts) {
+    // console.log('not thread')
+    return new NextResponse("ok");
+  }
 
-    // console.log('is thread')
+  // console.log('is thread')
 
-    const thread = await getThread(thread_ts, channel)
-    const threadContext = createThreadContext(thread, users)
-    
-    // console.log(threadContext)
+  const thread = await getThread(thread_ts, channel);
+  const threadContext = createThreadContext(thread, users);
 
-    const threadUrl = (await getChatLink(thread_ts, channel)).permalink
+  // console.log(threadContext)
 
-    // console.log(threadUrl)
+  const threadUrl = (await getChatLink(thread_ts, channel)).permalink;
 
-    const author = getUserByUserName(users, authorId)
+  // console.log(threadUrl)
 
-    // console.log(author)
+  const author = getUserByUserName(users, authorId);
 
-    const blogPost = await generateBlogPost(threadContext, text, author)
+  // console.log(author)
 
-    // const bannerImg = await generateImageFromDescription(blogPost.bannerImgDescription)
+  const blogPost = await generateBlogPost(threadContext, text, author);
 
-    // blogPost.bannerImgUrl = bannerImg.url
+  // const bannerImg = await generateImageFromDescription(blogPost.bannerImgDescription)
 
-    blogPost.bannerImgUrl = 'https://cdn.sanity.io/images/98ffjfuo/production/c4f4b2b486832d595a2fb5fccef4b3a46740115d-907x907.png?w=2000&fit=max&auto=format&dpr=2'
+  // blogPost.bannerImgUrl = bannerImg.url
 
-    const message = composeMessage({ ...blogPost, author }, threadUrl)
+  blogPost.bannerImgUrl =
+    "https://cdn.sanity.io/images/98ffjfuo/production/c4f4b2b486832d595a2fb5fccef4b3a46740115d-907x907.png?w=2000&fit=max&auto=format&dpr=2";
 
-    await sendMessage(message, process.env.SLACK_BLOG_CHANNEL_ID || channel)
+  const message = composeMessage({ ...blogPost, author }, threadUrl);
 
-    return new NextResponse('ok')
+  await sendMessage(message, process.env.SLACK_BLOG_CHANNEL_ID || channel);
+
+  return new NextResponse("ok");
 }
