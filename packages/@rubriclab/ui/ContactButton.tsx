@@ -1,7 +1,7 @@
 "use client";
 
 import { toast } from "./ToastProvider";
-import { copyToClipboard } from "./utils";
+import { copyToClipboard } from "@rubriclab/utils";
 
 export const ContactButton = ({ body }: { body: string }) => {
   return (

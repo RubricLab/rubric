@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/nextjs.json",
+  "extends": "@rubriclab/typescript-config",
   "compilerOptions": {
     "plugins": [{ "name": "next" }]
   },
