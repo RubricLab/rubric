@@ -1,5 +1,17 @@
 # create-rubric-app
 
+## 0.0.10
+
+### Patch Changes
+
+- bump configs
+
+## 0.0.9
+
+### Patch Changes
+
+- remove @rubriclab/ prefix in favour of simply npx create-rubric-app
+
 ## 0.0.8
 
 ### Patch Changes

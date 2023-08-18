@@ -1,5 +1,11 @@
 # @rubriclab/eslint-config
 
+## 0.0.6
+
+### Patch Changes
+
+- bump configs
+
 ## 0.0.5
 
 ### Patch Changes
