@@ -1,4 +1,13 @@
 {
   "extends": "@rubriclab/typescript-config/nextjs",
-  "include": ["./app/**/*.ts", "./app/**/*.tsx"]
+  "compilerOptions": {
+    "plugins": [{ "name": "next" }]
+  },
+  "include": [
+    "./app/**/*.ts",
+    "./app/**/*.tsx",
+    ".next/types/**/*.ts",
+    "next-env.d.ts"
+  ],
+  "exclude": ["node_modules"]
 }
