@@ -1,6 +1,6 @@
 {
   "name": "create-rubric-app",
-  "version": "0.0.10",
+  "version": "0.0.12",
   "license": "MIT",
   "bin": {
     "create-rubric-app": "./index.mjs"

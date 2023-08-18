@@ -1,11 +1,8 @@
 {
   "name": "@rubriclab/tailwind-config",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "license": "MIT",
-  "main": "index.js",
-  "devDependencies": {
-    "tailwindcss": "^3.3.2"
-  },
+  "main": "tailwind.cjs",
   "publishConfig": {
     "access": "public"
   }

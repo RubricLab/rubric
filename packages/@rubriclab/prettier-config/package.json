@@ -1,8 +1,8 @@
 {
   "name": "@rubriclab/prettier-config",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "license": "MIT",
-  "main": "index.js",
+  "main": "./index.cjs",
   "publishConfig": {
     "access": "public"
   }

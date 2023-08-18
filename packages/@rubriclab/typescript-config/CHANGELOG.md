@@ -1,5 +1,11 @@
 # @rubriclab/typescript-config
 
+## 0.0.3
+
+### Patch Changes
+
+- bump configs and cli
+
 ## 0.0.2
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # create-rubric-app
 
+## 0.0.12
+
+### Patch Changes
+
+- bump configs and cli
+
+## 0.0.11
+
+### Patch Changes
+
+- cjs
+
 ## 0.0.10
 
 ### Patch Changes

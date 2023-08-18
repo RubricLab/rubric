@@ -1,0 +1,4 @@
+{
+  "extends": "@rubriclab/typescript-config/nextjs",
+  "include": ["./app/**/*.ts", "./app/**/*.tsx"]
+}
