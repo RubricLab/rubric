@@ -1,5 +1,11 @@
 # create-rubric-app
 
+## 0.2.3
+
+### Patch Changes
+
+- add .vscode config
+
 ## 0.2.2
 
 ### Patch Changes
