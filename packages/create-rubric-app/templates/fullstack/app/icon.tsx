@@ -40,6 +40,6 @@ export default async function Icon() {
           data: await (await fetch(FONTS.calSansURL)).arrayBuffer(),
         },
       ],
-    }
+    },
   );
 }

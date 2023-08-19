@@ -9,6 +9,6 @@ export default (thread: ConversationsRepliesResponse, users: SimpleUser[]) => {
     thread.messages.map((t) => ({
       text: t.text,
       user: getUserByUserName(users, t.user)?.real_name || "Unknown",
-    }))
+    })),
   );
 };

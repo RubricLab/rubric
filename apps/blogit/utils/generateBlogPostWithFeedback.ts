@@ -7,7 +7,7 @@ import SimpleUser from "../types/SimpleUser";
 export default async (
   blogPostContext: string,
   feedback: string,
-  author: SimpleUser
+  author: SimpleUser,
 ) => {
   // System message
   const messages = [
@@ -79,6 +79,6 @@ export default async (
   });
 
   return JSON.parse(
-    (await response.json()).choices[0].message.function_call.arguments
+    (await response.json()).choices[0].message.function_call.arguments,
   ) as UpdatedBlogPost;
 };

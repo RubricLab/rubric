@@ -57,7 +57,7 @@ export async function POST(request: Request) {
   const blogPost = await generateBlogPostWithFeedback(
     blogPostContext,
     feedback,
-    author
+    author,
   );
 
   // const newBannerImgUrl = blogPost.changeBannerImg === 'true' ? (await generateImageFromDescription(blogPost.bannerImgDescription)).url : bannerImgUrl
@@ -66,7 +66,7 @@ export async function POST(request: Request) {
 
   const message = composeMessage(
     { ...blogPost, bannerImgUrl: newBannerImgUrl, author },
-    threadUrl
+    threadUrl,
   );
 
   await updateMessage(message, channel, json.message.ts);

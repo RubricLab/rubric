@@ -1,5 +1,11 @@
 # @rubriclab/eslint-config
 
+## 0.1.0
+
+### Minor Changes
+
+- minor release all packages
+
 ## 0.0.9
 
 ### Patch Changes

@@ -1905,7 +1905,7 @@
     eslint-plugin-react "7.33.2"
 
 "@rubriclab/prettier-config@file:packages/@rubriclab/prettier-config":
-  version "0.0.5"
+  version "0.0.7"
 
 "@rubriclab/tailwind-config@file:packages/@rubriclab/tailwind-config":
   version "0.0.6"

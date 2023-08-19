@@ -53,6 +53,6 @@ export default async function Image({ params }: Props) {
           data: await (await fetch(MISC.FONTS.calSansURL)).arrayBuffer(),
         },
       ],
-    }
+    },
   );
 }

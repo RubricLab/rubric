@@ -10,11 +10,11 @@ export const copyToClipboard = (
   }: {
     onSuccess?: (res?: string | void) => void;
     onError?: (error?: Error) => void;
-  } = {}
+  } = {},
 ) => {
   if (!window?.navigator) {
     throw new Error(
-      "Please try copying the text manually. Something went wrong."
+      "Please try copying the text manually. Something went wrong.",
     );
   }
 

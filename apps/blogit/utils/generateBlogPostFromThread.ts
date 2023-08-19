@@ -7,7 +7,7 @@ import SimpleUser from "../types/SimpleUser";
 export default async (
   threadContext: string,
   prompt: string,
-  author: SimpleUser
+  author: SimpleUser,
 ) => {
   // System message
   const messages = [
@@ -80,7 +80,7 @@ export default async (
 
   const blogPost = json.choices[0].message.function_call.arguments.replace(
     /\n\n/g,
-    "\\n\\n"
+    "\\n\\n",
   );
 
   try {

@@ -1,4 +1,6 @@
 import "@rubriclab/ui/globals.css";
+import "./styles.css";
+
 import localFont from "next/font/local";
 
 import ToastProvider from "@rubriclab/ui/ToastProvider";
@@ -16,10 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${calSans.variable} min-h-screen h-full w-full flex flex-col relative items-center`}
+        className={`${calSans.variable} min-h-screen flex w-full flex-col items-center`}
       >
         <ToastProvider />
-        <div className="z-10 max-w-6xl w-full p-5 pt-0">{children}</div>
+        <div className="z-10 max-w-6xl p-5 pt-0 h-full">{children}</div>
       </body>
     </html>
   );

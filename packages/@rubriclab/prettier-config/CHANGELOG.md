@@ -1,5 +1,23 @@
 # @rubriclab/prettier-config
 
+## 0.1.0
+
+### Minor Changes
+
+- minor release all packages
+
+## 0.0.7
+
+### Patch Changes
+
+- fix for prettier-plugin-tailwindcss
+
+## 0.0.6
+
+### Patch Changes
+
+- add tailwind config
+
 ## 0.0.5
 
 ### Patch Changes

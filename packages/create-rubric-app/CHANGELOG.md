@@ -1,5 +1,17 @@
 # create-rubric-app
 
+## 0.1.1
+
+### Patch Changes
+
+- fix font loading
+
+## 0.1.0
+
+### Minor Changes
+
+- minor release all packages
+
 ## 0.0.18
 
 ### Patch Changes

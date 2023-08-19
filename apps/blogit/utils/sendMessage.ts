@@ -3,7 +3,7 @@ import slackClient from "./slackClient";
 
 export default async (
   payload: ChatPostMessageArguments["blocks"],
-  channel: string
+  channel: string,
 ) => {
   return await slackClient.chat.postMessage({
     text: "Hey it's me, Blogit!",
