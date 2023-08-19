@@ -1,0 +1,9 @@
+{
+  "name": "@rubriclab/tailwind-config",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "tailwind.cjs",
+  "publishConfig": {
+    "access": "public"
+  }
+}

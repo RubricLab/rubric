@@ -15,7 +15,7 @@ export const size = {
 
 const backgroundColor = config.theme.extend.colors["off-white"] || "white";
 const fontImport = fetch(MISC.FONTS.calSansURL).then((res) =>
-  res.arrayBuffer()
+  res.arrayBuffer(),
 );
 
 type Props = {
@@ -60,6 +60,6 @@ export default async function Image({ params }: Props) {
           data: await fontImport,
         },
       ],
-    }
+    },
   );
 }

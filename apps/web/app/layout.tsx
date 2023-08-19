@@ -1,9 +1,9 @@
-import "ui/globals.css";
+import "@rubriclab/ui/globals.css";
 import "./styles.css";
 import localFont from "next/font/local";
 import NavBar from "./components/NavBar";
 import BackgroundGrid from "./components/BackgroundGrid";
-import ToastProvider from "ui/ToastProvider";
+import ToastProvider from "@rubriclab/ui/ToastProvider";
 import { META } from "../lib/constants";
 
 const calSans = localFont({

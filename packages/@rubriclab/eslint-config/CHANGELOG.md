@@ -1,5 +1,35 @@
 # @rubriclab/eslint-config
 
+## 0.1.0
+
+### Minor Changes
+
+- minor release all packages
+
+## 0.0.9
+
+### Patch Changes
+
+- update deps
+
+## 0.0.8
+
+### Patch Changes
+
+- bump configs and cli
+
+## 0.0.7
+
+### Patch Changes
+
+- cjs
+
+## 0.0.6
+
+### Patch Changes
+
+- bump configs
+
 ## 0.0.5
 
 ### Patch Changes

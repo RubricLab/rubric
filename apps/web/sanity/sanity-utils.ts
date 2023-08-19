@@ -26,7 +26,7 @@ export async function getHomePageCopy(): Promise<Home> {
           "slug": slug.current,
           "image": image.asset->url
         }
-    }`
+    }`,
   );
 }
 
@@ -42,7 +42,7 @@ export async function getProjects(): Promise<Project[]> {
         "image": image.asset->url,
         url,
         content
-    }`
+    }`,
   );
 }
 
@@ -57,7 +57,7 @@ export async function getPosts(): Promise<Post[]> {
         "slug": slug.current,
         "mainImage": mainImage.asset->url,
         publishedAt
-    }`
+    }`,
   );
 }
 
@@ -75,6 +75,6 @@ export async function getPost(slug: string): Promise<Post> {
         body,
         publishedAt
     }`,
-    { slug }
+    { slug },
   );
 }

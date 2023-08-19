@@ -11,10 +11,6 @@ export const size = {
   height: 32,
 };
 
-const fontImport = fetch(MISC.FONTS.calSansURL).then((res) =>
-  res.arrayBuffer()
-);
-
 const offWhite = config.theme.extend.colors["off-white"] || "white";
 
 export default async function Icon() {
@@ -41,9 +37,9 @@ export default async function Icon() {
       fonts: [
         {
           name: "cal-sans",
-          data: await fontImport,
+          data: await (await fetch(MISC.FONTS.calSansURL)).arrayBuffer(),
         },
       ],
-    }
+    },
   );
 }

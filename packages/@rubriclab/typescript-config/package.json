@@ -1,0 +1,9 @@
+{
+  "name": "@rubriclab/typescript-config",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "base.json",
+  "publishConfig": {
+    "access": "public"
+  }
+}

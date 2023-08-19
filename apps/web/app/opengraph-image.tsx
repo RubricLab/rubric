@@ -13,23 +13,16 @@ export const size = {
   height: 630,
 };
 
-const backgroundColor = config.theme.extend.colors["off-white"] || "white";
-const fontImport = fetch(MISC.FONTS.calSansURL).then((res) =>
-  res.arrayBuffer()
-);
-
 type Props = {
   params: object;
 };
 
 export default async function Image({ params }: Props) {
-  console.log("Path params: ", params);
-
   return new ImageResponse(
     (
       <div
         style={{
-          background: backgroundColor,
+          background: config.theme.extend.colors["off-white"],
           width: "100%",
           height: "100%",
           display: "flex",
@@ -57,9 +50,9 @@ export default async function Image({ params }: Props) {
       fonts: [
         {
           name: "cal-sans",
-          data: await fontImport,
+          data: await (await fetch(MISC.FONTS.calSansURL)).arrayBuffer(),
         },
       ],
-    }
+    },
   );
 }

@@ -9,21 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@slack/bolt": "^3.13.2",
+    "@slack/bolt": "^3.13.3",
     "@slack/events-api": "^3.0.1",
-    "@slack/web-api": "^6.8.1",
-    "@types/node": "20.4.2",
-    "@types/react": "18.2.15",
-    "@types/react-dom": "18.2.7",
-    "autoprefixer": "10.4.14",
-    "eslint": "8.45.0",
-    "eslint-config-next": "13.4.10",
-    "next": "13.4.10",
-    "openai-edge": "^1.2.1",
-    "postcss": "8.4.26",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "3.3.3",
-    "typescript": "5.1.6"
+    "@slack/web-api": "^6.9.0",
+    "next": "13.4.19",
+    "openai-edge": "^1.2.2"
   }
 }

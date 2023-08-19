@@ -34,7 +34,7 @@ export async function POST(request: Request) {
   }
 
   const isReferenced = new RegExp(["blogit", "blog it"].join("|"), "i").test(
-    text
+    text,
   );
 
   const isMentioned = text.includes(`<@${process.env.SLACK_BOT_ID}>`);

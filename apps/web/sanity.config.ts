@@ -1,6 +1,6 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
-import schemas from "../../packages/cms/schemas";
+import schemas from "./sanity/schema";
 import { visionTool } from "@sanity/vision";
 
 // Sanity config file
