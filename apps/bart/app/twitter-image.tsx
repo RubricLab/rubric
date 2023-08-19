@@ -8,8 +8,8 @@ export const runtime = 'edge'
 export const alt = 'Rubric logo with subtitle: We build software.'
 export const contentType = 'image/png'
 export const size = {
-	width: 1200,
-	height: 630
+	height: 630,
+	width: 1200
 }
 
 type Props = {
@@ -23,26 +23,26 @@ export default async function Image({params}: Props) {
 		(
 			<div
 				style={{
+					alignItems: 'center',
 					background: config.theme.extend.colors['simpsons-yellow'],
-					width: '100%',
-					height: '100%',
 					display: 'flex',
 					flexDirection: 'column',
-					alignItems: 'center',
+					height: '100%',
 					justifyContent: 'center',
+					overflowY: 'hidden',
 					position: 'relative',
-					overflowY: 'hidden'
+					width: '100%'
 				}}>
 				<div style={{fontSize: 128}}>Bart</div>
-				<div style={{fontSize: 48, color: colors['orange']['700']}}>40.7005635,-73.9722209</div>
+				<div style={{color: colors['orange']['700'], fontSize: 48}}>40.7005635,-73.9722209</div>
 			</div>
 		),
 		{
 			...size,
 			fonts: [
 				{
-					name: 'cal-sans',
-					data: await (await fetch(FONTS.simpsonFontUrl)).arrayBuffer()
+					data: await (await fetch(FONTS.simpsonFontUrl)).arrayBuffer(),
+					name: 'cal-sans'
 				}
 			]
 		}

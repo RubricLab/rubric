@@ -7,8 +7,8 @@ export const runtime = 'edge'
 
 export const contentType = 'image/png'
 export const size = {
-	width: 32,
-	height: 32
+	height: 32,
+	width: 32
 }
 
 export default async function Icon() {
@@ -16,15 +16,15 @@ export default async function Icon() {
 		(
 			<div
 				style={{
-					fontSize: 28,
-					background: config.theme.extend.colors['simpson-yellow'],
-					width: '100%',
-					height: '100%',
-					display: 'flex',
 					alignItems: 'center',
-					justifyContent: 'center',
+					background: config.theme.extend.colors['simpson-yellow'],
 					color: colors['blue']['700'],
-					paddingBottom: '5px'
+					display: 'flex',
+					fontSize: 28,
+					height: '100%',
+					justifyContent: 'center',
+					paddingBottom: '5px',
+					width: '100%'
 				}}>
 				B
 			</div>
@@ -33,8 +33,8 @@ export default async function Icon() {
 			...size,
 			fonts: [
 				{
-					name: 'simpson',
-					data: await (await fetch(FONTS.simpsonFontUrl)).arrayBuffer()
+					data: await (await fetch(FONTS.simpsonFontUrl)).arrayBuffer(),
+					name: 'simpson'
 				}
 			]
 		}
