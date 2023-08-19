@@ -2,7 +2,7 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ["ui"],
+  transpilePackages: ["@rubriclab/ui"],
   images: {
     remotePatterns: [
       {

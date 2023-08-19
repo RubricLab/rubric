@@ -1,5 +1,11 @@
 # @rubriclab/ui
 
+## 0.0.5
+
+### Patch Changes
+
+- remove dev dependancies
+
 ## 0.0.4
 
 ### Patch Changes

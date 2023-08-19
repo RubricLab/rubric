@@ -1,5 +1,11 @@
 # @rubriclab/tailwind-config
 
+## 0.0.6
+
+### Patch Changes
+
+- re-add the tailwind colors patch
+
 ## 0.0.5
 
 ### Patch Changes
