@@ -1,14 +1,14 @@
 {
   "name": "@rubriclab/ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "scripts": {
     "lint": "eslint \"**/*.ts*\"",
     "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
-    "@rubriclab/tailwind-config": "*",
-    "@rubriclab/typescript-config": "*",
+    "@rubriclab/tailwind-config": "latest",
+    "@rubriclab/typescript-config": "latest",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "autoprefixer": "^10.4.15",

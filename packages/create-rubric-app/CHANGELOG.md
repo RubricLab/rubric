@@ -1,5 +1,11 @@
 # create-rubric-app
 
+## 0.1.4
+
+### Patch Changes
+
+- change package.json rubric deps to latest
+
 ## 0.1.3
 
 ### Patch Changes
