@@ -1,5 +1,11 @@
 # create-rubric-app
 
+## 0.1.3
+
+### Patch Changes
+
+- font is buggy
+
 ## 0.1.2
 
 ### Patch Changes
