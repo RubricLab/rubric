@@ -1,5 +1,11 @@
 # create-rubric-app
 
+## 0.2.1
+
+### Patch Changes
+
+- Fix font and install and start dev server
+
 ## 0.2.0
 
 ### Minor Changes

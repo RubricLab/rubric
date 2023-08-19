@@ -1,16 +1,16 @@
 #! /usr/bin/env node
 
-import inquirer from 'inquirer'
-import {parseArgs} from 'node:util'
-import path from 'path'
-import {fileURLToPath} from 'url'
-
 import boxen from 'boxen'
 import chalk from 'chalk'
+import child_process from 'child_process'
 import clear from 'clear'
 import figlet from 'figlet'
-
 import {mkdirSync, readFileSync, readdirSync, statSync, writeFileSync} from 'fs'
+import inquirer from 'inquirer'
+import {parseArgs} from 'node:util'
+import open from 'open'
+import path from 'path'
+import {fileURLToPath} from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -70,10 +70,14 @@ const copyTemplate = (name, template) => {
 	createDirectoryContents(templatePath, projectName)
 }
 
+var downloadFile = (url, dest) => {
+	child_process.execSync('wget -P ' + dest + ' ' + url, {stdio: [0, 1, 2]})
+}
+
 // Parse arguments
 
 const {
-	values: {name, yes, template}
+	values: {name: _name, yes: _yes, template: _template}
 } = parseArgs({
 	options: {
 		name: {
@@ -112,18 +116,13 @@ console.log(
 	)
 )
 
-if ((name && template) || yes) {
-	copyTemplate(name || 'my-app', template || 'fullstack')
-} else if (name) {
-	inquirer.prompt([QUESTIONS['project-choice']]).then(answers => {
-		copyTemplate(name, answers['project-choice'])
-	})
-} else if (template) {
-	inquirer.prompt([QUESTIONS['project-name']]).then(answers => {
-		copyTemplate(answers['project-name'], template)
-	})
-} else {
-	inquirer.prompt([QUESTIONS['project-name'], QUESTIONS['project-choice']]).then(answers => {
-		copyTemplate(answers['project-name'], answers['project-choice'])
-	})
-}
+const name = _name || (!_yes ? (await inquirer.prompt([QUESTIONS['project-name']]))['project-name'] : 'my-app')
+const template = _template || (!_yes ? (await inquirer.prompt([QUESTIONS['project-choice']]))['project-choice'] : 'fullstack')
+
+copyTemplate(name, template)
+
+if (template === 'fullstack') downloadFile('https://rubriclab.com/fonts/CalSans-SemiBold.ttf', `${name}/public/fonts/`)
+
+child_process.execSync(`cd ${name} && yarn`, {stdio: [0, 1, 2]})
+open(`http://localhost:3000`)
+child_process.execSync(`cd ${name} && yarn dev`, {stdio: [0, 1, 2]})

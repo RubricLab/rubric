@@ -1,6 +1,6 @@
 {
 	"name": "create-rubric-app",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"license": "MIT",
 	"bin": {
 		"create-rubric-app": "./index.mjs"
@@ -13,6 +13,7 @@
 		"chalk": "^5.3.0",
 		"clear": "^0.1.0",
 		"figlet": "^1.6.0",
-		"inquirer": "^9.2.10"
+		"inquirer": "^9.2.10",
+		"open": "^9.1.0"
 	}
 }
