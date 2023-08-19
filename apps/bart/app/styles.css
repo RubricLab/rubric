@@ -1,0 +1,24 @@
+html {
+	@apply bg-simpson-yellow;
+}
+h1 {
+	@apply text-7xl font-bold;
+}
+h2 {
+	@apply text-2xl;
+}
+button {
+	@apply flex h-14 w-full max-w-sm items-center justify-center rounded-[2rem] border-2 border-gray-900 p-3 text-xl font-medium enabled:hover:rounded-2xl disabled:border-gray-400;
+}
+button > span {
+	@apply grow;
+}
+button.primary {
+	@apply bg-gray-900 text-white disabled:bg-gray-300;
+}
+input {
+	@apply w-full max-w-sm text-ellipsis rounded-[2rem] bg-gray-300 p-3 text-center text-xl transition-all focus:outline-none enabled:hover:rounded-2xl;
+}
+a {
+	@apply font-simpson text-black transition-colors hover:text-blue-600;
+}
