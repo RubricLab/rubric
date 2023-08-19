@@ -1,4 +1,4 @@
-import "ui/globals.css";
+import "@rubriclab/ui/globals.css";
 import "./styles.css";
 import localFont from "next/font/local";
 import NavBar from "./components/NavBar";

@@ -1,11 +1,12 @@
-const sharedConfig = require("tailwind-config/tailwind.config");
+const config = require("@rubriclab/tailwind-config");
 
 module.exports = {
-  presets: [sharedConfig],
+  presets: [config],
+  content: ["./app/**/*.{js,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        ...sharedConfig.theme.extend.colors,
+        ...config.theme.extend.colors,
       },
       fontFamily: {
         "cal-sans": ["var(--font-cal-sans)"],

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { ComingSoonButton, Header } from "ui";
+import { ComingSoonButton, Header } from "@rubriclab/ui";
 import { DEFAULT_META, META } from "../../lib/constants";
 import { getPosts } from "../../sanity/sanity-utils";
 import Link from "next/link";

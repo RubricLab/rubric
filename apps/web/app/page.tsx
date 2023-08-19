@@ -1,4 +1,4 @@
-import { ContactButton, Header } from "ui";
+import { ContactButton, Header } from "@rubriclab/ui";
 import { Metadata } from "next";
 import Image from "next/image";
 import { DEFAULT_META } from "../lib/constants";
