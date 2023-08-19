@@ -7,6 +7,7 @@ delete colors['coolGray']
 delete colors['blueGray']
 
 module.exports = {
+	plugins: [],
 	theme: {
 		extend: {
 			colors: {
@@ -15,6 +16,5 @@ module.exports = {
 				transparent: 'transparent'
 			}
 		}
-	},
-	plugins: []
+	}
 }

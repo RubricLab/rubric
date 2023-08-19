@@ -1,5 +1,13 @@
 # @rubriclab/ui
 
+## 0.2.1
+
+### Patch Changes
+
+- opinionated linting
+- Updated dependencies
+  - @rubriclab/utils@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes

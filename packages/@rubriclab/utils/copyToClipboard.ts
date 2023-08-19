@@ -12,9 +12,7 @@ export const copyToClipboard = (
 		onError?: (error?: Error) => void
 	} = {}
 ) => {
-	if (!window?.navigator) {
-		throw new Error('Please try copying the text manually. Something went wrong.')
-	}
+	if (!window?.navigator) throw new Error('Please try copying the text manually. Something went wrong.')
 
 	navigator?.clipboard
 		?.writeText(text)

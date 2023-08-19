@@ -1,12 +1,6 @@
 {
-	"name": "create-rubric-app",
-	"version": "0.2.1",
-	"license": "MIT",
 	"bin": {
 		"create-rubric-app": "./index.mjs"
-	},
-	"publishConfig": {
-		"access": "public"
 	},
 	"dependencies": {
 		"boxen": "^7.1.1",
@@ -15,5 +9,14 @@
 		"figlet": "^1.6.0",
 		"inquirer": "^9.2.10",
 		"open": "^9.1.0"
-	}
+	},
+	"license": "MIT",
+	"name": "create-rubric-app",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx"
+	},
+	"version": "0.2.2"
 }

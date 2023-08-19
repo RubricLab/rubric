@@ -1,8 +1,5 @@
 // Author of a blog post
 const author = {
-	name: 'author',
-	title: 'Author',
-	type: 'document',
 	fields: [
 		{
 			name: 'name',
@@ -11,26 +8,26 @@ const author = {
 		},
 		{
 			name: 'slug',
-			title: 'Slug',
-			type: 'slug',
 			options: {
 				source: 'name'
-			}
+			},
+			title: 'Slug',
+			type: 'slug'
 		},
 		{
-			name: 'image',
-			title: 'Image',
-			type: 'image',
-			options: {
-				hotspot: true
-			},
 			fields: [
 				{
 					name: 'alt',
 					title: 'Alt',
 					type: 'string'
 				}
-			]
+			],
+			name: 'image',
+			options: {
+				hotspot: true
+			},
+			title: 'Image',
+			type: 'image'
 		},
 		{
 			name: 'title',
@@ -39,24 +36,27 @@ const author = {
 		},
 		{
 			name: 'bio',
-			title: 'Bio',
-			type: 'array',
 			of: [
 				{
-					title: 'Block',
-					type: 'block',
+					lists: [],
 					styles: [{title: 'Normal', value: 'normal'}],
-					lists: []
+					title: 'Block',
+					type: 'block'
 				}
-			]
+			],
+			title: 'Bio',
+			type: 'array'
 		}
 	],
+	name: 'author',
 	preview: {
 		select: {
-			title: 'name',
-			media: 'image'
+			media: 'image',
+			title: 'name'
 		}
-	}
+	},
+	title: 'Author',
+	type: 'document'
 }
 
 export default author

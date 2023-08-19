@@ -1,65 +1,65 @@
 import {ChatPostMessageArguments} from '@slack/web-api'
 import BlogPost from '../types/BlogPost'
 
-export default (blogPost: BlogPost, threadUrl: string) => {
+const composeMessage = (blogPost: BlogPost, threadUrl: string) => {
 	const blocks: ChatPostMessageArguments['blocks'] = [
 		{
-			type: 'section',
 			text: {
-				type: 'mrkdwn',
-				text: `Hey <@${blogPost.author.id}>! It's me, <@${process.env.SLACK_BOT_ID}>! Here's a draft I created from <${threadUrl}|your thread>:`
-			}
-		},
-		{
-			type: 'divider'
-		},
-		{
-			type: 'section',
-			text: {
-				type: 'mrkdwn',
-				text: `${blogPost.emoji} *${blogPost.title}*\n\n${blogPost.summary}`
+				text: `Hey <@${blogPost.author.id}>! It's me, <@${process.env.SLACK_BOT_ID}>! Here's a draft I created from <${threadUrl}|your thread>:`,
+				type: 'mrkdwn'
 			},
-			accessory: {
-				type: 'image',
-				image_url: blogPost.bannerImgUrl,
-				alt_text: blogPost.bannerImgDescription || 'Banner Img'
-			}
+			type: 'section'
 		},
 		{
 			type: 'divider'
 		},
 		{
-			type: 'section',
+			accessory: {
+				alt_text: blogPost.bannerImgDescription || 'Banner Img',
+				image_url: blogPost.bannerImgUrl,
+				type: 'image'
+			},
 			text: {
-				type: 'mrkdwn',
-				text: blogPost.body
-			}
+				text: `${blogPost.emoji} *${blogPost.title}*\n\n${blogPost.summary}`,
+				type: 'mrkdwn'
+			},
+			type: 'section'
+		},
+		{
+			type: 'divider'
+		},
+		{
+			text: {
+				text: blogPost.body,
+				type: 'mrkdwn'
+			},
+			type: 'section'
 		},
 		{
 			type: 'divider'
 		},
 		{
 			dispatch_action: true,
-			type: 'input',
 			element: {
-				type: 'plain_text_input',
+				action_id: 'provide_feedback',
 				dispatch_action_config: {
 					trigger_actions_on: ['on_character_entered']
 				},
-				action_id: 'provide_feedback'
+				type: 'plain_text_input'
 			},
 			label: {
-				type: 'plain_text',
+				emoji: true,
 				text: 'Provide feedback on this draft',
-				emoji: true
-			}
+				type: 'plain_text'
+			},
+			type: 'input'
 		},
 		{
-			type: 'section',
 			text: {
-				type: 'mrkdwn',
-				text: '<https://rubriclab.com/studio/desk/post|View in Rubric Studio>'
-			}
+				text: '<https://rubriclab.com/studio/desk/post|View in Rubric Studio>',
+				type: 'mrkdwn'
+			},
+			type: 'section'
 		},
 		{
 			type: 'divider'
@@ -68,3 +68,5 @@ export default (blogPost: BlogPost, threadUrl: string) => {
 
 	return blocks
 }
+
+export default composeMessage

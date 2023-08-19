@@ -1,10 +1,12 @@
 import {ChatPostMessageArguments} from '@slack/web-api'
 import slackClient from './slackClient'
 
-export default async (payload: ChatPostMessageArguments['blocks'], channel: string) => {
+const sendMessage = async (payload: ChatPostMessageArguments['blocks'], channel: string) => {
 	return await slackClient.chat.postMessage({
-		text: "Hey it's me, Blogit!",
 		blocks: payload,
-		channel: channel
+		channel: channel,
+		text: "Hey it's me, Blogit!"
 	})
 }
+
+export default sendMessage

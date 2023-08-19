@@ -1,8 +1,5 @@
 // Blog post
 const post = {
-	name: 'post',
-	title: 'Post',
-	type: 'document',
 	fields: [
 		{
 			name: 'title',
@@ -11,32 +8,32 @@ const post = {
 		},
 		{
 			name: 'slug',
-			title: 'Slug',
-			type: 'slug',
 			options: {
-				source: 'title',
-				maxLength: 96
-			}
+				maxLength: 96,
+				source: 'title'
+			},
+			title: 'Slug',
+			type: 'slug'
 		},
 		{
 			name: 'author',
 			title: 'Author',
-			type: 'reference',
-			to: {type: 'author'}
+			to: {type: 'author'},
+			type: 'reference'
 		},
 		{
 			name: 'mainImage',
-			title: 'Main image',
-			type: 'image',
 			options: {
 				hotspot: true
-			}
+			},
+			title: 'Main image',
+			type: 'image'
 		},
 		{
 			name: 'categories',
+			of: [{to: {type: 'category'}, type: 'reference'}],
 			title: 'Categories',
-			type: 'array',
-			of: [{type: 'reference', to: {type: 'category'}}]
+			type: 'array'
 		},
 		{
 			name: 'publishedAt',
@@ -45,24 +42,27 @@ const post = {
 		},
 		{
 			name: 'body',
+			of: [{type: 'block'}, {type: 'image'}],
 			title: 'Body',
-			type: 'array',
-			of: [{type: 'block'}, {type: 'image'}]
+			type: 'array'
 		}
 	],
-
+	name: 'post',
 	preview: {
-		select: {
-			title: 'title',
-			author: 'author.name',
-			media: 'mainImage',
-			publishedAt: 'publishedAt'
-		},
 		prepare(selection) {
 			const {author} = selection
 			return {...selection, subtitle: author && `by ${author}`}
+		},
+		select: {
+			author: 'author.name',
+			media: 'mainImage',
+			publishedAt: 'publishedAt',
+			title: 'title'
 		}
-	}
+	},
+	title: 'Post',
+
+	type: 'document'
 }
 
 export default post

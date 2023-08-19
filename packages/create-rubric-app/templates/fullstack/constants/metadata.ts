@@ -1,23 +1,23 @@
 import {Metadata} from 'next'
 
 export const META = {
-	title: 'My Cool Website',
 	desc: 'Bootstrapped with create-rubric-app',
-	twitter: '@rubriclabs',
-	siteURL: 'https://rubriclab.com'
+	siteURL: 'https://rubriclab.com',
+	title: 'My Cool Website',
+	twitter: '@rubriclabs'
 }
 
 export const DEFAULT_META: Metadata = {
-	title: META.title,
 	description: META.desc,
 	openGraph: {
-		title: META.title,
-		description: META.desc
-	},
-	twitter: {
-		title: META.title,
 		description: META.desc,
+		title: META.title
+	},
+	title: META.title,
+	twitter: {
 		card: 'summary_large_image',
-		creator: META.twitter
+		creator: META.twitter,
+		description: META.desc,
+		title: META.title
 	}
 }

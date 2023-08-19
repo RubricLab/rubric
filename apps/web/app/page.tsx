@@ -17,15 +17,15 @@ type TeamMemberCardProps = {
 const TeamMemberCard = ({member}: TeamMemberCardProps) => {
 	return (
 		<div
-			key={member.name}
-			className='group relative h-20 w-20 cursor-pointer sm:h-40 sm:w-40'>
+			className='group relative h-20 w-20 cursor-pointer sm:h-40 sm:w-40'
+			key={member.name}>
 			<div className='relative h-full w-full'>
 				<Image
-					src={member.image}
 					alt={`${member.name}'s picture`}
+					className='rounded-full grayscale group-hover:blur-sm'
 					fill
 					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-					className='rounded-full grayscale group-hover:blur-sm'
+					src={member.image}
 				/>
 			</div>
 			<p className='absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col text-center text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100'>

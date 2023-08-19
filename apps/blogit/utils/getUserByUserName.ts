@@ -1,2 +1,4 @@
 import SimpleUser from '../types/SimpleUser'
-export default (users: SimpleUser[], userId: string) => users.find(u => u.id === userId)
+const getUserByUserName = (users: SimpleUser[], userId: string) => users.find(u => u.id === userId)
+
+export default getUserByUserName

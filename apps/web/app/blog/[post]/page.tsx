@@ -32,12 +32,12 @@ export default async function Post({params}: PostProps) {
 			{/* Cover image */}
 			<div className='relative h-40 w-full'>
 				<Image
-					src={post.mainImage}
 					alt='Blog cover image'
+					className='rounded-md'
 					fill
 					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+					src={post.mainImage}
 					style={{objectFit: 'cover', objectPosition: 'center'}}
-					className='rounded-md'
 				/>
 			</div>
 			<h2>{post.title}</h2>

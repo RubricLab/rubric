@@ -4,7 +4,7 @@ import BlogPost from '../types/BlogPost'
 import SimpleUser from '../types/SimpleUser'
 import openAiClient from './openAiClient'
 
-export default async (threadContext: string, prompt: string, author: SimpleUser) => {
+const generateBlogPostFromThread = async (threadContext: string, prompt: string, author: SimpleUser) => {
 	// System message
 	const messages = [
 		{
@@ -26,41 +26,41 @@ export default async (threadContext: string, prompt: string, author: SimpleUser)
 	]
 
 	const response = await openAiClient.createChatCompletion({
-		model: 'gpt-4',
-		messages,
+		function_call: {name: 'composeBlogPost'},
 		functions: [
 			{
-				name: 'composeBlogPost',
 				description: 'composes a blog post from its components',
+				name: 'composeBlogPost',
 				parameters: {
-					type: 'object',
 					properties: {
-						title: {
-							type: 'string',
-							description: 'A short description of the blog post'
-						},
-						summary: {
-							type: 'string',
-							description: 'A short summary of the blog post'
+						bannerImgDescription: {
+							description: 'A description of the banner image, which is a visual representation of themese in the blog post. Low fi, no text, abstract',
+							type: 'string'
 						},
 						body: {
-							type: 'string',
-							description: 'The body of the blog post in slack flavoured markdown. 4 paragraphs max.'
-						},
-						bannerImgDescription: {
-							type: 'string',
-							description: 'A description of the banner image, which is a visual representation of themese in the blog post. Low fi, no text, abstract'
+							description: 'The body of the blog post in slack flavoured markdown. 4 paragraphs max.',
+							type: 'string'
 						},
 						emoji: {
-							type: 'string',
-							description: 'An emoji that represents the blog post. For example: 😅'
+							description: 'An emoji that represents the blog post. For example: 😅',
+							type: 'string'
+						},
+						summary: {
+							description: 'A short summary of the blog post',
+							type: 'string'
+						},
+						title: {
+							description: 'A short description of the blog post',
+							type: 'string'
 						}
 					},
-					required: ['title', 'summary', 'body', 'bannerImgDescription', 'emoji']
+					required: ['title', 'summary', 'body', 'bannerImgDescription', 'emoji'],
+					type: 'object'
 				}
 			}
 		],
-		function_call: {name: 'composeBlogPost'}
+		messages,
+		model: 'gpt-4'
 	})
 
 	const json = await response.json()
@@ -75,3 +75,5 @@ export default async (threadContext: string, prompt: string, author: SimpleUser)
 		throw new Error('Failed to generate blog post from thread')
 	}
 }
+
+export default generateBlogPostFromThread

@@ -1,4 +1,6 @@
 import BlogPost from '../types/BlogPost'
-export default (blogPost: BlogPost) => {
+const createBlogPostContext = (blogPost: BlogPost) => {
 	return JSON.stringify({...blogPost})
 }
+
+export default createBlogPostContext

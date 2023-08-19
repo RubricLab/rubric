@@ -1,13 +1,4 @@
 {
-	"name": "web",
-	"version": "1.0.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint"
-	},
 	"dependencies": {
 		"@portabletext/react": "^3.0.4",
 		"@prisma/client": "^5.1.1",
@@ -23,7 +14,16 @@
 		"zod": "^3.22.2"
 	},
 	"devDependencies": {
-		"prisma": "^5.1.1",
-		"@sanity/eslint-config-studio": "^3.0.0"
-	}
+		"@sanity/eslint-config-studio": "^3.0.0",
+		"prisma": "^5.1.1"
+	},
+	"name": "web",
+	"private": true,
+	"scripts": {
+		"build": "next build",
+		"dev": "next dev",
+		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx",
+		"start": "next start"
+	},
+	"version": "1.0.0"
 }

@@ -1,13 +1,7 @@
 // Schema for Home page
 const homePage = {
-	name: 'home',
-	title: 'Home Page',
-	type: 'document',
 	fields: [
 		{
-			name: 'hero',
-			title: 'Hero',
-			type: 'document',
 			fields: [
 				{
 					name: 'title',
@@ -19,21 +13,27 @@ const homePage = {
 					title: 'Sub title',
 					type: 'string'
 				}
-			]
+			],
+			name: 'hero',
+			title: 'Hero',
+			type: 'document'
 		},
 		{
 			name: 'team',
+			of: [{type: 'author'}],
 			title: 'Team',
-			type: 'array',
-			of: [{type: 'author'}]
+			type: 'array'
 		},
 		{
 			name: 'desc',
+			of: [{type: 'block'}],
 			title: 'Description',
-			type: 'array',
-			of: [{type: 'block'}]
+			type: 'array'
 		}
-	]
+	],
+	name: 'home',
+	title: 'Home Page',
+	type: 'document'
 }
 
 export default homePage

@@ -13,10 +13,10 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 		<html lang='en'>
 			<body className={`${simpsonFont.variable} bg-simpson-yellow relative flex h-full min-h-screen w-full flex-col items-center justify-center`}>
 				<NextImage
-					src='/bart.png'
 					alt='bart'
-					layout='fill'
 					className='object-contain object-right-bottom'
+					layout='fill'
+					src='/bart.png'
 				/>
 				<div className='z-10 h-full w-full max-w-6xl p-5 pt-0'>{children}</div>
 			</body>

@@ -11,9 +11,9 @@ function BackgroundGrid({className, ...props}: {className?: string; [key: string
 	return (
 		<svg
 			className={className}
-			xmlns='http://www.w3.org/2000/svg'
-			viewBox='0 0 1000 1000'
 			preserveAspectRatio='xMidYMid slice' // slice means scale the SVG to cover the entire viewport, possibly cropping the SVG in the process
+			viewBox='0 0 1000 1000'
+			xmlns='http://www.w3.org/2000/svg'
 			{...props}>
 			<g>
 				{/* Vertical lines */}

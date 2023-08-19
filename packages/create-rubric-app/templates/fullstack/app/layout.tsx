@@ -11,19 +11,19 @@ const calSans = localFont({
 })
 
 export const metadata = {
-	metadataBase: new URL(META.siteURL),
 	alternates: {
 		canonical: '/',
 		languages: {
 			'en-US': '/en-US'
 		}
-	}
+	},
+	metadataBase: new URL(META.siteURL)
 }
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
 	return (
 		<html lang='en'>
-			<body className={`${calSans.variable} ` + `relative flex h-full min-h-screen w-full flex-col items-center`}>
+			<body className={`${calSans.variable}` + `relative flex h-full min-h-screen w-full flex-col items-center`}>
 				<BackgroundGrid className='fixed h-full w-full' />
 				<ToastProvider />
 				<div className='z-10 w-full max-w-6xl p-5 pt-0'>{children}</div>

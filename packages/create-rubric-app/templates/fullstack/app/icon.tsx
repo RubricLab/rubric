@@ -7,8 +7,8 @@ export const runtime = 'edge'
 
 export const contentType = 'image/png'
 export const size = {
-	width: 32,
-	height: 32
+	height: 32,
+	width: 32
 }
 
 const offWhite = config.theme.extend.colors['off-white'] || 'white'
@@ -18,15 +18,15 @@ export default async function Icon() {
 		(
 			<div
 				style={{
-					fontSize: 28,
-					background: colors['orange']['700'] || 'orange',
-					width: '100%',
-					height: '100%',
-					display: 'flex',
 					alignItems: 'center',
-					justifyContent: 'center',
+					background: colors['orange']['700'] || 'orange',
 					color: offWhite,
-					paddingBottom: '5px'
+					display: 'flex',
+					fontSize: 28,
+					height: '100%',
+					justifyContent: 'center',
+					paddingBottom: '5px',
+					width: '100%'
 				}}>
 				R
 			</div>
@@ -35,8 +35,8 @@ export default async function Icon() {
 			...size,
 			fonts: [
 				{
-					name: 'cal-sans',
-					data: await (await fetch(FONTS.calSansURL)).arrayBuffer()
+					data: await (await fetch(FONTS.calSansURL)).arrayBuffer(),
+					name: 'cal-sans'
 				}
 			]
 		}

@@ -1,19 +1,19 @@
 import tailwindConfig from '../tailwind.config'
 
 const lineAttributes = {
-	stroke: tailwindConfig.theme.extend.colors['stone'][400] || 'gray',
-	strokeWidth: 1,
+	fill: 'none',
 	opacity: 0.4,
-	fill: 'none'
+	stroke: tailwindConfig.theme.extend.colors['stone'][400] || 'gray',
+	strokeWidth: 1
 }
 
 function BackgroundGrid({className, ...props}: {className?: string; [key: string]: any}) {
 	return (
 		<svg
 			className={className}
-			xmlns='http://www.w3.org/2000/svg'
-			viewBox='0 0 1000 1000'
 			preserveAspectRatio='xMidYMid slice' // slice means scale the SVG to cover the entire viewport, possibly cropping the SVG in the process
+			viewBox='0 0 1000 1000'
+			xmlns='http://www.w3.org/2000/svg'
 			{...props}>
 			<g>
 				{/* Vertical lines */}

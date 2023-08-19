@@ -5,13 +5,14 @@ import schemas from './sanity/schema'
 
 // Sanity config file
 const config = defineConfig({
-	projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT,
-	dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-	title: 'Blog',
 	apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
-	basePath: '/studio', // URL at which Sanity studio will be hosted
+	basePath: '/studio',
+	dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+	// URL at which Sanity studio will be hosted
 	plugins: [deskTool(), visionTool()],
-	schema: {types: schemas}
+	projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT,
+	schema: {types: schemas},
+	title: 'Blog'
 })
 
 export default config

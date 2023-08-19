@@ -1,5 +1,11 @@
 # create-rubric-app
 
+## 0.2.2
+
+### Patch Changes
+
+- opinionated linting
+
 ## 0.2.1
 
 ### Patch Changes

@@ -1,4 +1,4 @@
-export default [
+const users = [
 	{
 		id: 'U05H1LWRB96',
 		real_name: 'Dexter Storey'
@@ -12,3 +12,5 @@ export default [
 		real_name: 'Sarim Malik'
 	}
 ]
+
+export default users

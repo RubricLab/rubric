@@ -1,8 +1,5 @@
 // Category type
 const category = {
-	name: 'category',
-	title: 'Category',
-	type: 'document',
 	fields: [
 		{
 			name: 'title',
@@ -14,7 +11,10 @@ const category = {
 			title: 'Description',
 			type: 'text'
 		}
-	]
+	],
+	name: 'category',
+	title: 'Category',
+	type: 'document'
 }
 
 export default category

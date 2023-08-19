@@ -1,14 +1,14 @@
 {
-	"name": "bart",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint"
-	},
 	"dependencies": {
 		"next": "^13.4.19"
-	}
+	},
+	"name": "bart",
+	"private": true,
+	"scripts": {
+		"build": "next build",
+		"dev": "next dev",
+		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx",
+		"start": "next start"
+	},
+	"version": "0.0.1"
 }

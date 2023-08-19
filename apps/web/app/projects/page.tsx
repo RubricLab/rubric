@@ -25,9 +25,9 @@ type ProjectCardProps = {
 const ProjectCard = ({project}: ProjectCardProps) => {
 	return (
 		<Link
+			className='bg-off-white/90 group flex w-full rounded-md border border-stone-700/80 px-6 py-5 text-black transition-colors duration-300 hover:bg-orange-400/80'
 			href={project.url}
-			target='_blank'
-			className='bg-off-white/90 group flex w-full rounded-md border border-stone-700/80 px-6 py-5 text-black transition-colors duration-300 hover:bg-orange-400/80'>
+			target='_blank'>
 			<div className='flex w-full items-center justify-between'>
 				{/* Name */}
 				<h3>{project.name}</h3>

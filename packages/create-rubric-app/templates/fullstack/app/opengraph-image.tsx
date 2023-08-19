@@ -9,8 +9,8 @@ export const runtime = 'edge'
 export const alt = 'Rubric logo with subtitle: We build software.'
 export const contentType = 'image/png'
 export const size = {
-	width: 1200,
-	height: 630
+	height: 630,
+	width: 1200
 }
 
 type Props = {
@@ -22,15 +22,15 @@ export default async function Image({params}: Props) {
 		(
 			<div
 				style={{
+					alignItems: 'center',
 					background: config.theme.extend.colors['off-white'],
-					width: '100%',
-					height: '100%',
 					display: 'flex',
 					flexDirection: 'column',
-					alignItems: 'center',
+					height: '100%',
 					justifyContent: 'center',
+					overflowY: 'hidden',
 					position: 'relative',
-					overflowY: 'hidden'
+					width: '100%'
 				}}>
 				<BackgroundGrid
 					style={{
@@ -39,15 +39,15 @@ export default async function Image({params}: Props) {
 					}}
 				/>
 				<div style={{fontSize: 128}}>Rubric</div>
-				<div style={{fontSize: 48, color: colors['orange']['700']}}>We build software.</div>
+				<div style={{color: colors['orange']['700'], fontSize: 48}}>We build software.</div>
 			</div>
 		),
 		{
 			...size,
 			fonts: [
 				{
-					name: 'cal-sans',
-					data: await (await fetch(FONTS.calSansURL)).arrayBuffer()
+					data: await (await fetch(FONTS.calSansURL)).arrayBuffer(),
+					name: 'cal-sans'
 				}
 			]
 		}

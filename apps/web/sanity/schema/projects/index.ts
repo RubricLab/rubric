@@ -1,8 +1,5 @@
 // Schema for Projects object
 const project = {
-	name: 'project',
-	title: 'Project',
-	type: 'document',
 	fields: [
 		{
 			name: 'name',
@@ -11,22 +8,22 @@ const project = {
 		},
 		{
 			name: 'slug',
+			options: {source: 'name'},
 			title: 'Slug',
-			type: 'slug',
-			options: {source: 'name'}
+			type: 'slug'
 		},
 		{
-			name: 'image',
-			title: 'Image',
-			type: 'image',
-			options: {hotspot: true},
 			fields: [
 				{
 					name: 'alt',
 					title: 'Alt',
 					type: 'string'
 				}
-			]
+			],
+			name: 'image',
+			options: {hotspot: true},
+			title: 'Image',
+			type: 'image'
 		},
 		{
 			name: 'url',
@@ -35,11 +32,14 @@ const project = {
 		},
 		{
 			name: 'content',
+			of: [{type: 'block'}],
 			title: 'Content',
-			type: 'array',
-			of: [{type: 'block'}]
+			type: 'array'
 		}
-	]
+	],
+	name: 'project',
+	title: 'Project',
+	type: 'document'
 }
 
 export default project

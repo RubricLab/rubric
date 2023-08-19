@@ -1,13 +1,4 @@
 {
-	"private": true,
-	"scripts": {
-		"build": "dotenv -- turbo run build",
-		"dev": "dotenv -- turbo run dev --concurrency 12",
-		"lint": "dotenv -- turbo run lint",
-		"lint:fix": "dotenv -- turbo run lint -- --fix",
-		"format": "prettier --write .",
-		"publish-packages": "changeset && changeset version && changeset publish"
-	},
 	"devDependencies": {
 		"@changesets/cli": "^2.26.2",
 		"@rubriclab/eslint-config": "file:packages/@rubriclab/eslint-config",
@@ -29,6 +20,15 @@
 	},
 	"name": "rubric",
 	"packageManager": "yarn@1.22.19",
+	"private": true,
+	"scripts": {
+		"build": "dotenv -- turbo run build",
+		"dev": "dotenv -- turbo run dev --concurrency 12",
+		"format": "prettier --write .",
+		"lint": "dotenv -- turbo run lint",
+		"lint:fix": "dotenv -- turbo run lint -- --fix",
+		"publish-packages": "changeset && changeset version && changeset publish"
+	},
 	"workspaces": [
 		"apps/*",
 		"packages/*",

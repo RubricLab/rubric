@@ -1,16 +1,20 @@
 {
-	"name": "@rubriclab/eslint-config",
-	"version": "0.2.0",
-	"license": "MIT",
-	"main": "./eslint.cjs",
 	"dependencies": {
 		"eslint-config-next": "^13.4.19",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-config-turbo": "^1.10.12",
+		"eslint-plugin-jsonc": "^2.9.0",
 		"eslint-plugin-react": "^7.33.2",
 		"eslint-plugin-sort-keys-fix": "^1.1.2"
 	},
+	"license": "MIT",
+	"main": "./eslint.cjs",
+	"name": "@rubriclab/eslint-config",
 	"publishConfig": {
 		"access": "public"
-	}
+	},
+	"scripts": {
+		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx"
+	},
+	"version": "0.2.1"
 }

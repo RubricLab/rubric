@@ -1,15 +1,15 @@
 /** @type {import("prettier").Config} */
 module.exports = {
-	plugins: [require.resolve('prettier-plugin-organize-imports'), require.resolve('prettier-plugin-tailwindcss')],
 	arrowParens: 'avoid',
-	bracketSpacing: false,
 	bracketSameLine: true,
-	proseWrap: 'never',
-	printWidth: 1000,
-	semi: false,
-	singleQuote: true,
-	singleAttributePerLine: true,
+	bracketSpacing: false,
 	jsxSingleQuote: true,
+	plugins: [require.resolve('prettier-plugin-organize-imports'), require.resolve('prettier-plugin-tailwindcss')],
+	printWidth: 1000,
+	proseWrap: 'never',
+	semi: false,
+	singleAttributePerLine: true,
+	singleQuote: true,
 	tabWidth: 1,
 	trailingComma: 'none',
 	useTabs: true

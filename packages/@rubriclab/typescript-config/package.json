@@ -1,9 +1,12 @@
 {
-	"name": "@rubriclab/typescript-config",
-	"version": "0.2.0",
 	"license": "MIT",
 	"main": "base.json",
+	"name": "@rubriclab/typescript-config",
 	"publishConfig": {
 		"access": "public"
-	}
+	},
+	"scripts": {
+		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx"
+	},
+	"version": "0.2.1"
 }

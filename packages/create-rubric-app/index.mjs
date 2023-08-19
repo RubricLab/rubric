@@ -21,16 +21,17 @@ const CURR_DIR = process.cwd()
 
 const QUESTIONS = {
 	'project-choice': {
-		name: 'project-choice',
-		type: 'list',
-		message: 'What project template would you like to generate?',
 		choices: CHOICES,
-		default: 'fullstack'
+
+		default: 'fullstack',
+		message: 'What project template would you like to generate?',
+		name: 'project-choice',
+		type: 'list'
 	},
 	'project-name': {
+		message: 'Project name:',
 		name: 'project-name',
 		type: 'input',
-		message: 'Project name:',
 		validate: function (input) {
 			if (/^([A-Za-z\-\_\d])+$/.test(input)) return true
 			else return 'Project name may only include letters, numbers, underscores and hashes.'
@@ -81,16 +82,16 @@ const {
 } = parseArgs({
 	options: {
 		name: {
-			type: 'string',
-			short: 'n'
+			short: 'n',
+			type: 'string'
 		},
 		template: {
-			type: 'string',
-			short: 't'
+			short: 't',
+			type: 'string'
 		},
 		yes: {
-			type: 'boolean',
-			short: 'y'
+			short: 'y',
+			type: 'boolean'
 		}
 	}
 })
@@ -109,9 +110,9 @@ console.log(
 			)}`
 		),
 		{
-			padding: 1,
+			borderColor: '#f97316',
 			borderStyle: 'round',
-			borderColor: '#f97316'
+			padding: 1
 		}
 	)
 )

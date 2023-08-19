@@ -4,7 +4,7 @@ import SimpleUser from '../types/SimpleUser'
 import UpdatedBlogPost from '../types/UpdatedBlogPost'
 import openAiClient from './openAiClient'
 
-export default async (blogPostContext: string, feedback: string, author: SimpleUser) => {
+const generateBlogPostWithFeedback = async (blogPostContext: string, feedback: string, author: SimpleUser) => {
 	// System message
 	const messages = [
 		{
@@ -22,46 +22,48 @@ export default async (blogPostContext: string, feedback: string, author: SimpleU
 	]
 
 	const response = await openAiClient.createChatCompletion({
-		model: 'gpt-4',
-		messages,
+		function_call: {name: 'composeBlogPost'},
 		functions: [
 			{
-				name: 'composeBlogPost',
 				description: 'composes a blog post from its components',
+				name: 'composeBlogPost',
 				parameters: {
-					type: 'object',
 					properties: {
-						title: {
-							type: 'string',
-							description: 'A short description of the blog post'
-						},
-						summary: {
-							type: 'string',
-							description: 'A short summary of the blog post'
+						bannerImgDescription: {
+							description: 'A description of the banner image, which is a visual representation of themese in the blog post. Low fi, no text, abstract',
+							type: 'string'
 						},
 						body: {
-							type: 'string',
-							description: 'The body of the blog post in slack flavoured markdown. 4 paragraphs max.'
-						},
-						bannerImgDescription: {
-							type: 'string',
-							description: 'A description of the banner image, which is a visual representation of themese in the blog post. Low fi, no text, abstract'
-						},
-						emoji: {
-							type: 'string',
-							description: 'An emoji that represents the blog post. For example: 😅. Even if the emoji passed is passed as text "musical_score", always replace it with the actual emoji 🎼'
+							description: 'The body of the blog post in slack flavoured markdown. 4 paragraphs max.',
+							type: 'string'
 						},
 						changeBannerImg: {
-							type: 'string',
-							description: 'true/false. Whether to change the banner image or not. Most often false.'
+							description: 'true/false. Whether to change the banner image or not. Most often false.',
+							type: 'string'
+						},
+						emoji: {
+							description: 'An emoji that represents the blog post. For example: 😅. Even if the emoji passed is passed as text "musical_score", always replace it with the actual emoji 🎼',
+							type: 'string'
+						},
+						summary: {
+							description: 'A short summary of the blog post',
+							type: 'string'
+						},
+						title: {
+							description: 'A short description of the blog post',
+							type: 'string'
 						}
 					},
-					required: ['title', 'summary', 'body', 'bannerImgDescription', 'emoji', 'changeBannerImg']
+					required: ['title', 'summary', 'body', 'bannerImgDescription', 'emoji', 'changeBannerImg'],
+					type: 'object'
 				}
 			}
 		],
-		function_call: {name: 'composeBlogPost'}
+		messages,
+		model: 'gpt-4'
 	})
 
 	return JSON.parse((await response.json()).choices[0].message.function_call.arguments) as UpdatedBlogPost
 }
+
+export default generateBlogPostWithFeedback

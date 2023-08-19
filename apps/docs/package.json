@@ -1,16 +1,16 @@
 {
-	"name": "docs",
-	"version": "1.0.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint"
-	},
 	"dependencies": {
 		"next": "^13.4.19",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
-	}
+	},
+	"name": "docs",
+	"private": true,
+	"scripts": {
+		"build": "next build",
+		"dev": "next dev",
+		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx",
+		"start": "next start"
+	},
+	"version": "1.0.0"
 }
