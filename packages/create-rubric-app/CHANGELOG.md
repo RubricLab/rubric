@@ -1,5 +1,11 @@
 # create-rubric-app
 
+## 0.0.15
+
+### Patch Changes
+
+- rm node modules
+
 ## 0.0.14
 
 ### Patch Changes
