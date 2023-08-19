@@ -1,6 +1,6 @@
-const config = require("@rubriclab/tailwind-config");
+const config = require('@rubriclab/tailwind-config')
 
 module.exports = {
-  presets: [config],
-  content: ["./app/**/*.{js,ts,tsx}"],
-};
+	presets: [config],
+	content: ['./app/**/*.{js,ts,tsx}']
+}

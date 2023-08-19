@@ -1,19 +1,19 @@
 html {
-  @apply bg-off-white;
+	@apply bg-off-white;
 }
 
 h1 {
-  @apply font-cal-sans;
+	@apply font-cal-sans;
 }
 
 code {
-  @apply bg-orange-200/60 border-stone-700/80;
+	@apply border-stone-700/80 bg-orange-200/60;
 }
 
 a {
-  @apply text-orange-500;
+	@apply text-orange-500;
 }
 
 blockquote {
-  @apply border-stone-500/80;
+	@apply border-stone-500/80;
 }

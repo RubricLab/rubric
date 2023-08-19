@@ -1,8 +1,8 @@
-const sharedConfig = require("@rubriclab/tailwind-config");
+const sharedConfig = require('@rubriclab/tailwind-config')
 
 module.exports = {
-  presets: [sharedConfig],
-  theme: {
-    extend: {},
-  },
-};
+	presets: [sharedConfig],
+	theme: {
+		extend: {}
+	}
+}

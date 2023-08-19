@@ -1,14 +1,10 @@
-import * as React from "react";
+import * as React from "react"; 
+interface Props { children?: React.ReactNode; }
 
-interface Props {
-  children?: React.ReactNode;
-}
-
-export const {{ pascalCase name }} = ({ children }: Props) => {
+export const {{pascalCase name}} = ({ children }: Props) => { 
   return (
     <div>
-      <h1>{{ name }}</h1>
+      <h1>{{name}}</h1>
       {children}
     </div>
-  );
-};
+);};

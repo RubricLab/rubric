@@ -1,40 +1,26 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
-    },
-    "build:web": {
-      "env": [
-        "NEXT_PUBLIC_SANITY_PROJECT",
-        "NEXT_PUBLIC_SANITY_DATASET",
-        "NEXT_PUBLIC_SANITY_API_VERSION"
-      ],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
-    },
-    "build:blogit": {
-      "env": [
-        "SLACK_SIGNING_SECRET",
-        "SLACK_BOT_TOKEN",
-        "SLACK_BOT_ID",
-        "SLACK_BLOG_CHANNEL_ID",
-        "OPENAI_API_KEY"
-      ]
-    },
-    "lint": {},
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "dev:web": {
-      "cache": false,
-      "persistent": true,
-      "env": [
-        "NEXT_PUBLIC_SANITY_PROJECT",
-        "NEXT_PUBLIC_SANITY_DATASET",
-        "NEXT_PUBLIC_SANITY_API_VERSION"
-      ]
-    }
-  }
+	"$schema": "https://turbo.build/schema.json",
+	"pipeline": {
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": [".next/**", "!.next/cache/**", "dist/**"]
+		},
+		"build:web": {
+			"env": ["NEXT_PUBLIC_SANITY_PROJECT", "NEXT_PUBLIC_SANITY_DATASET", "NEXT_PUBLIC_SANITY_API_VERSION"],
+			"outputs": [".next/**", "!.next/cache/**", "dist/**"]
+		},
+		"build:blogit": {
+			"env": ["SLACK_SIGNING_SECRET", "SLACK_BOT_TOKEN", "SLACK_BOT_ID", "SLACK_BLOG_CHANNEL_ID", "OPENAI_API_KEY"]
+		},
+		"lint": {},
+		"dev": {
+			"cache": false,
+			"persistent": true
+		},
+		"dev:web": {
+			"cache": false,
+			"persistent": true,
+			"env": ["NEXT_PUBLIC_SANITY_PROJECT", "NEXT_PUBLIC_SANITY_DATASET", "NEXT_PUBLIC_SANITY_API_VERSION"]
+		}
+	}
 }

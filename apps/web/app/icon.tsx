@@ -1,45 +1,44 @@
-import { ImageResponse } from "next/server";
-import colors from "tailwindcss/colors";
-import config from "../tailwind.config";
-import { MISC } from "../lib/constants";
+import {ImageResponse} from 'next/server'
+import colors from 'tailwindcss/colors'
+import {MISC} from '../lib/constants'
+import config from '../tailwind.config'
 
-export const runtime = "edge";
+export const runtime = 'edge'
 
-export const contentType = "image/png";
+export const contentType = 'image/png'
 export const size = {
-  width: 32,
-  height: 32,
-};
+	height: 32,
+	width: 32
+}
 
-const offWhite = config.theme.extend.colors["off-white"] || "white";
+const offWhite = config.theme.extend.colors['off-white'] || 'white'
 
 export default async function Icon() {
-  return new ImageResponse(
-    (
-      <div
-        style={{
-          fontSize: 28,
-          background: colors["orange"]["700"] || "orange",
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          color: offWhite,
-          paddingBottom: "5px",
-        }}
-      >
-        R
-      </div>
-    ),
-    {
-      ...size,
-      fonts: [
-        {
-          name: "cal-sans",
-          data: await (await fetch(MISC.FONTS.calSansURL)).arrayBuffer(),
-        },
-      ],
-    },
-  );
+	return new ImageResponse(
+		(
+			<div
+				style={{
+					alignItems: 'center',
+					background: colors['orange']['700'] || 'orange',
+					color: offWhite,
+					display: 'flex',
+					fontSize: 28,
+					height: '100%',
+					justifyContent: 'center',
+					paddingBottom: '5px',
+					width: '100%'
+				}}>
+				R
+			</div>
+		),
+		{
+			...size,
+			fonts: [
+				{
+					data: await (await fetch(MISC.FONTS.calSansURL)).arrayBuffer(),
+					name: 'cal-sans'
+				}
+			]
+		}
+	)
 }

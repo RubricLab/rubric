@@ -1,76 +1,75 @@
-import { ContactButton, Header } from "@rubriclab/ui";
-import { Metadata } from "next";
-import Image from "next/image";
-import { DEFAULT_META } from "../lib/constants";
-import { getHomePageCopy } from "../sanity/sanity-utils";
-import { PortableText } from "@portabletext/react";
-import { Author } from "../types/sanity";
+import {PortableText} from '@portabletext/react'
+import {ContactButton, Header} from '@rubriclab/ui'
+import {Metadata} from 'next'
+import Image from 'next/image'
+import {DEFAULT_META} from '../lib/constants'
+import {getHomePageCopy} from '../sanity/sanity-utils'
+import {Author} from '../types/sanity'
 
 export const metadata: Metadata = {
-  ...DEFAULT_META,
-};
+	...DEFAULT_META
+}
 
 type TeamMemberCardProps = {
-  member: Author;
-};
+	member: Author
+}
 
-const TeamMemberCard = ({ member }: TeamMemberCardProps) => {
-  return (
-    <div
-      key={member.name}
-      className="w-20 h-20 sm:w-40 sm:h-40 relative group cursor-pointer"
-    >
-      <div className="relative w-full h-full">
-        <Image
-          src={member.image}
-          alt={`${member.name}'s picture`}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="rounded-full grayscale group-hover:blur-sm"
-        />
-      </div>
-      <p className="absolute flex flex-col top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-white">
-        <span className="text-sm text-gray-100">{member.name}</span>{" "}
-        <span className="text-xs text-gray-300">{member.title}</span>
-      </p>
-    </div>
-  );
-};
+const TeamMemberCard = ({member}: TeamMemberCardProps) => {
+	return (
+		<div
+			key={member.name}
+			className='group relative h-20 w-20 cursor-pointer sm:h-40 sm:w-40'>
+			<div className='relative h-full w-full'>
+				<Image
+					src={member.image}
+					alt={`${member.name}'s picture`}
+					fill
+					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+					className='rounded-full grayscale group-hover:blur-sm'
+				/>
+			</div>
+			<p className='absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col text-center text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100'>
+				<span className='text-sm text-gray-100'>{member.name}</span> <span className='text-xs text-gray-300'>{member.title}</span>
+			</p>
+		</div>
+	)
+}
 
-export const revalidate = 60; // revalidate this page every 60 seconds
+export const revalidate = 60 // revalidate this page every 60 seconds
 
 export default async function Home() {
-  const result = await getHomePageCopy();
-  return (
-    <div className="flex flex-col">
-      {/* Section: Hero */}
-      <div className="flex min-h-screen justify-end flex-col gap-3 pb-5 max-w-3xl">
-        <Header text={result.hero.title} />
-        <p className="text-3xl sm:text-6xl md:text-6xl font-extralight">
-          {result.hero.subtitle}
-        </p>
-      </div>
+	const result = await getHomePageCopy()
+	return (
+		<div className='flex flex-col'>
+			{/* Section: Hero */}
+			<div className='flex min-h-screen max-w-3xl flex-col justify-end gap-3 pb-5'>
+				<Header text={result.hero.title} />
+				<p className='text-3xl font-extralight sm:text-6xl md:text-6xl'>{result.hero.subtitle}</p>
+			</div>
 
-      {/* Section */}
-      <div className="flex min-h-screen items-end justify-end pb-5 flex-col gap-3">
-        <div className="flex flex-col max-w-xl gap-10">
-          {/* Team */}
-          <div className="flex justify-between">
-            {result.team.map((member) => (
-              <TeamMemberCard key={member._key} member={member} />
-            ))}
-          </div>
+			{/* Section */}
+			<div className='flex min-h-screen flex-col items-end justify-end gap-3 pb-5'>
+				<div className='flex max-w-xl flex-col gap-10'>
+					{/* Team */}
+					<div className='flex justify-between'>
+						{result.team.map(member => (
+							<TeamMemberCard
+								key={member._key}
+								member={member}
+							/>
+						))}
+					</div>
 
-          {/* What we do */}
-          <div className="flex flex-col gap-3 font-light text-xl">
-            <PortableText value={result.desc} />
-          </div>
+					{/* What we do */}
+					<div className='flex flex-col gap-3 text-xl font-light'>
+						<PortableText value={result.desc} />
+					</div>
 
-          <div className="flex justify-end">
-            <ContactButton body="hello@rubriclab.com" />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+					<div className='flex justify-end'>
+						<ContactButton body='hello@rubriclab.com' />
+					</div>
+				</div>
+			</div>
+		</div>
+	)
 }

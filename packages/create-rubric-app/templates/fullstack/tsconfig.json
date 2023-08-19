@@ -1,13 +1,8 @@
 {
-  "extends": "@rubriclab/typescript-config/nextjs",
-  "compilerOptions": {
-    "plugins": [{ "name": "next" }]
-  },
-  "include": [
-    "./app/**/*.ts",
-    "./app/**/*.tsx",
-    ".next/types/**/*.ts",
-    "next-env.d.ts"
-  ],
-  "exclude": ["node_modules"]
+	"extends": "@rubriclab/typescript-config/nextjs",
+	"compilerOptions": {
+		"plugins": [{"name": "next"}]
+	},
+	"include": ["./app/**/*.ts", "./app/**/*.tsx", ".next/types/**/*.ts", "next-env.d.ts"],
+	"exclude": ["node_modules"]
 }

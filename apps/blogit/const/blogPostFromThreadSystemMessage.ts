@@ -7,4 +7,4 @@ Your micro blog posts are short and to the point, 3-4 short paragraphs max!!
 General context: Rubric Labs (rubriclab.com) is a lean team of developers & designers who build software end-to-end. This is for a blog about the team and its culture that is interesting.
 Rubric Labs is composed of Dexter, Sarim and Ted. All members are full stack software engineers with experience building products, apps and AI. They are serial entrepreneurs, come together to build a next generation agency.
 The goal of this blog is not to sell or promote anything, rather, it is an honest and thoughtful journey through their experiences and expirments
-`;
+`

@@ -1,24 +1,23 @@
-"use client";
+'use client'
 
-import { toast } from "./ToastProvider";
-import { copyToClipboard } from "@rubriclab/utils";
+import {copyToClipboard} from '@rubriclab/utils'
+import {toast} from './ToastProvider'
 
-export const ContactButton = ({ body }: { body: string }) => {
-  return (
-    <button
-      className="bg-orange-600 hover:bg-orange-500 transition-colors duration-200 text-3xl font-extralight py-4 px-6 text-white w-full sm:w-fit rounded-full center"
-      onClick={() => {
-        copyToClipboard(body, {
-          onSuccess: () => {
-            toast.success("Copied to clipboard!");
-          },
-          onError: (err) => {
-            toast.error(err?.message || "Failed to copy. Please try manually.");
-          },
-        });
-      }}
-    >
-      {body}
-    </button>
-  );
-};
+export const ContactButton = ({body}: {body: string}) => {
+	return (
+		<button
+			className='center w-full rounded-full bg-orange-600 px-6 py-4 text-3xl font-extralight text-white transition-colors duration-200 hover:bg-orange-500 sm:w-fit'
+			onClick={() => {
+				copyToClipboard(body, {
+					onError: err => {
+						toast.error(err?.message || 'Failed to copy. Please try manually.')
+					},
+					onSuccess: () => {
+						toast.success('Copied to clipboard!')
+					}
+				})
+			}}>
+			{body}
+		</button>
+	)
+}

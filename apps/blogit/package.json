@@ -1,18 +1,18 @@
 {
-  "name": "blogit",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@slack/bolt": "^3.13.3",
-    "@slack/events-api": "^3.0.1",
-    "@slack/web-api": "^6.9.0",
-    "next": "13.4.19",
-    "openai-edge": "^1.2.2"
-  }
+	"name": "blogit",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@slack/bolt": "^3.13.3",
+		"@slack/events-api": "^3.0.1",
+		"@slack/web-api": "^6.9.0",
+		"next": "13.4.19",
+		"openai-edge": "^1.2.2"
+	}
 }

@@ -3,40 +3,40 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply w-screen h-screen overflow-x-hidden overflow-y-scroll;
-  }
-  h1 {
-    @apply text-6xl sm:text-7xl md:text-8xl tracking-tight font-medium;
-  }
-  h2 {
-    @apply text-4xl sm:text-5xl md:text-6xl tracking-tight font-medium;
-  }
-  h3 {
-    @apply text-2xl sm:text-3xl md:text-4xl tracking-tight font-medium;
-  }
-  h4 {
-    @apply text-xl md:text-2xl tracking-tight;
-  }
-  p {
-    @apply text-lg;
-  }
-  button {
-    @apply text-lg px-4 py-2 font-medium leading-6;
-  }
-  a {
-    @apply hover:opacity-80 transition-colors duration-200;
-  }
-  blockquote {
-    @apply border-l-4 pl-1 py-2;
-  }
-  code {
-    @apply w-full p-5 flex overflow-hidden border;
-  }
+	body {
+		@apply h-screen w-screen overflow-x-hidden overflow-y-scroll;
+	}
+	h1 {
+		@apply text-6xl font-medium tracking-tight sm:text-7xl md:text-8xl;
+	}
+	h2 {
+		@apply text-4xl font-medium tracking-tight sm:text-5xl md:text-6xl;
+	}
+	h3 {
+		@apply text-2xl font-medium tracking-tight sm:text-3xl md:text-4xl;
+	}
+	h4 {
+		@apply text-xl tracking-tight md:text-2xl;
+	}
+	p {
+		@apply text-lg;
+	}
+	button {
+		@apply px-4 py-2 text-lg font-medium leading-6;
+	}
+	a {
+		@apply transition-colors duration-200 hover:opacity-80;
+	}
+	blockquote {
+		@apply border-l-4 py-2 pl-1;
+	}
+	code {
+		@apply flex w-full overflow-hidden border p-5;
+	}
 }
 
 @layer utilities {
-  .center {
-    @apply flex items-center justify-center;
-  }
+	.center {
+		@apply flex items-center justify-center;
+	}
 }
