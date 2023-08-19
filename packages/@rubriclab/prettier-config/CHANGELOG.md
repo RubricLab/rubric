@@ -1,5 +1,11 @@
 # @rubriclab/prettier-config
 
+## 0.0.5
+
+### Patch Changes
+
+- rm yarn lock
+
 ## 0.0.4
 
 ### Patch Changes

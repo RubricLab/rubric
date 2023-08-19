@@ -1,5 +1,11 @@
 # create-rubric-app
 
+## 0.0.14
+
+### Patch Changes
+
+- rm yarn lock
+
 ## 0.0.13
 
 ### Patch Changes
