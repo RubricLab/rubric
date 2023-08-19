@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/server";
 import colors from "tailwindcss/colors";
 import config from "../tailwind.config";
-import { MISC } from "../lib/constants";
+import { FONTS } from "../constants/fonts";
 
 export const runtime = "edge";
 
@@ -37,7 +37,7 @@ export default async function Icon() {
       fonts: [
         {
           name: "cal-sans",
-          data: await (await fetch(MISC.FONTS.calSansURL)).arrayBuffer(),
+          data: await (await fetch(FONTS.calSansURL)).arrayBuffer(),
         },
       ],
     }

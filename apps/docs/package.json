@@ -11,16 +11,13 @@
   "dependencies": {
     "next": "^13.4.19",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "ui": "*"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "eslint": "^8.47.0",
     "typescript": "^5.1.6",
     "@types/node": "^20.5.1",
     "@types/react": "^18.2.20",
-    "@types/react-dom": "^18.2.7",
-    "@rubriclab/eslint-config": "*",
-    "@rubriclab/typescript-config": "0.0.3"
+    "@types/react-dom": "^18.2.7"
   }
 }

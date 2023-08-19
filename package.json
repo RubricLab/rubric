@@ -7,10 +7,13 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "publish-packages": "changeset && changeset version && changeset publish"
   },
+  "dependencies": {},
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
-    "@rubriclab/eslint-config": "*",
+    "@rubriclab/eslint-config": "file:packages/@rubriclab/eslint-config",
     "@rubriclab/prettier-config": "*",
+    "@rubriclab/tailwind-config": "*",
+    "@rubriclab/typescript-config": "*",
     "@turbo/gen": "^1.10.12",
     "dotenv-cli": "^7.3.0",
     "eslint": "^8.47.0",

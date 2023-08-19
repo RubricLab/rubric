@@ -1,5 +1,11 @@
 # create-rubric-app
 
+## 0.0.16
+
+### Patch Changes
+
+- update template
+
 ## 0.0.15
 
 ### Patch Changes

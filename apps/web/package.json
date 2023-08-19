@@ -20,16 +20,13 @@
     "react-dom": "^18.2.0",
     "sanity": "^3.15.1",
     "styled-components": "^6.0.7",
-    "zod": "^3.22.2",
-    "@rubriclab/ui": "*"
+    "zod": "^3.22.2"
   },
   "devDependencies": {
     "prisma": "^5.1.1",
     "@sanity/eslint-config-studio": "^3.0.0",
     "@types/node": "^20.5.1",
     "@types/react": "^18.2.20",
-    "@types/react-dom": "^18.2.7",
-    "@rubriclab/tailwind-config": "*",
-    "@rubriclab/typescript-config": "*"
+    "@types/react-dom": "^18.2.7"
   }
 }

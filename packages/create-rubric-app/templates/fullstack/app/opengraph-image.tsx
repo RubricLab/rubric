@@ -1,8 +1,8 @@
 import { ImageResponse } from "next/server";
 import config from "../tailwind.config";
 import colors from "tailwindcss/colors";
-import BackgroundGrid from "./components/BackgroundGrid";
-import { MISC } from "../lib/constants";
+import BackgroundGrid from "../components/BackgroundGrid";
+import { FONTS } from "../constants/fonts";
 
 export const runtime = "edge";
 
@@ -50,7 +50,7 @@ export default async function Image({ params }: Props) {
       fonts: [
         {
           name: "cal-sans",
-          data: await (await fetch(MISC.FONTS.calSansURL)).arrayBuffer(),
+          data: await (await fetch(FONTS.calSansURL)).arrayBuffer(),
         },
       ],
     }
