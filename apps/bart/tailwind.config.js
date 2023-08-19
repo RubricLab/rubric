@@ -1,12 +1,6 @@
-import config from "@rubriclab/tailwind-config";
+const config = require("@rubriclab/tailwind-config");
 
-export default {
+module.exports = {
   presets: [config],
-  theme: {
-    extend: {
-      colors: {
-        ...config.theme.extend.colors,
-      },
-    },
-  },
+  content: ["./app/**/*.{js,ts,tsx}"],
 };

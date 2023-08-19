@@ -1,1 +1,1 @@
-export { default } from "@rubriclab/tailwind-config/postcss";
+module.exports = require("@rubriclab/tailwind-config/postcss.cjs");
