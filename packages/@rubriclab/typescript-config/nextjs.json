@@ -17,5 +17,5 @@
 	"display": "Next.js",
 	"exclude": ["node_modules"],
 	"extends": "./base.json",
-	"include": [".next/types/**/*.ts  ", "next-env.d.ts"]
+	"include": [".next/types/**/*.ts", "next-env.d.ts"]
 }

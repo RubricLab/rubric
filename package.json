@@ -22,7 +22,12 @@
 	"packageManager": "yarn@1.22.19",
 	"private": true,
 	"scripts": {
+		"bleed": "npx yarn-upgrade-all -W",
 		"build": "dotenv -- turbo run build",
+		"clean": "yarn clean:next && yarn clean:packages && yarn clean:turbo",
+		"clean:next": "find . -name '.next' -type d -prune -exec rm -rf '{}' +",
+		"clean:packages": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+		"clean:turbo": "find . -name '.turbo' -type d -prune -exec rm -rf '{}' +",
 		"dev": "dotenv -- turbo run dev --concurrency 12",
 		"format": "prettier --write .",
 		"lint": "dotenv -- turbo run lint",

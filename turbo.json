@@ -21,8 +21,6 @@
 			"env": ["NEXT_PUBLIC_SANITY_API_VERSION", "NEXT_PUBLIC_SANITY_DATASET", "NEXT_PUBLIC_SANITY_PROJECT"],
 			"persistent": true
 		},
-		"lint": {
-			"cache": false
-		}
+		"lint": {}
 	}
 }

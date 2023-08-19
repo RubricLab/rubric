@@ -1,5 +1,11 @@
 # @rubriclab/typescript-config
 
+## 0.2.2
+
+### Patch Changes
+
+- remove trailing space
+
 ## 0.2.1
 
 ### Patch Changes
