@@ -13,7 +13,10 @@ export default async function Home() {
       <div className="flex min-h-screen justify-end flex-col gap-3 pb-5 max-w-3xl">
         <Header text={"Welcome to my new Rubric app"} />
         <p className="text-3xl sm:text-6xl md:text-6xl font-extralight">
-          {"This project was bootstrapped with create-rubric-app"}
+          This project was bootstrapped with{" "}
+          <a href="https://www.npmjs.com/package/create-rubric-app">
+            create-rubric-app
+          </a>
         </p>
       </div>
 

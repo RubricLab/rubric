@@ -4,10 +4,10 @@ CLI for initializing projects
 
 ## Usage
 
-`npx create-rubric-app`
+`npx create-rubric-app@latest`
 
 ## Advanced Usage
 
-`npx create-rubric-app -y`
+`npx create-rubric-app@latest --n my-cool-app --t fullstack`
 
-`npx create-rubric-app --name my-cool-app --template fullstack`
+`npx create-rubric-app@latest -y`
