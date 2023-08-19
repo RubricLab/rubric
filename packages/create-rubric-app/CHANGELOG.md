@@ -1,5 +1,17 @@
 # create-rubric-app
 
+## 0.1.6
+
+### Patch Changes
+
+- add font back
+
+## 0.1.5
+
+### Patch Changes
+
+- remove font
+
 ## 0.1.4
 
 ### Patch Changes
