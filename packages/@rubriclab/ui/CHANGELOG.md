@@ -1,5 +1,11 @@
 # @rubriclab/ui
 
+## 0.2.2
+
+### Patch Changes
+
+- fixes to tailwind imports
+
 ## 0.2.1
 
 ### Patch Changes

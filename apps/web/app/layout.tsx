@@ -1,5 +1,4 @@
 import ToastProvider from '@rubriclab/ui/ToastProvider'
-import '@rubriclab/ui/globals.css'
 import localFont from 'next/font/local'
 import {META} from '../lib/constants'
 import BackgroundGrid from './components/BackgroundGrid'

@@ -1,5 +1,11 @@
 # create-rubric-app
 
+## 0.2.4
+
+### Patch Changes
+
+- fixes to tailwind imports
+
 ## 0.2.3
 
 ### Patch Changes

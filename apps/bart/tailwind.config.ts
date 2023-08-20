@@ -1,7 +1,9 @@
-const config = require('@rubriclab/tailwind-config')
+import {Config} from 'tailwindcss'
 
-module.exports = {
-	content: ['./app/**/*.{js,ts,tsx}'],
+import config from '@rubriclab/tailwind-config'
+
+const tailwindConfig = {
+	content: ['./app/**/*.tsx'],
 	presets: [config],
 	theme: {
 		extend: {
@@ -14,4 +16,6 @@ module.exports = {
 			}
 		}
 	}
-}
+} satisfies Config
+
+export default tailwindConfig
