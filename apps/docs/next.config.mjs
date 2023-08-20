@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
-	transpilePackages: ['@rubriclab/ui']
+	transpilePackages: ['@rubriclab/utils']
 }
 
 export default nextConfig

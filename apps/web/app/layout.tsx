@@ -1,8 +1,10 @@
-import ToastProvider from '@rubriclab/ui/ToastProvider'
+import '@rubriclab/ui/globals.css'
+import {ToastProvider} from '@rubriclab/ui/src'
 import localFont from 'next/font/local'
 import {META} from '../lib/constants'
 import BackgroundGrid from './components/BackgroundGrid'
 import NavBar from './components/NavBar'
+
 import './styles.css'
 
 const calSans = localFont({

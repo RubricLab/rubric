@@ -18,5 +18,5 @@
 	"scripts": {
 		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx"
 	},
-	"version": "0.2.4"
+	"version": "0.2.8"
 }

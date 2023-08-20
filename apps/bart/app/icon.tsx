@@ -17,7 +17,7 @@ export default async function Icon() {
 			<div
 				style={{
 					alignItems: 'center',
-					background: config.theme.extend.colors['simpson-yellow'],
+					background: config.theme.colors['simpson-yellow'],
 					color: colors['blue']['700'],
 					display: 'flex',
 					fontSize: 28,

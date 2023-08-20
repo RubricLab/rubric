@@ -6,10 +6,11 @@ const tailwindConfig = {
 	content: ['./app/**/*.tsx', './components/**/*.tsx'],
 	presets: [config],
 	theme: {
+		colors: {
+			...config.theme.colors,
+			'off-white': '#E2DCDB'
+		},
 		extend: {
-			colors: {
-				...config.theme.extend.colors
-			},
 			fontFamily: {
 				'cal-sans': ['var(--font-cal-sans)']
 			}

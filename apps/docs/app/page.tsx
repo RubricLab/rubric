@@ -1,4 +1,4 @@
-import {ComingSoonButton, Header} from '@rubriclab/ui'
+import {ComingSoonButton, Header} from '@rubriclab/ui/src'
 
 export default function Page() {
 	return (

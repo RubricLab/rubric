@@ -11,7 +11,7 @@ export const size = {
 	width: 32
 }
 
-const offWhite = config.theme.extend.colors['off-white'] || 'white'
+const offWhite = config.theme.colors['off-white']
 
 export default async function Icon() {
 	return new ImageResponse(

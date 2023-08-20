@@ -1,5 +1,3 @@
-@import '@rubriclab/ui/globals.css';
-
 html {
 	@apply bg-off-white;
 }

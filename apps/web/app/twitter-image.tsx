@@ -13,7 +13,7 @@ export const size = {
 	width: 1200
 }
 
-const backgroundColor = config.theme.extend.colors['off-white'] || 'white'
+const backgroundColor = config.theme.colors['off-white']
 const fontImport = fetch(MISC.FONTS.calSansURL).then(res => res.arrayBuffer())
 
 type Props = {

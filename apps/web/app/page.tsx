@@ -1,14 +1,13 @@
 import {PortableText} from '@portabletext/react'
-import {ContactButton, Header} from '@rubriclab/ui'
-import {Metadata} from 'next'
+import {Header} from '@rubriclab/ui'
+import {ContactButton} from '@rubriclab/ui/src'
 import Image from 'next/image'
-import {DEFAULT_META} from '../lib/constants'
 import {getHomePageCopy} from '../sanity/sanity-utils'
 import {Author} from '../types/sanity'
 
-export const metadata: Metadata = {
-	...DEFAULT_META
-}
+// export const metadata: Metadata = {
+// 	...DEFAULT_META
+// }
 
 type TeamMemberCardProps = {
 	member: Author

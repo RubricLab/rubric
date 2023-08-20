@@ -3,7 +3,7 @@ import tailwindConfig from '../tailwind.config'
 const lineAttributes = {
 	fill: 'none',
 	opacity: 0.4,
-	stroke: tailwindConfig.theme.extend.colors['stone'][400] || 'gray',
+	stroke: tailwindConfig.theme.colors['stone'][400],
 	strokeWidth: 1
 }
 

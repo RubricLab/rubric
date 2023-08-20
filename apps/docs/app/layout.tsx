@@ -1,9 +1,8 @@
 import '@rubriclab/ui/globals.css'
+import {ToastProvider} from '@rubriclab/ui/src'
 import './styles.css'
 
 import localFont from 'next/font/local'
-
-import ToastProvider from '@rubriclab/ui/ToastProvider'
 
 const calSans = localFont({
 	src: '../public/fonts/CalSans-SemiBold.ttf',

@@ -8,7 +8,8 @@ const tailwindConfig = {
 	theme: {
 		extend: {
 			colors: {
-				...config.theme.extend.colors
+				...config.theme.colors,
+				'off-white': '#E2DCDB'
 			},
 			fontFamily: {
 				'cal-sans': ['var(--font-cal-sans)']

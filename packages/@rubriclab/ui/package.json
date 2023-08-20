@@ -13,16 +13,36 @@
 		"eslint": "^8.47.0",
 		"postcss": "^8.4.28",
 		"tailwindcss": "^3.3.3",
+		"tsup": "^7.2.0",
 		"typescript": "^5.1.6"
 	},
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./globals.css": {
+			"import": "./dist/globals.css",
+			"require": "./dist/globals.css"
+		},
+		"./src": {
+			"import": "./src/index.tsx"
+		},
+		"./src/globals.css": {
+			"import": "./src/globals.css",
+			"require": "./src/globals.css"
+		}
+	},
 	"license": "MIT",
+	"main": "./dist/index.js",
 	"name": "@rubriclab/ui",
 	"publishConfig": {
 		"access": "public"
 	},
 	"scripts": {
-		"generate:component": "turbo gen react-component",
+		"build": "tsup src/index.tsx src/globals.css --format esm,cjs --dts --external react",
 		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx"
 	},
-	"version": "0.2.2"
+	"version": "0.2.7"
 }

@@ -22,7 +22,7 @@ export default async function Image({params}: Props) {
 			<div
 				style={{
 					alignItems: 'center',
-					background: config.theme.extend.colors['simpson-yellow'],
+					background: config.theme.colors['simpson-yellow'],
 					display: 'flex',
 					flexDirection: 'column',
 					height: '100%',
