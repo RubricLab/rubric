@@ -177,7 +177,7 @@ if (settings.includes('dev'))
 				? console.log(
 						boxen(
 							chalk.hex('#f97316')(
-								figlet.textSync('Happy hacking!', {
+								figlet.textSync('Happy Hacking!', {
 									font: 'Small',
 									horizontalLayout: 'default',
 									verticalLayout: 'default'
