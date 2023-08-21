@@ -1,6 +1,6 @@
 @tailwind utilities;
 
-@import '@rubriclab/ui/globals.css';
+@import '@rubriclab/ui/build.css';
 
 html {
 	@apply bg-off-white;

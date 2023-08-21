@@ -1,4 +1,6 @@
-@import '@rubriclab/ui/globals.css';
+@tailwind utilities;
+
+@import '@rubriclab/ui/build.css';
 
 html {
 	@apply bg-simpson-yellow;
