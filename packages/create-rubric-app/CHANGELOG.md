@@ -1,5 +1,11 @@
 # create-rubric-app
 
+## 0.2.9
+
+### Patch Changes
+
+- globals.css build
+
 ## 0.2.8
 
 ### Patch Changes

@@ -1,5 +1,4 @@
-import '@rubriclab/ui/globals.css'
-import {ToastProvider} from '@rubriclab/ui/src'
+import {ToastProvider} from '@rubriclab/ui'
 import './styles.css'
 
 import localFont from 'next/font/local'

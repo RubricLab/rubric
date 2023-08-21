@@ -3,11 +3,11 @@
 		"create-rubric-app": "./index.mjs"
 	},
 	"dependencies": {
+		"@inquirer/prompts": "^3.0.3",
 		"boxen": "^7.1.1",
 		"chalk": "^5.3.0",
 		"clear": "^0.1.0",
 		"figlet": "^1.6.0",
-		"inquirer": "^9.2.10",
 		"open": "^9.1.0"
 	},
 	"license": "MIT",
@@ -18,5 +18,5 @@
 	"scripts": {
 		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx"
 	},
-	"version": "0.2.8"
+	"version": "0.2.9"
 }

@@ -1,5 +1,4 @@
-import {Header} from '@rubriclab/ui'
-import {ContactButton} from '@rubriclab/ui/src'
+import {ContactButton, Header} from '@rubriclab/ui'
 import {Metadata} from 'next'
 import {DEFAULT_META} from '../constants/metadata'
 

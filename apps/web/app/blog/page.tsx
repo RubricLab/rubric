@@ -1,5 +1,4 @@
-import {Header} from '@rubriclab/ui'
-import {ComingSoonButton} from '@rubriclab/ui/src'
+import {ComingSoonButton, Header} from '@rubriclab/ui'
 import {ArrowUpRightIcon} from 'lucide-react'
 import {Metadata} from 'next'
 import Image from 'next/image'

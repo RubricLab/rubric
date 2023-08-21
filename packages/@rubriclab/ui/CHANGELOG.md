@@ -1,5 +1,11 @@
 # @rubriclab/ui
 
+## 0.2.8
+
+### Patch Changes
+
+- globals.css build
+
 ## 0.2.7
 
 ### Patch Changes

@@ -1,12 +1,13 @@
 #! /usr/bin/env node
 
+import {checkbox, input, select} from '@inquirer/prompts'
 import boxen from 'boxen'
 import chalk from 'chalk'
 import child_process from 'child_process'
 import clear from 'clear'
 import figlet from 'figlet'
-import {mkdirSync, readFileSync, readdirSync, statSync, writeFileSync} from 'fs'
-import inquirer from 'inquirer'
+import fs, {mkdirSync, readFileSync, readdirSync, statSync, writeFileSync} from 'fs'
+import https from 'https'
 import {parseArgs} from 'node:util'
 import open from 'open'
 import path from 'path'
@@ -15,29 +16,7 @@ import {fileURLToPath} from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const CHOICES = readdirSync(`${__dirname}/templates`)
-
 const CURR_DIR = process.cwd()
-
-const QUESTIONS = {
-	'project-choice': {
-		choices: CHOICES,
-
-		default: 'fullstack',
-		message: 'What project template would you like to generate?',
-		name: 'project-choice',
-		type: 'list'
-	},
-	'project-name': {
-		message: 'Project name:',
-		name: 'project-name',
-		type: 'input',
-		validate: function (input) {
-			if (/^([A-Za-z\-\_\d])+$/.test(input)) return true
-			else return 'Project name may only include letters, numbers, underscores and hashes.'
-		}
-	}
-}
 
 const createDirectoryContents = (templatePath, newProjectPath) => {
 	const filesToCreate = readdirSync(templatePath)
@@ -71,16 +50,32 @@ const copyTemplate = (name, template) => {
 	createDirectoryContents(templatePath, projectName)
 }
 
-var downloadFile = (url, dest) => {
-	child_process.execSync('wget -P ' + dest + ' ' + url, {stdio: [0, 1, 2]})
+var downloadFile = async (url, dest) => {
+	const file = fs.createWriteStream(`${dest}/${path.basename(url)}`)
+	return await new Promise(resolve => {
+		https.get(url, function (response) {
+			response.pipe(file)
+
+			// after download completed close filestream
+			file.on('finish', () => {
+				file.close()
+				console.log(`Downloaded ${path.basename(url)}`)
+				resolve()
+			})
+		})
+	})
 }
 
 // Parse arguments
 
 const {
-	values: {name: _name, yes: _yes, template: _template}
+	values: {name: _name, yes: _yes, template: _template, dissent: _dissent}
 } = parseArgs({
 	options: {
+		dissent: {
+			short: 'x',
+			type: 'boolean'
+		},
 		name: {
 			short: 'n',
 			type: 'string'
@@ -117,13 +112,114 @@ console.log(
 	)
 )
 
-const name = _name || (!_yes ? (await inquirer.prompt([QUESTIONS['project-name']]))['project-name'] : 'my-app')
-const template = _template || (!_yes ? (await inquirer.prompt([QUESTIONS['project-choice']]))['project-choice'] : 'fullstack')
+const CHOICES = readdirSync(`${__dirname}/templates`).map(template => ({
+	name: template,
+	value: template
+}))
 
-copyTemplate(name, template)
+const name = _name || (_yes ? 'my-app' : await input({default: 'my-app', message: 'What do you want to name your project?'}))
+const template = _template || (_yes ? 'fullstack' : await select({choices: CHOICES, default: 'fullstack', message: 'What project template would you like to generate?'}))
+const settings = _yes
+	? ['scaffold', 'download', 'vscode', 'install', 'dev'] + (_dissent ? ['npm'] : [])
+	: await checkbox({
+			choices: [
+				{checked: true, name: 'scaffold project files', value: 'scaffold'},
+				{checked: true, name: 'download assets', value: 'download'},
+				{checked: true, name: 'configure vscode', value: 'vscode'},
+				{checked: true, name: 'run install', value: 'install'},
+				{checked: true, name: 'run dev', value: 'dev'},
+				{checked: _dissent, name: 'use npm', value: 'npm'}
+			],
+			message: 'Do you want to change any settings?'
+	  })
 
-if (template === 'fullstack') downloadFile('https://rubriclab.com/fonts/CalSans-SemiBold.ttf', `${name}/public/fonts/`)
+console.log(`Creating a new ${chalk.hex('#f97316')(template)} app called ${chalk.hex('#f97316')(name)}...`)
 
-child_process.execSync(`cd ${name} && yarn`, {stdio: [0, 1, 2]})
-open(`http://localhost:3000`)
-child_process.execSync(`cd ${name} && yarn dev`, {stdio: [0, 1, 2]})
+if (settings.includes('scaffold')) {
+	copyTemplate(name, template)
+	console.log(`✅ 1/5 - Scaffolded project files`)
+} else console.log(`✅ 1/5 - no-scaffold flag passed`)
+
+if (settings.includes('download'))
+	if (template === 'fullstack') {
+		await downloadFile('https://rubriclab.com/fonts/CalSans-SemiBold.ttf', `${name}/public/fonts/`)
+		console.log(`✅ 2/5 - Downloaded assets`)
+	} else console.log(`✅ 2/5 - Nothing to download`)
+else console.log(`✅ 2/5 - no-download flag passed`)
+
+if (settings.includes('install')) {
+	child_process.execSync(`cd ${name} && ${settings.includes('npm') ? 'npm install' : 'yarn'}`, {stdio: [0, 1, 2]})
+	console.log(`✅ 3/5 - Installed dependencies with ${settings.includes('npm') ? 'npm' : 'yarn'}`)
+} else console.log(`✅ 3/5 - no-install flag passed`)
+
+if (settings.includes('vscode'))
+	try {
+		child_process.execSync('code --install-extension dbaeumer.vscode-eslint', {stdio: [0, 1, 2]})
+		child_process.execSync('code --install-extension esbenp.prettier-vscode', {stdio: [0, 1, 2]})
+		child_process.execSync(`code ${name}`, {stdio: [0, 1, 2]})
+		console.log(`✅ 4/5 - Configured vscode`)
+	} catch (e) {
+		console.log(`❌ 4/5 - Could not configure vscode. You might have to do this: https://code.visualstudio.com/docs/setup/mac`)
+	}
+else console.log(`✅ 4/5 - no-vscode flag passed`)
+
+if (settings.includes('dev'))
+	await Promise.all([
+		new Promise(resolve => {
+			setTimeout(() => {
+				resolve()
+			}, 2000)
+		}).then(() => {
+			open(`http://localhost:3000`)
+			console.log(`✅ 5/5 - Started development server`)
+			!_dissent
+				? console.log(
+						boxen(
+							chalk.hex('#f97316')(
+								figlet.textSync('Happy hacking!', {
+									font: 'Small',
+									horizontalLayout: 'default',
+									verticalLayout: 'default'
+								})
+							),
+							{
+								borderColor: '#f97316',
+								borderStyle: 'round',
+								padding: 1
+							}
+						)
+				  )
+				: console.log(
+						boxen(
+							chalk.hex('#FDD41E')(
+								figlet.textSync('RESIST!', {
+									font: 'big',
+									horizontalLayout: 'default',
+									verticalLayout: 'default'
+								})
+							),
+							{
+								// align: 'center',
+								// backgroundColor: 'black',
+								// borderColor: 'black',
+								borderStyle: 'round',
+
+								borderStyle: {
+									bottom: '👆',
+									bottomLeft: ' ',
+									bottomRight: ' ',
+									left: '👉',
+									right: '👈',
+									top: '👇',
+									topLeft: ' ',
+									topRight: ' '
+								},
+								// fullscreen: (width, height) => [width - 2, height - 4],
+								padding: 1
+							}
+						)
+				  )
+		}),
+		child_process.exec(`cd ${name} && ${settings.includes('npm') ? 'npm run' : 'yarn'} dev`, {stdio: [0, 1, 2]})
+	])
+else console.log(`✅ 5/5 - no-dev flag passed`)

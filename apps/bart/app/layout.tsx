@@ -1,4 +1,3 @@
-import '@rubriclab/ui/globals.css'
 import localFont from 'next/font/local'
 import NextImage from 'next/legacy/image'
 import './styles.css'

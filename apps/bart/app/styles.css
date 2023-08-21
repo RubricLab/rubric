@@ -1,3 +1,6 @@
+@import '@rubriclab/ui/src/globals.css';
+/* This is weird 👆 */
+
 html {
 	@apply bg-simpson-yellow;
 }

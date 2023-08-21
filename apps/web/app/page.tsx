@@ -1,6 +1,5 @@
 import {PortableText} from '@portabletext/react'
-import {Header} from '@rubriclab/ui'
-import {ContactButton} from '@rubriclab/ui/src'
+import {ContactButton, Header} from '@rubriclab/ui'
 import Image from 'next/image'
 import {getHomePageCopy} from '../sanity/sanity-utils'
 import {Author} from '../types/sanity'
