@@ -1,5 +1,23 @@
 # create-rubric-app
 
+## 0.2.12
+
+### Patch Changes
+
+- important orange
+
+## 0.2.11
+
+### Patch Changes
+
+- oops2
+
+## 0.2.10
+
+### Patch Changes
+
+- oops
+
 ## 0.2.9
 
 ### Patch Changes

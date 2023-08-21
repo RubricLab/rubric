@@ -51,6 +51,7 @@ const copyTemplate = (name, template) => {
 }
 
 var downloadFile = async (url, dest) => {
+	if (!fs.existsSync(dest)) mkdirSync(dest)
 	const file = fs.createWriteStream(`${dest}/${path.basename(url)}`)
 	return await new Promise(resolve => {
 		https.get(url, function (response) {
@@ -142,7 +143,7 @@ if (settings.includes('scaffold')) {
 
 if (settings.includes('download'))
 	if (template === 'fullstack') {
-		await downloadFile('https://rubriclab.com/fonts/CalSans-SemiBold.ttf', `${name}/public/fonts/`)
+		await downloadFile('https://rubriclab.com/fonts/CalSans-SemiBold.ttf', `${name}/public/fonts`)
 		console.log(`✅ 2/5 - Downloaded assets`)
 	} else console.log(`✅ 2/5 - Nothing to download`)
 else console.log(`✅ 2/5 - no-download flag passed`)

@@ -13,7 +13,7 @@ code {
 }
 
 a {
-	@apply text-orange-500;
+	@apply text-orange-500 !important;
 }
 
 blockquote {
