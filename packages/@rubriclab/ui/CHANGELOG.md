@@ -1,5 +1,11 @@
 # @rubriclab/ui
 
+## 0.2.9
+
+### Patch Changes
+
+- more changes to try to solve weird compile issue of globals.css
+
 ## 0.2.8
 
 ### Patch Changes

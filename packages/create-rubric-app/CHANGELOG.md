@@ -1,5 +1,11 @@
 # create-rubric-app
 
+## 0.2.14
+
+### Patch Changes
+
+- more changes to try to solve weird compile issue of globals.css
+
 ## 0.2.13
 
 ### Patch Changes

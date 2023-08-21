@@ -2,7 +2,6 @@
 
 import {copyToClipboard} from '@rubriclab/utils'
 import {toast} from './ToastProvider'
-import './globals.css'
 
 export const ContactButton = ({body}: {body: string}) => {
 	return (

@@ -1,7 +1,6 @@
 'use client'
 
 import {toast} from './ToastProvider'
-import './globals.css'
 
 export const ComingSoonButton = () => {
 	return (

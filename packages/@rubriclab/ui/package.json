@@ -17,19 +17,19 @@
 		"typescript": "^5.1.6"
 	},
 	"exports": {
-		".": "./src/index.tsx",
-		"./globals.css": "./dist/globals.css",
-		"./src/globals.css": "./src/globals.css"
+		".": "./index.tsx",
+		"./build.css": "./build.css",
+		"./globals.css": "./globals.css"
 	},
 	"license": "MIT",
-	"main": "./src/index.tsx",
+	"main": "./index.tsx",
 	"name": "@rubriclab/ui",
 	"publishConfig": {
 		"access": "public"
 	},
 	"scripts": {
-		"build": "tsup src/index.tsx src/globals.css --format esm,cjs --dts --external react",
+		"build": "npx tailwindcss -i ./globals.css -o ./build.css --minify",
 		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx"
 	},
-	"version": "0.2.8"
+	"version": "0.2.9"
 }
