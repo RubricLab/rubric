@@ -42,7 +42,7 @@ export default async function Image({params}: Props) {
 			fonts: [
 				{
 					data: await (await fetch(FONTS.simpsonFontUrl)).arrayBuffer(),
-					name: 'cal-sans'
+					name: 'simpson'
 				}
 			]
 		}

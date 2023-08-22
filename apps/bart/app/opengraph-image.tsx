@@ -31,8 +31,8 @@ export default async function Image({params}: Props) {
 					position: 'relative',
 					width: '100%'
 				}}>
-				<div style={{fontSize: 128}}>Rubric</div>
-				<div style={{color: colors['blue']['700'], fontSize: 48}}>We build software.</div>
+				<div style={{fontSize: 128, paddingBottom: '20px'}}>Bart</div>
+				<div style={{color: colors['blue']['700'], fontSize: 48}}>40.7005635,-73.9722209</div>
 			</div>
 		),
 		{
@@ -40,7 +40,7 @@ export default async function Image({params}: Props) {
 			fonts: [
 				{
 					data: await (await fetch(FONTS.simpsonFontUrl)).arrayBuffer(),
-					name: 'cal-sans'
+					name: 'simpson'
 				}
 			]
 		}

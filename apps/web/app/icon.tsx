@@ -11,16 +11,14 @@ export const size = {
 	width: 32
 }
 
-const offWhite = config.theme.colors['off-white']
-
 export default async function Icon() {
 	return new ImageResponse(
 		(
 			<div
 				style={{
 					alignItems: 'center',
-					background: colors['orange']['700'] || 'orange',
-					color: offWhite,
+					background: colors['orange']['700'],
+					color: config.theme.colors['off-white'],
 					display: 'flex',
 					fontSize: 28,
 					height: '100%',

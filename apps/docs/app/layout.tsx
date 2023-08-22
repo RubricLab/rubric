@@ -2,11 +2,22 @@ import {ToastProvider} from '@rubriclab/ui'
 import './styles.css'
 
 import localFont from 'next/font/local'
+import {META} from '../constants/metadata'
 
 const calSans = localFont({
 	src: '../public/fonts/CalSans-SemiBold.ttf',
 	variable: '--font-cal-sans'
 })
+
+export const metadata = {
+	alternates: {
+		canonical: '/',
+		languages: {
+			'en-US': '/en-US'
+		}
+	},
+	metadataBase: new URL(META.siteURL)
+}
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
 	return (

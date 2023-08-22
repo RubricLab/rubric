@@ -38,8 +38,8 @@ export default async function Image({params}: Props) {
 						width: size.width
 					}}
 				/>
-				<div style={{fontSize: 128}}>My Cool App</div>
-				<div style={{color: colors['orange']['700'], fontSize: 48}}>Built with Rubric.</div>
+				<div style={{fontSize: 128}}>Rubric Docs</div>
+				<div style={{color: colors['orange']['700'], fontSize: 48}}>for Rubric Labs software.</div>
 			</div>
 		),
 		{

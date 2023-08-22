@@ -17,24 +17,24 @@ export default async function Icon() {
 			<div
 				style={{
 					alignItems: 'center',
-					background: config.theme.colors['simpson-yellow'],
-					color: colors['black'],
+					background: colors['orange']['700'],
+					color: config.theme.colors['off-white'],
 					display: 'flex',
-					fontSize: 28,
+					fontSize: 10,
 					height: '100%',
 					justifyContent: 'center',
-					paddingTop: '1px',
+					paddingBottom: '1px',
 					width: '100%'
 				}}>
-				B
+				Docs
 			</div>
 		),
 		{
 			...size,
 			fonts: [
 				{
-					data: await (await fetch(FONTS.simpsonFontUrl)).arrayBuffer(),
-					name: 'simpson'
+					data: await (await fetch(FONTS.calSansURL)).arrayBuffer(),
+					name: 'cal-sans'
 				}
 			]
 		}

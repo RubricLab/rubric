@@ -1,5 +1,11 @@
 # create-rubric-app
 
+## 0.2.16
+
+### Patch Changes
+
+- fix to opengraph and twitter images with font imports
+
 ## 0.2.15
 
 ### Patch Changes

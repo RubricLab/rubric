@@ -1,3 +1,3 @@
 export const FONTS = {
-	simpsonFontUrl: '/fonts/Simpsonfont.ttf'
+	simpsonFontUrl: 'https://bartbartbart.com/fonts/Simpsonfont.ttf'
 }
