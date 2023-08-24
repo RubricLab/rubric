@@ -8,6 +8,11 @@
 	},
 	"name": "blogit",
 	"private": true,
+	"repository": {
+		"directory": "apps/blogit",
+		"type": "git",
+		"url": "https://github.com/RubricLab/rubric.git"
+	},
 	"scripts": {
 		"build": "next build",
 		"dev": "next dev",

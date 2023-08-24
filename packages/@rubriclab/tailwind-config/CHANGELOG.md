@@ -1,5 +1,17 @@
 # @rubriclab/tailwind-config
 
+## 1.0.0
+
+### Major Changes
+
+- Major Release
+
+## 0.2.6
+
+### Patch Changes
+
+- repository in package.json
+
 ## 0.2.5
 
 ### Patch Changes

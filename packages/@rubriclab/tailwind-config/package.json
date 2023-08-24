@@ -1,12 +1,23 @@
 {
+	"homepage": "https://github.com/RubricLab/rubric/tree/main/packages/@rubriclab/tailwind-config#readme",
+	"keywords": [
+		"config",
+		"rubric",
+		"tailwind"
+	],
 	"license": "MIT",
 	"main": "tailwind.ts",
 	"name": "@rubriclab/tailwind-config",
 	"publishConfig": {
 		"access": "public"
 	},
+	"repository": {
+		"directory": "packages/@rubriclab/tailwind-config",
+		"type": "git",
+		"url": "https://github.com/RubricLab/rubric.git"
+	},
 	"scripts": {
 		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx"
 	},
-	"version": "0.2.5"
+	"version": "1.0.0"
 }

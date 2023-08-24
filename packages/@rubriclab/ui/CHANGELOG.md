@@ -1,5 +1,24 @@
 # @rubriclab/ui
 
+## 1.0.0
+
+### Major Changes
+
+- Major Release
+
+### Patch Changes
+
+- Updated dependencies
+  - @rubriclab/utils@1.0.0
+
+## 0.2.10
+
+### Patch Changes
+
+- repository in package.json
+- Updated dependencies
+  - @rubriclab/utils@0.2.2
+
 ## 0.2.9
 
 ### Patch Changes

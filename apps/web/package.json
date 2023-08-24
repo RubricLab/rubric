@@ -19,6 +19,11 @@
 	},
 	"name": "web",
 	"private": true,
+	"repository": {
+		"directory": "apps/web",
+		"type": "git",
+		"url": "https://github.com/RubricLab/rubric.git"
+	},
 	"scripts": {
 		"build": "next build",
 		"dev": "next dev",

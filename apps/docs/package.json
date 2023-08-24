@@ -6,6 +6,11 @@
 	},
 	"name": "docs",
 	"private": true,
+	"repository": {
+		"directory": "apps/docs",
+		"type": "git",
+		"url": "https://github.com/RubricLab/rubric.git"
+	},
 	"scripts": {
 		"build": "next build",
 		"dev": "next dev",

@@ -7,14 +7,25 @@
 		"eslint-plugin-react": "^7.33.2",
 		"eslint-plugin-sort-keys-fix": "^1.1.2"
 	},
+	"homepage": "https://github.com/RubricLab/rubric/tree/main/packages/@rubriclab/eslint-config#readme",
+	"keywords": [
+		"config",
+		"eslint",
+		"rubric"
+	],
 	"license": "MIT",
 	"main": "./eslint.cjs",
 	"name": "@rubriclab/eslint-config",
 	"publishConfig": {
 		"access": "public"
 	},
+	"repository": {
+		"directory": "packages/@rubriclab/eslint-config",
+		"type": "git",
+		"url": "https://github.com/RubricLab/rubric.git"
+	},
 	"scripts": {
 		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx"
 	},
-	"version": "0.2.1"
+	"version": "1.0.0"
 }

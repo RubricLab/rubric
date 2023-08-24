@@ -21,15 +21,25 @@
 		"./build.css": "./build.css",
 		"./globals.css": "./globals.css"
 	},
+	"homepage": "https://github.com/RubricLab/rubric/tree/main/packages/@rubriclab/ui#readme",
+	"keywords": [
+		"rubric",
+		"ui"
+	],
 	"license": "MIT",
 	"main": "./index.tsx",
 	"name": "@rubriclab/ui",
 	"publishConfig": {
 		"access": "public"
 	},
+	"repository": {
+		"directory": "packages/@rubriclab/ui",
+		"type": "git",
+		"url": "https://github.com/RubricLab/rubric.git"
+	},
 	"scripts": {
 		"build": "npx tailwindcss -i ./globals.css -o ./build.css --minify",
 		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx"
 	},
-	"version": "0.2.9"
+	"version": "1.0.0"
 }

@@ -1,5 +1,17 @@
 # @rubriclab/utils
 
+## 1.0.0
+
+### Major Changes
+
+- Major Release
+
+## 0.2.2
+
+### Patch Changes
+
+- repository in package.json
+
 ## 0.2.1
 
 ### Patch Changes
