@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
+import { META } from '../../lib/constants'
 
 export default function NavBar() {
 	const pathname = usePathname()
@@ -19,9 +20,14 @@ export default function NavBar() {
 
 				<div className='flex gap-4'>
 					<Link
-						className='font-light hover:opacity-80'
+						className='font-light'
 						href='/projects'>
 						Projects
+					</Link>
+					<Link 
+						className='font-light'
+						href={META.githubURL}>
+						GitHub
 					</Link>
 					<Link
 						className='font-light'
