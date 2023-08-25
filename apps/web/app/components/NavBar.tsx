@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
-import { META } from '../../lib/constants'
+import {META} from '../../lib/constants'
 
 export default function NavBar() {
 	const pathname = usePathname()
@@ -24,7 +24,7 @@ export default function NavBar() {
 						href='/projects'>
 						Projects
 					</Link>
-					<Link 
+					<Link
 						className='font-light'
 						href={META.githubURL}>
 						GitHub
