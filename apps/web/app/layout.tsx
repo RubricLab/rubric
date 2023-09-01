@@ -1,4 +1,5 @@
 import {ToastProvider} from '@rubriclab/ui'
+import PlausibleProvider from 'next-plausible'
 import localFont from 'next/font/local'
 import {META} from '../lib/constants'
 import BackgroundGrid from './components/BackgroundGrid'
@@ -23,6 +24,9 @@ export const metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
 	return (
 		<html lang='en'>
+			<head>
+				<PlausibleProvider domain='rubriclab.com' />
+			</head>
 			<body className={`${calSans.variable} relative flex h-full min-h-screen w-full flex-col items-center`}>
 				<BackgroundGrid className='fixed h-full w-full' />
 				<NavBar />

@@ -49,6 +49,12 @@ To develop all apps and packages, run the following command:
 yarn dev
 ```
 
+To develop a subrepo, run:
+
+```sh
+yarn workspace [subrepo name] dev
+```
+
 To add a dependency to a subrepo, run:
 
 ```sh
