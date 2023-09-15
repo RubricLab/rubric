@@ -12,7 +12,7 @@ type ProjectCardProps = {
 	project: Project
 }
 
-export const ProjectCard = ({project: {url, name, content}}: ProjectCardProps) => (
+const ProjectCard = ({project: {url, name, content}}: ProjectCardProps) => (
 	<Link
 		className='bg-off-white group relative w-full rounded-xl border p-10 opacity-90 shadow-2xl transition-opacity hover:!opacity-100'
 		href={url}
