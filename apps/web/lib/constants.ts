@@ -24,8 +24,7 @@ export const DEFAULT_META: Metadata = {
 		creator: META.twitter,
 		description: META.desc,
 		title: META.title
-	},
-	viewport: {initialScale: 1, width: 'device-width'}
+	}
 }
 
 export const MISC = {
