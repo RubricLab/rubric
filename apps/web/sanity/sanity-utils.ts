@@ -1,5 +1,5 @@
 import {createClient, groq} from 'next-sanity'
-import {Home, Post, Project} from '../types/sanity'
+import {CaseStudy, Home, Post, Project} from '../types/sanity'
 
 // Sanity client
 const sanity = createClient({
@@ -75,6 +75,38 @@ export async function getPost(slug: string): Promise<Post> {
         body,
         publishedAt
     }`,
+		{slug}
+	)
+}
+
+// Get list of all case studies
+export async function getCaseStudies(): Promise<CaseStudy[]> {
+	return sanity.fetch(
+		groq`*[_type == "caseStudy" && publishedAt < now() ] | order(publishedAt desc){
+            _id,
+            _createdAt,
+            title,
+            summary,
+            "slug": slug.current,
+            "imageUrl": image.asset->url,
+            publishedAt
+        }`
+	)
+}
+
+// Get singular case study by slug
+export async function getCaseStudy(slug: string): Promise<CaseStudy> {
+	return sanity.fetch(
+		// Returns an array, so default to first value
+		groq`*[_type == "caseStudy" && slug.current == $slug][0]{
+            _id,
+            _createdAt,
+            title,
+            "slug": slug.current,
+            "imageUrl": image.asset->url,
+            body,
+            publishedAt
+        }`,
 		{slug}
 	)
 }

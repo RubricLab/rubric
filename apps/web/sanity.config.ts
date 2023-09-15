@@ -12,7 +12,7 @@ const config = defineConfig({
 	plugins: [deskTool(), visionTool()],
 	projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT,
 	schema: {types: schemas},
-	title: 'Blog'
+	title: 'Rubric CMS'
 })
 
 export default config

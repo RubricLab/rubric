@@ -38,3 +38,14 @@ export type Post = {
 	body: PortableTextBlock[]
 	publishedAt: Date
 }
+
+export type CaseStudy = {
+	_id: string
+	_createdAt: Date
+	title: string
+	slug: string
+	imageUrl: string
+	summary: string
+	body: PortableTextBlock[]
+	publishedAt: Date
+}
