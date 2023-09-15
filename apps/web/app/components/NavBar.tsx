@@ -7,6 +7,8 @@ import {META} from '../../lib/constants'
 export default function NavBar() {
 	const pathname = usePathname()
 
+	if (pathname === '/studio') return <></>
+
 	return (
 		<nav className='absolute left-[50%] top-0 z-20 flex w-full max-w-6xl -translate-x-1/2 flex-col gap-1 p-5'>
 			<div className={`${pathname === '/' ? 'justify-end' : 'justify-between'} flex text-lg text-orange-600 sm:text-2xl lg:text-3xl`}>
