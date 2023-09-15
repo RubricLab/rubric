@@ -3,6 +3,7 @@ import PlausibleProvider from 'next-plausible'
 import localFont from 'next/font/local'
 import {META} from '../lib/constants'
 import BackgroundGrid from './components/BackgroundGrid'
+import Footer from './components/Footer'
 import NavBar from './components/NavBar'
 import './styles.css'
 
@@ -31,7 +32,8 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 				<BackgroundGrid className='fixed h-full w-full' />
 				<NavBar />
 				<ToastProvider />
-				<div className='z-10 w-full max-w-6xl p-5 pt-0'>{children}</div>
+				<div className='z-10 w-full p-5 px-10 pt-0 2xl:max-w-6xl'>{children}</div>
+				<Footer />
 			</body>
 		</html>
 	)
