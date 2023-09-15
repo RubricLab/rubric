@@ -18,12 +18,11 @@ export function parseDate(input: Date | string) {
 export const getMetadata = ({title, description, previewImageUrl}: {title?: string; description?: string; previewImageUrl?: string}): Metadata => {
 	const combinedTitle = `${title ? `${title} | ` : ''}${META.title}`
 	return {
-		title: combinedTitle,
 		description: description || DEFAULT_META.description,
 		openGraph: {
 			...DEFAULT_META.openGraph,
-			title: combinedTitle,
 			description: description || DEFAULT_META.description,
+			title: combinedTitle,
 			...(previewImageUrl
 				? {
 						images: [
@@ -34,6 +33,7 @@ export const getMetadata = ({title, description, previewImageUrl}: {title?: stri
 				  }
 				: {})
 		},
+		title: combinedTitle,
 		twitter: {
 			...DEFAULT_META.twitter,
 			title: combinedTitle

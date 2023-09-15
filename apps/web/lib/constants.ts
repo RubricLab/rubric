@@ -11,12 +11,13 @@ export const META = {
 export const DEFAULT_META: Metadata = {
 	description: META.desc,
 	openGraph: {
-		title: META.title,
 		description: META.desc,
 		siteName: META.title,
+		title: META.title,
 		type: 'website',
 		url: META.siteURL
 	},
+	themeColor: '#E1DCDB',
 	title: META.title,
 	twitter: {
 		card: 'summary_large_image',
@@ -24,8 +25,7 @@ export const DEFAULT_META: Metadata = {
 		description: META.desc,
 		title: META.title
 	},
-	themeColor: '#E1DCDB',
-	viewport: {width: 'device-width', initialScale: 1}
+	viewport: {initialScale: 1, width: 'device-width'}
 }
 
 export const MISC = {
