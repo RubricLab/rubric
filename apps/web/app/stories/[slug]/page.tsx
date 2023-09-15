@@ -16,13 +16,12 @@ export default async function Post({params}: PostProps) {
 	const {slug} = params
 	const {imageUrl, title, body} = await getCaseStudy(slug)
 
-	if (!title) {
+	if (!title)
 		return (
 			<div className='mt-20 flex h-full flex-col gap-10'>
 				<h1>Coming soon.</h1>
 			</div>
 		)
-	}
 
 	return (
 		<div className='mt-20 grid h-full grid-cols-1 items-start gap-10 md:mt-32 md:grid-cols-2'>

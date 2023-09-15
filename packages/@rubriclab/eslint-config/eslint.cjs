@@ -22,10 +22,6 @@ module.exports = {
 				order: {type: 'asc'},
 				pathPattern: '.*'
 			}
-		],
-		'react/jsx-sort-props': ['error'],
-		'sort-keys': ['error'],
-		'sort-keys-fix/sort-keys-fix': ['error'],
-		'sort-vars': ['error']
+		]
 	}
 }
