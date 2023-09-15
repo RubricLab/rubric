@@ -1,58 +1,51 @@
+import {PortableText} from '@portabletext/react'
+import {ContactButton} from '@rubriclab/ui'
 import {ArrowUpRightIcon} from 'lucide-react'
-import {Metadata} from 'next'
 import Link from 'next/link'
-import {DEFAULT_META, META} from '../../lib/constants'
+import {getMetadata} from '../../lib/utils'
 import {getProjects} from '../../sanity/sanity-utils'
 import {Project} from '../../types/sanity'
 
-export const metadata: Metadata = {
-	...DEFAULT_META,
-	openGraph: {
-		...DEFAULT_META.openGraph,
-		title: `Projects | ${META.title}`
-	},
-	title: `Projects | ${META.title}`,
-	twitter: {
-		...DEFAULT_META.twitter,
-		title: `Projects | ${META.title}`
-	}
-}
+export const metadata = getMetadata({title: 'Projects'})
 
 type ProjectCardProps = {
 	project: Project
 }
 
-const ProjectCard = ({project}: ProjectCardProps) => {
-	return (
-		<Link
-			className='bg-off-white/90 group flex w-full rounded-md border border-stone-700/80 px-6 py-5 text-black transition-colors duration-300 hover:bg-orange-400/80'
-			href={project.url}
-			target='_blank'>
-			<div className='flex w-full items-center justify-between'>
-				{/* Name */}
-				<h3>{project.name}</h3>
-				<ArrowUpRightIcon className='h-10 w-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100' />
-			</div>
-		</Link>
-	)
-}
+export const ProjectCard = ({project: {url, name, content}}: ProjectCardProps) => (
+	<Link
+		className='bg-off-white group relative w-full rounded-xl border p-10 opacity-90 shadow-2xl transition-opacity hover:!opacity-100'
+		href={url}
+		target='_blank'>
+		<ArrowUpRightIcon className='absolute -right-5 -top-5 h-32 w-32 opacity-0 transition-opacity duration-300 group-hover:opacity-20' />
+		<div className='w-full space-y-4 text-black/50 transition-colors duration-300 hover:text-orange-500'>
+			<h2>{name}</h2>
+			<PortableText value={content} />
+		</div>
+	</Link>
+)
 
 export const revalidate = 60 // revalidate this page every 60 seconds
 
-export default async function Projects() {
+const Projects = async () => {
 	const projects = await getProjects()
 	return (
-		<div className='mt-20 flex h-full flex-col gap-10 2xl:justify-center'>
+		<div className='mt-28 flex h-full flex-col gap-10 2xl:justify-center'>
 			<h1>Projects</h1>
-			{/* Projects */}
-			<div className='grid grid-cols-1 gap-6 md:grid-cols-2 xl:pb-5'>
+			<div className='mx-auto flex max-w-xl flex-col items-center gap-5 py-10'>
 				{projects.map((project: Project) => (
 					<ProjectCard
 						key={project._id}
 						project={project}
 					/>
 				))}
+				<ContactButton
+					body='Want to be on the list?'
+					className='my-10'
+				/>
 			</div>
 		</div>
 	)
 }
+
+export default Projects

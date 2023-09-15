@@ -14,13 +14,13 @@ export default function NavBar() {
 			<div className={`${pathname === '/' ? 'justify-end' : 'justify-between'} flex text-lg text-orange-600 sm:text-2xl lg:text-3xl`}>
 				{pathname !== '/' && (
 					<Link
-						className='font-bold text-black'
+						className='font-cal-sans font-bold text-black'
 						href='/'>
 						Rubric
 					</Link>
 				)}
 
-				<div className='flex gap-4'>
+				<div className='flex items-baseline gap-5 text-2xl'>
 					<Link
 						className='font-light'
 						href='/projects'>
