@@ -17,8 +17,8 @@ export const ProjectCard = ({project: {url, name, content}}: ProjectCardProps) =
 		className='bg-off-white group relative w-full rounded-xl border p-10 opacity-90 shadow-2xl transition-opacity hover:!opacity-100'
 		href={url}
 		target='_blank'>
-		<ArrowUpRightIcon className='absolute -right-5 -top-5 h-32 w-32 opacity-0 transition-opacity duration-300 group-hover:opacity-20' />
-		<div className='w-full space-y-4 text-black/50 transition-colors duration-300 hover:text-orange-500'>
+		<ArrowUpRightIcon className='absolute right-0 top-0 h-32 w-32 opacity-0 transition-opacity group-hover:opacity-20' />
+		<div className='w-full space-y-4 text-black/60 transition-colors group-hover:text-orange-500'>
 			<h2>{name}</h2>
 			<PortableText value={content} />
 		</div>

@@ -19,7 +19,6 @@ export default function NavBar() {
 						Rubric
 					</Link>
 				)}
-
 				<div className='flex items-baseline gap-5 text-2xl'>
 					<Link
 						className='font-light'
@@ -38,12 +37,6 @@ export default function NavBar() {
 					</Link>
 				</div>
 			</div>
-
-			{pathname === '/' && (
-				<div className='flex flex-col items-end'>
-					<span className='text-sm font-thin sm:text-base lg:text-lg'>© Rubric Labs Inc.</span>
-				</div>
-			)}
 		</nav>
 	)
 }
