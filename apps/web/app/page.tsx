@@ -1,12 +1,11 @@
 import {PortableText} from '@portabletext/react'
 import {ContactButton, Header} from '@rubriclab/ui'
 import Image from 'next/image'
+import {getMetadata} from '../lib/utils'
 import {getHomePageCopy} from '../sanity/sanity-utils'
 import {Author} from '../types/sanity'
 
-// export const metadata: Metadata = {
-// 	...DEFAULT_META
-// }
+export const metadata = getMetadata({title: 'Home'})
 
 type TeamMemberCardProps = {
 	member: Author
@@ -27,7 +26,7 @@ const TeamMemberCard = ({member}: TeamMemberCardProps) => {
 				/>
 			</div>
 			<p className='absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col text-center text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100'>
-				<span className='text-sm text-gray-100'>{member.name}</span> <span className='text-xs text-gray-300'>{member.title}</span>
+				<span className='text-base text-gray-100'>{member.name}</span> <span className='text-sm text-gray-300'>{member.title}</span>
 			</p>
 		</div>
 	)
@@ -40,14 +39,14 @@ export default async function Home() {
 	return (
 		<div className='flex flex-col'>
 			{/* Section: Hero */}
-			<div className='flex min-h-screen max-w-3xl flex-col justify-end gap-3 pb-5'>
+			<div className='flex min-h-screen flex-col justify-end gap-5 pb-10'>
 				<Header text={result.hero.title} />
-				<p className='text-3xl font-extralight sm:text-6xl md:text-6xl'>{result.hero.subtitle}</p>
+				<p className='max-w-2xl text-4xl font-extralight sm:text-5xl'>{result.hero.subtitle}</p>
 			</div>
 
 			{/* Section */}
 			<div className='flex min-h-screen flex-col items-end justify-end gap-3 pb-5'>
-				<div className='flex max-w-xl flex-col gap-10'>
+				<div className='flex max-w-xl flex-col gap-10 pb-10'>
 					{/* Team */}
 					<div className='flex justify-between'>
 						{result.team.map(member => (
@@ -59,12 +58,12 @@ export default async function Home() {
 					</div>
 
 					{/* What we do */}
-					<div className='flex flex-col gap-3 text-xl font-light'>
+					<div className='flex flex-col gap-5 text-2xl font-light'>
 						<PortableText value={result.desc} />
-					</div>
-
-					<div className='flex justify-end'>
-						<ContactButton body='hello@rubriclab.com' />
+						<ContactButton
+							body='hello@rubriclab.com'
+							className='mt-5'
+						/>
 					</div>
 				</div>
 			</div>
