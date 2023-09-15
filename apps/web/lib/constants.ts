@@ -11,8 +11,11 @@ export const META = {
 export const DEFAULT_META: Metadata = {
 	description: META.desc,
 	openGraph: {
+		title: META.title,
 		description: META.desc,
-		title: META.title
+		siteName: META.title,
+		type: 'website',
+		url: META.siteURL
 	},
 	title: META.title,
 	twitter: {
@@ -20,7 +23,9 @@ export const DEFAULT_META: Metadata = {
 		creator: META.twitter,
 		description: META.desc,
 		title: META.title
-	}
+	},
+	themeColor: '#E1DCDB',
+	viewport: {width: 'device-width', initialScale: 1}
 }
 
 export const MISC = {
