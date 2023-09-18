@@ -1,5 +1,11 @@
 # create-rubric-app
 
+## 1.1.0
+
+### Minor Changes
+
+- Use bun by default
+
 ## 1.0.0
 
 ### Major Changes
