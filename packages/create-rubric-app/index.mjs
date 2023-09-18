@@ -121,7 +121,7 @@ const CHOICES = readdirSync(`${__dirname}/templates`).map(template => ({
 const name = _name || (_yes ? 'my-app' : await input({default: 'my-app', message: 'What do you want to name your project?'}))
 const template = _template || (_yes ? 'fullstack' : await select({choices: CHOICES, default: 'fullstack', message: 'What project template would you like to generate?'}))
 const settings = _yes
-	? ['scaffold', 'download', 'vscode', 'install', 'dev'] + (_dissent ? ['npm'] : [])
+	? ['scaffold', 'download', 'vscode', 'install', 'dev'] + (_dissent ? ['yarn'] : [])
 	: await checkbox({
 			choices: [
 				{checked: true, name: 'scaffold project files', value: 'scaffold'},
@@ -129,7 +129,7 @@ const settings = _yes
 				{checked: true, name: 'configure vscode', value: 'vscode'},
 				{checked: true, name: 'run install', value: 'install'},
 				{checked: true, name: 'run dev', value: 'dev'},
-				{checked: _dissent, name: 'use npm', value: 'npm'}
+				{checked: _dissent, name: 'use yarn', value: 'yarn'}
 			],
 			message: 'Do you want to change any settings?'
 	  })
@@ -149,8 +149,8 @@ if (settings.includes('download'))
 else console.log(`✅ 2/5 - no-download flag passed`)
 
 if (settings.includes('install')) {
-	child_process.execSync(`cd ${name} && ${settings.includes('npm') ? 'npm install' : 'yarn'}`, {stdio: [0, 1, 2]})
-	console.log(`✅ 3/5 - Installed dependencies with ${settings.includes('npm') ? 'npm' : 'yarn'}`)
+	child_process.execSync(`cd ${name} && ${settings.includes('yarn') ? 'yarn' : 'bun i'}`, {stdio: [0, 1, 2]})
+	console.log(`✅ 3/5 - Installed dependencies with ${settings.includes('yarn') ? 'yarn' : 'bun'}`)
 } else console.log(`✅ 3/5 - no-install flag passed`)
 
 if (settings.includes('vscode'))
@@ -221,6 +221,6 @@ if (settings.includes('dev'))
 						)
 				  )
 		}),
-		child_process.exec(`cd ${name} && ${settings.includes('npm') ? 'npm run' : 'yarn'} dev`, {stdio: [0, 1, 2]})
+		child_process.exec(`cd ${name} && ${settings.includes('yarn') ? 'yarn' : 'bun'} run dev`, {stdio: [0, 1, 2]})
 	])
 else console.log(`✅ 5/5 - no-dev flag passed`)
