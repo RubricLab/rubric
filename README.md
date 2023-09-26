@@ -38,7 +38,7 @@ This Turborepo has some additional tools already setup for you:
 To build all apps and packages, run the following command:
 
 ```sh
-yarn build
+bun build
 ```
 
 ### Develop
@@ -46,25 +46,25 @@ yarn build
 To develop all apps and packages, run the following command:
 
 ```sh
-yarn dev
+bun dev
 ```
 
 To develop a subrepo, run:
 
 ```sh
-yarn workspace [subrepo name] dev
+bun workspace [subrepo name] dev
 ```
 
 To add a dependency to a subrepo, run:
 
 ```sh
-yarn workspace [subrepo name] add dependency
+bun workspace [subrepo name] add dependency
 ```
 
 To add a global dependency, run:
 
 ```sh
-yarn add -W dependency
+bun add -W dependency
 ```
 
 ### Remote Caching
