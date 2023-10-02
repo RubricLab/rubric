@@ -30,11 +30,11 @@ export default function NavBar() {
 						href='/blog'>
 						Blog
 					</Link>
-					<Link
+					{/* <Link
 						className='font-light'
 						href='/stories'>
 						Stories
-					</Link>
+					</Link> */}
 					<Link
 						className='font-light'
 						href={META.githubURL}>
