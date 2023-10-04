@@ -1,5 +1,11 @@
 # @rubriclab/prettier-config
 
+## 1.0.1
+
+### Reset line width
+
+- Remove wide print-width
+
 ## 1.0.0
 
 ### Major Changes

@@ -5,7 +5,6 @@ module.exports = {
 	bracketSpacing: false,
 	jsxSingleQuote: true,
 	plugins: [require.resolve('prettier-plugin-organize-imports'), require.resolve('prettier-plugin-tailwindcss')],
-	printWidth: 1000,
 	proseWrap: 'never',
 	semi: false,
 	singleAttributePerLine: true,
