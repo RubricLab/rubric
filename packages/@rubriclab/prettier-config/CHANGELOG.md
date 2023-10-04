@@ -1,5 +1,11 @@
 # @rubriclab/prettier-config
 
+## 1.1.0
+
+### Minor Changes
+
+- Reset code line width
+
 ## 1.0.1
 
 ### Reset line width
