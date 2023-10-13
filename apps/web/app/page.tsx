@@ -1,3 +1,4 @@
+import {ArrowUpRight} from 'lucide-react'
 import Image from 'next/image'
 import {getMetadata} from '../lib/utils'
 import {getHomePageCopy} from '../sanity/sanity-utils'
@@ -60,7 +61,22 @@ export default async function Home() {
 			</div>
 
 			{/* Section: Featured projects */}
-			<div className='flex min-h-screen flex-col items-center justify-center gap-5 bg-gradient-to-b from-[#1C1F23] to-[#14171A]'></div>
+			<div className='flex min-h-screen flex-col items-center justify-center gap-5 bg-gradient-to-b from-[#1C1F23] to-[#14171A]'>
+				<h1 className='text-white'>_featured projects</h1>
+				<div className='flex max-w-4xl flex-col'>
+					<div className='flex items-center rounded-md bg-black/50 p-10 text-white'>
+						<p className='w-1/4 text-3xl'>Neat</p>
+						<p className='w-1/2 text-lg'>
+							Unified inbox for developer notifications. Used by 3000+ developers.
+						</p>
+						<div className='flex w-1/4 justify-center'>
+							<button className='rounded-md bg-black p-5'>
+								<ArrowUpRight />
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	)
 }

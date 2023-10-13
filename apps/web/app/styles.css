@@ -1,3 +1,5 @@
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
 
 @import '@rubriclab/ui/build.css';
@@ -6,14 +8,17 @@ html {
 	@apply bg-white;
 }
 
-code {
-	@apply border-stone-700/80 bg-orange-200/60;
-}
-
-a {
-	@apply text-orange-600;
-}
-
-blockquote {
-	@apply border-stone-500/80;
+@layer base {
+	h1 {
+		@apply font-neue-bit text-7xl;
+	}
+	code {
+		@apply border-stone-700/80 bg-orange-200/60;
+	}
+	a {
+		@apply text-orange-600;
+	}
+	blockquote {
+		@apply border-stone-500/80;
+	}
 }
