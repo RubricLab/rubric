@@ -12,7 +12,7 @@ const tailwindConfig = {
 		},
 		extend: {
 			fontFamily: {
-				'cal-sans': ['var(--font-neue-bit)']
+				'neue-bit': ['var(--font-neue-bit)']
 			}
 		}
 	}

@@ -6,10 +6,6 @@ html {
 	@apply bg-white;
 }
 
-h1 {
-	@apply font-cal-sans;
-}
-
 code {
 	@apply border-stone-700/80 bg-orange-200/60;
 }

@@ -1,5 +1,3 @@
-import {PortableText} from '@portabletext/react'
-import {ContactButton, Header} from '@rubriclab/ui'
 import Image from 'next/image'
 import {getMetadata} from '../lib/utils'
 import {getHomePageCopy} from '../sanity/sanity-utils'
@@ -40,35 +38,25 @@ export default async function Home() {
 	return (
 		<div className='flex flex-col'>
 			{/* Section: Hero */}
-			<div className='flex min-h-screen flex-col justify-end gap-5 pb-10'>
-				<Header text={result.hero.title} />
-				<p className='max-w-2xl text-4xl font-extralight sm:text-5xl'>
-					{result.hero.subtitle}
+			<div className='flex min-h-screen flex-col items-center justify-center gap-5 pb-10'>
+				<p className='max-w-2xl text-center text-4xl sm:text-5xl'>
+					We&apos;re a digital studio making{' '}
+					<span className='font-neue-bit text-7xl'>ai-first</span> software.
 				</p>
-			</div>
+				<p>
+					Press <span className='mx-1 rounded-md bg-orange-100 px-3 py-2'>R</span> to
+					get started
+				</p>
 
-			{/* Section */}
-			<div className='flex min-h-screen flex-col items-end justify-end gap-3 pb-5'>
-				<div className='flex max-w-xl flex-col gap-10 pb-10'>
-					{/* Team */}
-					<div className='flex justify-between'>
-						{result.team.map(member => (
-							<TeamMemberCard
-								key={member._key}
-								member={member}
-							/>
-						))}
-					</div>
-
-					{/* What we do */}
-					<div className='flex flex-col gap-5 text-2xl font-light'>
-						<PortableText value={result.desc} />
-						<ContactButton
-							body='hello@rubriclab.com'
-							className='mt-5'
-						/>
-					</div>
-				</div>
+				{/* <div className='relative h-[50vh] w-full'>
+					<Image
+						src='/images/iMac.png'
+						alt='iMac with a picture of a desert'
+						fill
+						sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+						style={{objectFit: 'cover', objectPosition: 'center'}}
+					/>
+				</div> */}
 			</div>
 		</div>
 	)
