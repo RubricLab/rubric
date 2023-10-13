@@ -3,7 +3,7 @@
 @import '@rubriclab/ui/build.css';
 
 html {
-	@apply bg-off-white;
+	@apply bg-white;
 }
 
 h1 {

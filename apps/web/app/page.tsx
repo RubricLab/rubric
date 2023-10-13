@@ -26,7 +26,8 @@ const TeamMemberCard = ({member}: TeamMemberCardProps) => {
 				/>
 			</div>
 			<p className='absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col text-center text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100'>
-				<span className='text-base text-gray-100'>{member.name}</span> <span className='text-sm text-gray-300'>{member.title}</span>
+				<span className='text-base text-gray-100'>{member.name}</span>{' '}
+				<span className='text-sm text-gray-300'>{member.title}</span>
 			</p>
 		</div>
 	)
@@ -41,7 +42,9 @@ export default async function Home() {
 			{/* Section: Hero */}
 			<div className='flex min-h-screen flex-col justify-end gap-5 pb-10'>
 				<Header text={result.hero.title} />
-				<p className='max-w-2xl text-4xl font-extralight sm:text-5xl'>{result.hero.subtitle}</p>
+				<p className='max-w-2xl text-4xl font-extralight sm:text-5xl'>
+					{result.hero.subtitle}
+				</p>
 			</div>
 
 			{/* Section */}

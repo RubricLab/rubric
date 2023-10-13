@@ -11,10 +11,13 @@ export default function NavBar() {
 
 	return (
 		<nav className='absolute left-[50%] top-0 z-20 flex w-full -translate-x-1/2 flex-col gap-1 p-5 sm:px-10'>
-			<div className={`${pathname === '/' ? 'justify-end' : 'justify-between'} flex text-lg text-orange-600 sm:text-2xl lg:text-3xl`}>
+			<div
+				className={`${
+					pathname === '/' ? 'justify-end' : 'justify-between'
+				} flex text-lg text-orange-600 sm:text-2xl lg:text-3xl`}>
 				{pathname !== '/' && (
 					<Link
-						className='font-cal-sans font-bold text-black'
+						className='font-neue-bit font-bold text-black'
 						href='/'>
 						Rubric
 					</Link>
