@@ -38,7 +38,7 @@ export default async function Home() {
 	return (
 		<div className='flex flex-col'>
 			{/* Section: Hero */}
-			<div className='flex min-h-screen flex-col items-center justify-center gap-5 pb-10'>
+			<div className='flex min-h-screen flex-col items-center justify-center gap-5'>
 				<p className='max-w-2xl text-center text-4xl sm:text-5xl'>
 					We&apos;re a digital studio making{' '}
 					<span className='font-neue-bit text-7xl'>ai-first</span> software.
@@ -58,6 +58,9 @@ export default async function Home() {
 					/>
 				</div> */}
 			</div>
+
+			{/* Section: Featured projects */}
+			<div className='flex min-h-screen flex-col items-center justify-center gap-5 bg-gradient-to-b from-[#1C1F23] to-[#14171A]'></div>
 		</div>
 	)
 }
