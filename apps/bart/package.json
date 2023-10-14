@@ -1,6 +1,6 @@
 {
 	"dependencies": {
-		"next": "^13.4.19"
+		"next": "^13.5.4"
 	},
 	"name": "bart",
 	"private": true,
@@ -10,8 +10,9 @@
 		"url": "https://github.com/RubricLab/rubric.git"
 	},
 	"scripts": {
+		"bleed": "npx yarn-upgrade-all -W",
 		"build": "next build",
-		"dev": "next dev",
+		"dev": "next dev -p 3003",
 		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx",
 		"start": "next start"
 	},
