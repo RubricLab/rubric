@@ -14,7 +14,7 @@ type ProjectCardProps = {
 
 const ProjectCard = ({project: {url, name, content}}: ProjectCardProps) => (
 	<Link
-		className='bg-off-white group relative w-full rounded-xl border p-10 opacity-90 shadow-2xl transition-opacity hover:!opacity-100'
+		className='bg-off-white group relative w-full rounded-xl border bg-white p-10 opacity-90 shadow-2xl transition-opacity hover:!opacity-100'
 		href={url}
 		target='_blank'>
 		<ArrowUpRightIcon className='absolute right-0 top-0 h-32 w-32 opacity-0 transition-opacity group-hover:opacity-20' />
@@ -30,9 +30,9 @@ export const revalidate = 60 // revalidate this page every 60 seconds
 const Projects = async () => {
 	const projects = await getProjects()
 	return (
-		<div className='mt-28 flex h-full flex-col gap-10 2xl:justify-center'>
+		<div className=' mt-28 flex h-full flex-col gap-10 2xl:justify-center'>
 			<h1>Projects</h1>
-			<div className='mx-auto flex max-w-xl flex-col items-center gap-5 py-10'>
+			<div className='z-20 mx-auto flex max-w-xl flex-col items-center gap-5 py-10'>
 				{projects.map((project: Project) => (
 					<ProjectCard
 						key={project._id}

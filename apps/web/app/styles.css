@@ -18,9 +18,6 @@ html {
 	code {
 		@apply border-stone-700/80 bg-orange-200/60;
 	}
-	a {
-		@apply text-orange-600;
-	}
 	blockquote {
 		@apply border-stone-500/80;
 	}

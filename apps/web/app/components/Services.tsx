@@ -23,18 +23,15 @@ const sections = [
 
 export default function Services() {
 	return (
-		<div className='flex min-h-screen flex-col items-center justify-center gap-40 bg-white p-8'>
-			{sections.map(section => (
-				<div
-					key={section.title}
-					className='flex flex-col items-center gap-5 text-center'>
-					<span className='bg-teal rounded-full p-3'>{section.icon}</span>
-					<div className='flex flex-col gap-3'>
-						<h2>{section.title}</h2>
-						<p>{section.desc}</p>
-					</div>
-				</div>
-			))}
+		<div className='flex min-h-screen flex-col items-center justify-center bg-white p-8'>
+			<div className='flex flex-col gap-5'>
+				<h1 className='text-3xl'>A note to the ambitious ones.</h1>
+				<p>Our goal is to turn your ideas into pixel-perfect reality.</p>
+				<p>
+					We are speedy, efficient, and cover everything from wireframes to code.
+				</p>
+				<p>Got a concept? We are here to make it shine.</p>
+			</div>
 		</div>
 	)
 }

@@ -1,18 +1,42 @@
 'use client'
+import Link from 'next/link'
 import Button from './Button'
+import Logo from './Logo'
 
 const Footer = () => {
 	return (
-		<div className='flex h-[400px] w-screen flex-col items-center justify-center gap-10 bg-gradient-to-b from-[#1C1F23] to-[#14171A] p-5 text-white sm:p-10'>
-			<div className='flex flex-col gap-1 text-center'>
-				<p className='font-2xl'>Got an idea? Get in touch.</p>
-				<p className='font-2xl'> Let&apos;s make something amazing, together.</p>
+		<div className='z-20 flex w-screen items-center justify-between bg-gradient-to-b from-[#1C1F23] to-[#14171A] px-5 py-20 text-white sm:px-10'>
+			<div className='flex flex-col gap-3'>
+				<Link href='/'>
+					<Logo size='full' />
+				</Link>
+				<div className='flex flex-col gap-1'>
+					<p className='font-2xl'> Let&apos;s make something amazing, together.</p>
+				</div>
+				<Button
+					body='Get in touch'
+					variant='dark'
+					href='/contact'
+				/>
 			</div>
-			<Button
-				body='Get in touch'
-				variant='dark'
-				href='/contact'
-			/>
+
+			<div className='flex flex-col items-end'>
+				<Link
+					className='underline-offset-4 transition-all duration-300 hover:underline'
+					href='/projects'>
+					Projects
+				</Link>
+				<Link
+					className='underline-offset-4 transition-all duration-300 hover:underline'
+					href='/blog'>
+					Blog
+				</Link>
+				<Link
+					className='underline-offset-4 transition-all duration-300 hover:underline'
+					href='/contact'>
+					Contact
+				</Link>
+			</div>
 		</div>
 	)
 }

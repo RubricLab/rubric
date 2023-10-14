@@ -24,7 +24,7 @@ export default function NavBar() {
 			<Link
 				href='/'
 				className='text-inherit'>
-				<Logo />
+				<Logo size='small' />
 			</Link>
 			<Button
 				body='Get in touch'
