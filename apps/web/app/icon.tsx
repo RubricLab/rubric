@@ -1,6 +1,6 @@
 import {ImageResponse} from 'next/server'
 import colors from 'tailwindcss/colors'
-import {MISC} from '../lib/constants'
+import {FONTS} from '../lib/constants'
 import config from '../tailwind.config'
 
 export const runtime = 'edge'
@@ -33,8 +33,8 @@ export default async function Icon() {
 			...size,
 			fonts: [
 				{
-					data: await (await fetch(MISC.FONTS.calSansURL)).arrayBuffer(),
-					name: 'cal-sans'
+					data: await (await fetch(FONTS.neueBit)).arrayBuffer(),
+					name: 'neue-bit'
 				}
 			]
 		}
