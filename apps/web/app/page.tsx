@@ -49,17 +49,6 @@ export default async function Home() {
 					Press <span className='mx-1 rounded-md bg-orange-100 px-3 py-2'>R</span> to
 					get started
 				</p>
-
-				<div className='relative h-[50vh] w-[50vw]'>
-					<Image
-						src='/images/desert.png'
-						alt='iMac with a picture of a desert'
-						fill
-						sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-						style={{objectFit: 'cover', objectPosition: 'center'}}
-						className='rounded-md border-2 border-black/40'
-					/>
-				</div>
 			</div>
 
 			<Projects />
