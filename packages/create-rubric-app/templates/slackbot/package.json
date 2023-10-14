@@ -22,7 +22,7 @@
 		"tailwindcss": "^3.3.3",
 		"typescript": "^5.1.6"
 	},
-	"name": "my-cool-app",
+	"name": "my-cool-slackbot",
 	"private": true,
 	"scripts": {
 		"build": "next build",
