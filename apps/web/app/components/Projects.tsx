@@ -35,9 +35,9 @@ const projects = [
 		href: 'https://cal.ai/'
 	},
 	{
-		title: 'Archetype',
-		desc: 'Component library and landing page.',
-		href: 'https://archetype.dev/'
+		title: 'Maige',
+		desc: 'Bot that labels your GitHub issues using AI.',
+		href: 'https://maige.app/'
 	},
 	{
 		title: 'Neat',

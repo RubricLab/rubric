@@ -1,36 +1,41 @@
-import {ArrowUpIcon} from 'lucide-react'
-
-const sections = [
-	{
-		title: 'Our goal is to turn your ideas into pixel-perfect reality.',
-		desc:
-			'We are speedy, efficient, and cover everything from wireframes to code.',
-		icon: <ArrowUpIcon className='h-10 w-10' />
-	},
-	{
-		title: 'Got a concept? We are here to make it shine.',
-		desc:
-			'User experience? That is our jam. We build cool, intuitive digital spaces your users would not want to leave.',
-		icon: <ArrowUpIcon className='h-10 w-10' />
-	},
-	{
-		title: 'Our home turf is frontend but we are game for everything.',
-		desc:
-			'Full-stack desktop, mobile apps, you name it. Years spent in the startup world have given us street-smarts. We have learned the ropes and can turn your vision into the next big thing. We partner with a few select clients each quarter, giving them our full attention.',
-		icon: <ArrowUpIcon className='h-10 w-10' />
-	}
-]
+import Link from 'next/link'
 
 export default function Services() {
 	return (
 		<div className='flex min-h-screen flex-col items-center justify-center bg-white p-8'>
-			<div className='flex flex-col gap-5'>
-				<h1 className='text-3xl'>A note to the ambitious ones.</h1>
-				<p>Our goal is to turn your ideas into pixel-perfect reality.</p>
-				<p>
-					We are speedy, efficient, and cover everything from wireframes to code.
-				</p>
-				<p>Got a concept? We are here to make it shine.</p>
+			<div className='flex flex-col gap-8'>
+				<div className='flex w-full flex-col gap-5'>
+					<h1 className='text-3xl'>A note to the builders.</h1>
+					<p>Our goal is to turn your ideas into pixel-perfect reality.</p>
+					<p>
+						We are speedy, efficient, and cover everything from wireframes to code.
+					</p>
+					<p>Got a concept? We are here to make it shine.</p>
+				</div>
+
+				<div className='flex w-full flex-col gap-2'>
+					<p>Signed,</p>
+					<p>
+						<Link
+							className='underline-offset-4 hover:underline'
+							href='https://twitter.com/dexterstorey'>
+							Dex
+						</Link>
+						,{' '}
+						<Link
+							className='underline-offset-4 hover:underline'
+							href='https://twitter.com/sarimrmalik'>
+							Sarim
+						</Link>
+						, and{' '}
+						<Link
+							className='underline-offset-4 hover:underline'
+							href='https://twitter.com/tedspare'>
+							Ted
+						</Link>
+						.
+					</p>
+				</div>
 			</div>
 		</div>
 	)
