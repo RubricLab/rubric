@@ -10,7 +10,7 @@ html {
 
 @layer base {
 	h1 {
-		@apply font-neue-bit text-7xl;
+		@apply font-neue-bit text-6xl md:text-7xl;
 	}
 	code {
 		@apply border-stone-700/80 bg-orange-200/60;

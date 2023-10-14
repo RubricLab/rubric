@@ -12,12 +12,14 @@ function Card({
 	href: string
 }) {
 	return (
-		<div className='flex items-center rounded-md bg-black/50 p-10 text-white'>
-			<p className='w-1/4 text-2xl'>{title}</p>
-			<p className='w-1/2 text-lg'>{desc}</p>
-			<div className='flex w-1/4 justify-center'>
+		<div className='flex gap-3 rounded-md bg-black/50 p-10 text-white sm:flex-row sm:items-center sm:gap-5'>
+			<div className='flex flex-col gap-3 sm:w-3/4 sm:flex-row sm:gap-5'>
+				<p className='text-2xl sm:w-1/3'>{title}</p>
+				<p className='text-lg sm:w-2/3'>{desc}</p>
+			</div>
+			<div className='flex items-center justify-center sm:w-1/4'>
 				<Link
-					className='group rounded-md bg-black p-5 text-inherit'
+					className='group h-fit rounded-md bg-black p-5 text-inherit'
 					href={href}>
 					<ArrowUpRight className='transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1' />
 				</Link>
@@ -46,7 +48,7 @@ const projects = [
 
 export default function Projects() {
 	return (
-		<div className='flex min-h-screen flex-col items-center justify-center gap-10 bg-gradient-to-b from-[#1C1F23] to-[#14171A]'>
+		<div className='flex min-h-screen flex-col items-center justify-center gap-10 bg-gradient-to-b from-[#1C1F23] to-[#14171A] p-8'>
 			<h1 className='text-white'>_featured projects</h1>
 			<div className='flex max-w-4xl flex-col gap-5'>
 				{projects.map(project => (
