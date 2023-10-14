@@ -50,15 +50,16 @@ export default async function Home() {
 					get started
 				</p>
 
-				{/* <div className='relative h-[50vh] w-full'>
+				<div className='relative h-[50vh] w-[50vw]'>
 					<Image
-						src='/images/iMac.png'
+						src='/images/desert.png'
 						alt='iMac with a picture of a desert'
 						fill
 						sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
 						style={{objectFit: 'cover', objectPosition: 'center'}}
+						className='rounded-md border-2 border-black/40'
 					/>
-				</div> */}
+				</div>
 			</div>
 
 			<Projects />

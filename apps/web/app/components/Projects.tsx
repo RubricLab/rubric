@@ -1,5 +1,6 @@
-import {ArrowRight, ArrowUpRight} from 'lucide-react'
+import {ArrowUpRight} from 'lucide-react'
 import Link from 'next/link'
+import Button from './Button'
 
 function Card({
 	title,
@@ -57,12 +58,11 @@ export default function Projects() {
 					/>
 				))}
 			</div>
-			<Link
+			<Button
+				body='Learn more'
+				variant='teal'
 				href='/projects'
-				className='font-neue-bit group flex items-center justify-between gap-10 rounded-md bg-[#A8CFCF] px-5 py-3'>
-				<span className='font-neue-bit text-2xl text-black'>Learn more</span>
-				<ArrowRight className='text-black transition-all duration-300 group-hover:translate-x-1.5' />
-			</Link>
+			/>
 		</div>
 	)
 }

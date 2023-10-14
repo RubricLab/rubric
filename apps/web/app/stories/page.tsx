@@ -12,7 +12,9 @@ type StoryCardProps = {
 	story: CaseStudy
 }
 
-const StoryCard = ({story: {title, summary, slug, imageUrl}}: StoryCardProps) => (
+const StoryCard = ({
+	story: {title, summary, slug, imageUrl}
+}: StoryCardProps) => (
 	<Link
 		className='bg-off-white group relative w-full rounded-xl border p-10 opacity-90 shadow-2xl transition-opacity hover:!opacity-100'
 		href={`/stories/${slug}`}

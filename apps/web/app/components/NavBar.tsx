@@ -1,5 +1,6 @@
+'use client'
 import Link from 'next/link'
-import ContactButton from './ContactButton'
+import Button from './Button'
 import Logo from './Logo'
 
 export default function NavBar() {
@@ -10,7 +11,11 @@ export default function NavBar() {
 				className='text-inherit'>
 				<Logo />
 			</Link>
-			<ContactButton variant='light' />
+			<Button
+				body='Get in touch'
+				variant='light'
+				onClick={() => null}
+			/>
 		</nav>
 	)
 }

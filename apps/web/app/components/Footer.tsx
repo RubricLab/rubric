@@ -1,4 +1,5 @@
-import ContactButton from './ContactButton'
+'use client'
+import Button from './Button'
 
 const Footer = () => {
 	return (
@@ -7,7 +8,11 @@ const Footer = () => {
 				<p className='font-2xl'>Got an idea? Get in touch.</p>
 				<p className='font-2xl'> Let&apos;s make something amazing, together.</p>
 			</div>
-			<ContactButton variant='dark' />
+			<Button
+				body='Get in touch'
+				variant='dark'
+				onClick={() => null}
+			/>
 		</div>
 	)
 }
