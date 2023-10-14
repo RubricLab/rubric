@@ -12,6 +12,9 @@ html {
 	h1 {
 		@apply font-neue-bit text-6xl md:text-7xl;
 	}
+	h2 {
+		@apply text-3xl;
+	}
 	code {
 		@apply border-stone-700/80 bg-orange-200/60;
 	}

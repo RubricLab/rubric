@@ -5,7 +5,7 @@ import Link from 'next/link'
 const variants = {
 	dark: 'border-2 border-black border-opacity-20 bg-[#121519] text-white',
 	light: 'bg-orange-100 text-black',
-	teal: 'bg-[#A8CFCF] text-black'
+	teal: 'bg-teal text-black'
 }
 
 export default function Button({
