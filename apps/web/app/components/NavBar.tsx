@@ -11,9 +11,9 @@ export default function NavBar() {
 				className='text-inherit'>
 				<Logo />
 			</Link>
-			<button className='flex w-fit items-center justify-between gap-20 rounded-md bg-orange-100 p-3 '>
+			<button className='group flex w-fit items-center justify-between gap-20 rounded-md bg-orange-100 px-5 py-3'>
 				<span className='font-neue-bit text-2xl'>Get in touch</span>
-				<ArrowRight />
+				<ArrowRight className='transition-all duration-300 group-hover:translate-x-1.5' />
 			</button>
 		</nav>
 	)
