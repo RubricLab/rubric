@@ -3,8 +3,8 @@ import {ArrowRight} from 'lucide-react'
 import Link from 'next/link'
 
 const variants = {
-	dark: 'border-2 border-black border-opacity-20 bg-[#121519]',
-	light: 'bg-orange-100',
+	dark: 'border-2 border-black border-opacity-20 bg-[#121519] text-white',
+	light: 'bg-orange-100 text-black',
 	teal: 'bg-[#A8CFCF] text-black'
 }
 

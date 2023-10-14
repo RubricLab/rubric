@@ -2,6 +2,7 @@ import Image from 'next/image'
 import {getMetadata} from '../lib/utils'
 import {getHomePageCopy} from '../sanity/sanity-utils'
 import {Author} from '../types/sanity'
+import Hero from './components/Hero'
 import Projects from './components/Projects'
 import Services from './components/Services'
 
@@ -39,18 +40,7 @@ export default async function Home() {
 	const result = await getHomePageCopy()
 	return (
 		<div className='flex flex-col'>
-			{/* Section: Hero */}
-			<div className='flex min-h-screen flex-col items-center justify-center gap-5'>
-				<p className='max-w-2xl text-center text-4xl sm:text-5xl'>
-					We&apos;re a digital studio making{' '}
-					<span className='font-neue-bit text-7xl'>ai-first</span> software.
-				</p>
-				<p>
-					Press <span className='mx-1 rounded-md bg-orange-100 px-3 py-2'>R</span> to
-					get started
-				</p>
-			</div>
-
+			<Hero />
 			<Projects />
 			<Services />
 		</div>

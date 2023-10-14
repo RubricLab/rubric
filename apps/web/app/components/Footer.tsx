@@ -11,7 +11,7 @@ const Footer = () => {
 			<Button
 				body='Get in touch'
 				variant='dark'
-				onClick={() => null}
+				href='/contact'
 			/>
 		</div>
 	)

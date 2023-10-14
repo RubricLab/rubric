@@ -14,7 +14,7 @@ export default function NavBar() {
 			<Button
 				body='Get in touch'
 				variant='light'
-				onClick={() => null}
+				href='/contact'
 			/>
 		</nav>
 	)
