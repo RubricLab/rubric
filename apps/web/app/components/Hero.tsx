@@ -6,8 +6,8 @@ export default function Hero() {
 				<span className='font-neue-bit text-7xl'>ai-first</span> software.
 			</p>
 			<p>
-				Press <span className='mx-1 rounded-md bg-orange-100 px-3 py-2'>R</span> to
-				get started
+				Press <span className='mx-1 rounded-md bg-orange-100 px-3 py-2'>R</span>{' '}
+				anytime to get started
 			</p>
 		</div>
 	)
