@@ -13,9 +13,9 @@ export default function Services() {
 					<p>Got a concept? We are here to make it shine.</p>
 				</div>
 
-				<div className='flex w-full flex-col gap-2'>
-					<p>Signed,</p>
-					<p>
+				<div className='flex w-full flex-col gap-2 '>
+					<p className='text-base italic'>Signed,</p>
+					<p className='font-semibold'>
 						<Link
 							className='underline-offset-4 hover:underline'
 							href='https://twitter.com/dexterstorey'>
