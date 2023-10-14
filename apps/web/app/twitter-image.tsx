@@ -1,6 +1,6 @@
 import {ImageResponse} from 'next/server'
 import colors from 'tailwindcss/colors'
-import {MISC} from '../lib/constants'
+import {FONTS} from '../lib/constants'
 import config from '../tailwind.config'
 import BackgroundGrid from './components/BackgroundGrid'
 
@@ -14,7 +14,6 @@ export const size = {
 }
 
 const backgroundColor = config.theme.colors['off-white']
-const fontImport = fetch(MISC.FONTS.calSansURL).then(res => res.arrayBuffer())
 
 type Props = {
 	params: object
@@ -44,15 +43,17 @@ export default async function Image({params}: Props) {
 					}}
 				/>
 				<div style={{fontSize: 128}}>Rubric</div>
-				<div style={{color: colors['orange']['700'], fontSize: 48}}>We build software.</div>
+				<div style={{color: colors['orange']['700'], fontSize: 48}}>
+					We build software.
+				</div>
 			</div>
 		),
 		{
 			...size,
 			fonts: [
 				{
-					data: await fontImport,
-					name: 'cal-sans'
+					data: await (await fetch(FONTS.neueBit)).arrayBuffer(),
+					name: 'neue-bit'
 				}
 			]
 		}
