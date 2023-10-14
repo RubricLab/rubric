@@ -3,6 +3,7 @@ import {getMetadata} from '../lib/utils'
 import {getHomePageCopy} from '../sanity/sanity-utils'
 import {Author} from '../types/sanity'
 import Projects from './components/Projects'
+import Services from './components/Services'
 
 export const metadata = getMetadata({title: 'Home'})
 
@@ -60,8 +61,8 @@ export default async function Home() {
 				</div> */}
 			</div>
 
-			{/* Section: Featured projects */}
 			<Projects />
+			<Services />
 		</div>
 	)
 }

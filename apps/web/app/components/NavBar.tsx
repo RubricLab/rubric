@@ -1,6 +1,5 @@
-'use client'
-import {ArrowRight} from 'lucide-react'
 import Link from 'next/link'
+import ContactButton from './ContactButton'
 import Logo from './Logo'
 
 export default function NavBar() {
@@ -11,10 +10,7 @@ export default function NavBar() {
 				className='text-inherit'>
 				<Logo />
 			</Link>
-			<button className='group flex w-fit items-center justify-between gap-20 rounded-md bg-orange-100 px-5 py-3'>
-				<span className='font-neue-bit text-2xl'>Get in touch</span>
-				<ArrowRight className='transition-all duration-300 group-hover:translate-x-1.5' />
-			</button>
+			<ContactButton variant='light' />
 		</nav>
 	)
 }

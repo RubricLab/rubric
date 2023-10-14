@@ -3,6 +3,7 @@ import PlausibleProvider from 'next-plausible'
 import {Plus_Jakarta_Sans} from 'next/font/google'
 import localFont from 'next/font/local'
 import {META} from '../lib/constants'
+import Footer from './components/Footer'
 import NavBar from './components/NavBar'
 import './styles.css'
 
@@ -34,7 +35,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 				<NavBar />
 				<ToastProvider />
 				<div className='z-10 w-full 2xl:max-w-6xl'>{children}</div>
-				{/* <Footer /> */}
+				<Footer />
 			</body>
 		</html>
 	)
