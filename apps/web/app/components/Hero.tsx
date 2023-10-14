@@ -1,6 +1,9 @@
+import Announcement from './Announcement'
+
 export default function Hero() {
 	return (
 		<div className='flex min-h-screen flex-col items-center justify-center gap-5'>
+			<Announcement />
 			<p className='max-w-2xl text-center text-4xl sm:text-5xl'>
 				We&apos;re a digital studio making{' '}
 				<span className='font-neue-bit text-7xl'>ai-first</span> software.
