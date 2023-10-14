@@ -5,7 +5,7 @@ import Logo from './Logo'
 
 const Footer = () => {
 	return (
-		<div className='z-20 flex w-screen items-center justify-between bg-gradient-to-b from-[#1C1F23] to-[#14171A] px-5 py-20 text-white sm:px-10'>
+		<div className='z-20 flex w-screen flex-col items-center justify-start gap-3 bg-gradient-to-b from-[#1C1F23]  to-[#14171A] px-5 py-20 text-white sm:flex-row sm:justify-between sm:gap-0 sm:px-10'>
 			<div className='flex flex-col gap-3'>
 				<Link href='/'>
 					<Logo size='full' />
@@ -21,7 +21,7 @@ const Footer = () => {
 				/>
 			</div>
 
-			<div className='flex flex-col items-end'>
+			<div className='flex w-full flex-col items-end'>
 				<Link
 					className='underline-offset-4 transition-all duration-300 hover:underline'
 					href='/projects'>
