@@ -1,7 +1,6 @@
 import {ImageResponse} from 'next/server'
 import colors from 'tailwindcss/colors'
 import {FONTS} from '../lib/constants'
-import config from '../tailwind.config'
 
 export const runtime = 'edge'
 
@@ -17,8 +16,8 @@ export default async function Icon() {
 			<div
 				style={{
 					alignItems: 'center',
-					background: colors['orange']['700'],
-					color: config.theme.colors['off-white'],
+					background: colors['white'],
+					color: colors['black'],
 					display: 'flex',
 					fontSize: 28,
 					height: '100%',
