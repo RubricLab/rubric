@@ -30,6 +30,7 @@ export default function NavBar() {
 				body='Get in touch'
 				variant='light'
 				href='/contact'
+				className='w-fit'
 			/>
 		</nav>
 	)

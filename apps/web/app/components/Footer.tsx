@@ -17,6 +17,7 @@ const Footer = () => {
 					body='Get in touch'
 					variant='dark'
 					href='/contact'
+					className='w-fit'
 				/>
 			</div>
 

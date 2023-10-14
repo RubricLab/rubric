@@ -1,6 +1,7 @@
 'use client'
 import {ArrowRight} from 'lucide-react'
 import Link from 'next/link'
+import {cn} from '../../lib/utils'
 
 const variants = {
 	dark: 'border-2 border-black border-opacity-20 bg-[#121519] text-white',
@@ -12,18 +13,23 @@ export default function Button({
 	body,
 	variant,
 	href,
-	onClick
+	onClick,
+	className
 }: {
 	body: string
 	variant: 'dark' | 'light' | 'teal'
 	href?: string
 	onClick?: () => void
+	className?: string
 }) {
 	// Link
 	if (href)
 		return (
 			<Link
-				className={`group flex w-fit items-center justify-between gap-20 rounded-md ${variants[variant]} px-5 py-3`}
+				className={cn(
+					`group flex w-full items-center justify-between gap-20 rounded-md ${variants[variant]} px-5 py-3`,
+					className
+				)}
 				href={href}>
 				<span className='font-neue-bit text-2xl'>{body}</span>
 				<ArrowRight className='transition-all duration-300 group-hover:translate-x-1.5' />
@@ -33,7 +39,10 @@ export default function Button({
 		return (
 			<button
 				onClick={onClick}
-				className={`group flex w-fit items-center justify-between gap-20 rounded-md ${variants[variant]} px-5 py-3`}>
+				className={cn(
+					`group flex w-full items-center justify-between gap-20 rounded-md ${variants[variant]} px-5 py-3`,
+					className
+				)}>
 				<span className='font-neue-bit text-2xl'>{body}</span>
 				<ArrowRight className='transition-all duration-300 group-hover:translate-x-1.5' />
 			</button>

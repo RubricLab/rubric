@@ -1,4 +1,6 @@
+import clsx, {type ClassValue} from 'clsx'
 import {Metadata} from 'next'
+import {twMerge} from 'tailwind-merge'
 import {DEFAULT_META, META} from './constants'
 
 // Parse string to Date object and return "Month DD, YYYY" format
@@ -15,7 +17,15 @@ export function parseDate(input: Date | string) {
 /**
  * Get metadata for a page. Optionally override title, description, and preview image URL.
  */
-export const getMetadata = ({title, description, previewImageUrl}: {title?: string; description?: string; previewImageUrl?: string}): Metadata => {
+export const getMetadata = ({
+	title,
+	description,
+	previewImageUrl
+}: {
+	title?: string
+	description?: string
+	previewImageUrl?: string
+}): Metadata => {
 	const combinedTitle = `${title ? `${title} | ` : ''}${META.title}`
 	return {
 		description: description || DEFAULT_META.description,
@@ -40,4 +50,9 @@ export const getMetadata = ({title, description, previewImageUrl}: {title?: stri
 		},
 		...DEFAULT_META
 	}
+}
+
+// Allows merging of Tailwind class
+export function cn(...inputs: ClassValue[]) {
+	return twMerge(clsx(inputs))
 }

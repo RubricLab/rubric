@@ -19,7 +19,7 @@ const ProjectCard = ({project: {url, name, content}}: ProjectCardProps) => (
 		target='_blank'>
 		<ArrowUpRightIcon className='absolute right-0 top-0 h-32 w-32 opacity-0 transition-opacity group-hover:opacity-20' />
 		<div className='w-full space-y-4 text-black/60 transition-colors group-hover:text-black'>
-			<h2>{name}</h2>
+			<h2 className='font-neue-bit text-4xl'>{name}</h2>
 			<PortableText value={content} />
 		</div>
 	</Link>

@@ -64,6 +64,7 @@ export default function Projects() {
 				body='Learn more'
 				variant='teal'
 				href='/projects'
+				className='w-fit'
 			/>
 		</div>
 	)
