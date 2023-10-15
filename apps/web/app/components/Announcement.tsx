@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Announcement() {
 	return (
 		<Link
-			className='group flex items-center gap-2 rounded-full border-2 border-neutral-400 bg-neutral-200 px-5 py-3 text-black'
+			className='group flex items-center gap-2 rounded-full border-2 border-neutral-500 bg-neutral-200 px-5 py-3 text-black shadow-lg dark:bg-neutral-950 dark:text-white'
 			href='https://cal.ai'>
 			<p>
 				<span className='font-semibold'>New:</span> Check out our launch with Cal.ai

@@ -14,7 +14,10 @@ export default function Grid({grid, running}: Props) {
 						<div
 							key={`${i},${j}`}
 							className={`aspect-square w-full ${
-								cell && (running ? 'bg-neutral-200' : 'bg-black')
+								cell &&
+								(running
+									? 'bg-neutral-200 dark:bg-neutral-800'
+									: 'bg-black dark:bg-white')
 							}`}
 						/>
 					))}

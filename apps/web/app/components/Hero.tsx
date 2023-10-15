@@ -25,16 +25,18 @@ export default function Hero() {
 						animate={{opacity: 1}}
 						exit={{opacity: 0}}
 						transition={{duration: 3, delay: 1}}
-						className='flex w-full flex-col items-center gap-10'>
+						className='flex w-full flex-col items-center gap-16'>
 						<Announcement />
-						<div className='flex flex-col items-center gap-5'>
+						<div className='flex flex-col items-center gap-16 text-black dark:text-white'>
 							<p className='max-w-2xl text-center text-4xl sm:text-5xl'>
 								We&apos;re a digital studio making{' '}
 								<span className='font-neue-bit text-7xl'>ai-first</span> software.
 							</p>
 							<p>
 								Press{' '}
-								<span className='mx-1 rounded-md bg-black px-3 py-2 text-white'>R</span>{' '}
+								<span className='mx-1 rounded-md bg-black px-3 py-2 text-white dark:bg-white dark:text-black'>
+									R
+								</span>{' '}
 								anytime to get started
 							</p>
 						</div>

@@ -1,11 +1,14 @@
-export default function Title({size}: {size: 'small' | 'full'}) {
+export default function Title({
+	size,
+	className
+}: {
+	size: 'small' | 'full'
+	className?: string
+}) {
 	return (
-		<p className='text-2xl font-semibold'>
-			<span>
-				R<span className='font-neue-bit text-4xl font-bold'>u</span>b
-				<span className='font-neue-bit text-4xl'>r</span>ic
-			</span>{' '}
-			{size === 'full' && <span>Labs</span>}
+		<p
+			className={`font-neue-bit mt-[3px] text-4xl text-black dark:text-white ${className}`}>
+			<span>Rubric</span> {size === 'full' && <span>Labs</span>}
 		</p>
 	)
 }
