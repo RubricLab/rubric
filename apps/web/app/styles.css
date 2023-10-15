@@ -5,7 +5,7 @@
 @import '@rubriclab/ui/build.css';
 
 html {
-	@apply bg-white dark:bg-black;
+	@apply bg-white text-black dark:bg-black dark:text-white;
 }
 
 @layer base {

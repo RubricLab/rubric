@@ -41,8 +41,7 @@ const projects = [
 	},
 	{
 		title: 'Neat',
-		desc:
-			'Your unified inbox for developer notifications. Used by 3000+ developers.',
+		desc: 'A unified inbox for your notifications. Used by 3000+ developers.',
 		href: 'https://neat.run/'
 	}
 ]

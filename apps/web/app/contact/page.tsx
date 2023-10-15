@@ -44,14 +44,14 @@ export default function Contact() {
 					variant='dark'
 					onClick={() => handleSubmit()}
 				/>
-				<span className='text-sm'>
+				<p className='text-sm'>
 					Alternatively, feel free to email us at{' '}
 					<button
 						className='font-semibold underline-offset-4 hover:underline'
 						onClick={() => copyToClipboard('hello@rubriclab.com')}>
 						hello@rubriclab.com
 					</button>
-				</span>
+				</p>
 			</div>
 		</div>
 	)
