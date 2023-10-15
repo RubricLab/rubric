@@ -19,7 +19,8 @@
 			"env": [
 				"NEXT_PUBLIC_SANITY_API_VERSION",
 				"NEXT_PUBLIC_SANITY_DATASET",
-				"NEXT_PUBLIC_SANITY_PROJECT"
+				"NEXT_PUBLIC_SANITY_PROJECT",
+				"SLACK_KEY"
 			],
 			"outputs": ["!.next/cache/**", ".next/**", "dist/**"]
 		},
@@ -32,7 +33,8 @@
 			"env": [
 				"NEXT_PUBLIC_SANITY_API_VERSION",
 				"NEXT_PUBLIC_SANITY_DATASET",
-				"NEXT_PUBLIC_SANITY_PROJECT"
+				"NEXT_PUBLIC_SANITY_PROJECT",
+				"SLACK_KEY"
 			],
 			"persistent": true
 		},

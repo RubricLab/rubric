@@ -15,6 +15,12 @@ html {
 	h2 {
 		@apply text-3xl;
 	}
+	input {
+		@apply w-full rounded-md border p-3 text-neutral-600 focus:outline-none;
+	}
+	textarea {
+		@apply h-32 w-full resize-none rounded-md border p-3 text-neutral-500 focus:outline-none;
+	}
 	code {
 		@apply border-stone-700/80 bg-orange-200/60;
 	}
