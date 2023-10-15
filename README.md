@@ -52,13 +52,15 @@ bun dev
 To develop a subrepo, run:
 
 ```sh
-bun workspace [subrepo name] dev
+cd apps/[subrepo_name]
+bun run dev
 ```
 
 To add a dependency to a subrepo, run:
 
 ```sh
-bun workspace [subrepo name] add dependency
+cd apps/[subrepo_name]
+bun i dependency
 ```
 
 To add a global dependency, run:

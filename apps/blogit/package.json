@@ -1,9 +1,9 @@
 {
 	"dependencies": {
-		"@slack/bolt": "^3.13.3",
+		"@slack/bolt": "^3.14.0",
 		"@slack/events-api": "^3.0.1",
 		"@slack/web-api": "^6.9.0",
-		"next": "13.4.19",
+		"next": "^13.5.4",
 		"openai-edge": "^1.2.2"
 	},
 	"name": "blogit",
@@ -14,8 +14,9 @@
 		"url": "https://github.com/RubricLab/rubric.git"
 	},
 	"scripts": {
+		"bleed": "npx yarn-upgrade-all -W",
 		"build": "next build",
-		"dev": "next dev",
+		"dev": "next dev -p 3002",
 		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx",
 		"start": "next start"
 	},

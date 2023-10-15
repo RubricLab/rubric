@@ -1,5 +1,6 @@
 import {ToastProvider} from '@rubriclab/ui'
 import PlausibleProvider from 'next-plausible'
+import {Plus_Jakarta_Sans} from 'next/font/google'
 import localFont from 'next/font/local'
 import {META} from '../lib/constants'
 import BackgroundGrid from './components/BackgroundGrid'
@@ -7,9 +8,11 @@ import Footer from './components/Footer'
 import NavBar from './components/NavBar'
 import './styles.css'
 
-const calSans = localFont({
-	src: '../public/fonts/CalSans-SemiBold.ttf',
-	variable: '--font-cal-sans'
+const jakartaSans = Plus_Jakarta_Sans({subsets: ['latin']})
+
+const neueBit = localFont({
+	src: '../public/fonts/PPNeueBit-Bold.otf',
+	variable: '--font-neue-bit'
 })
 
 export const metadata = {
@@ -28,11 +31,12 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 			<head>
 				<PlausibleProvider domain='rubriclab.com' />
 			</head>
-			<body className={`${calSans.variable} relative flex h-full min-h-screen w-full flex-col items-center`}>
-				<BackgroundGrid className='fixed h-full w-full' />
+			<body
+				className={`${jakartaSans.className} ${neueBit.variable} relative flex h-full min-h-screen w-full flex-col items-center`}>
 				<NavBar />
+				<BackgroundGrid className='fixed z-0 h-full w-full' />
 				<ToastProvider />
-				<div className='z-10 w-full p-5 pt-0 sm:px-10 2xl:max-w-6xl'>{children}</div>
+				<div className='z-10 w-full 2xl:max-w-6xl'>{children}</div>
 				<Footer />
 			</body>
 		</html>
