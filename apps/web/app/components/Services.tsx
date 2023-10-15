@@ -5,12 +5,32 @@ export default function Services() {
 		<div className='flex min-h-screen flex-col items-center justify-center bg-white p-8'>
 			<div className='flex flex-col gap-8'>
 				<div className='flex w-full flex-col gap-5'>
-					<h1 className='text-3xl'>A note to the builders.</h1>
-					<p>Our goal is to turn your ideas into pixel-perfect reality.</p>
+					<h1 className='text-7xl'>A note to the builders.</h1>
 					<p>
-						We are speedy, efficient, and cover everything from wireframes to code.
+						Hello world! We&apos;re Rubric. A nomadic team of engineers and artists
+						working on the next generation of technology.
 					</p>
-					<p>Got a concept? We are here to make it shine.</p>
+					<p>
+						We have been tinkering, hacking, breaking and building for over a decade
+						and could not be more excited and optimistic about the future.
+					</p>
+					<p>
+						Artificial Intelligence is a full fledged platform shift, akin to the
+						invention of the internet. We believe that it is important to approach
+						this shift with a child-like sense of wonder. To be bold, curious and
+						open.
+					</p>
+					<p>
+						Over our careers, we have built a framework for problem solving that
+						prioritizes simple, fast and scalable solutions to complex problems and
+						approch all of our projects with empathy for the people that use them.
+					</p>
+					<p>
+						We want to sit down with you, skip the BS, break the rules and figure out
+						how we can add value. We commit to being honest, open and fun. If you have
+						an idea, project or problem, drop use a line. Let&apos;s melt some
+						servers.
+					</p>
 				</div>
 
 				<div className='flex w-full flex-col gap-2 '>
@@ -19,7 +39,7 @@ export default function Services() {
 						<Link
 							className='underline-offset-4 hover:underline'
 							href='https://twitter.com/dexterstorey'>
-							Dex
+							Dexter
 						</Link>
 						,{' '}
 						<Link
