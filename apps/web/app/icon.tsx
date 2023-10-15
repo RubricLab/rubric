@@ -20,58 +20,58 @@ export default async function Icon() {
 					justifyContent: 'center'
 				}}>
 				<svg
-					width='30'
-					height='30'
-					viewBox='0 0 30 30'
+					width='32'
+					height='32'
+					viewBox='0 0 32 32'
 					fill='none'
 					xmlns='http://www.w3.org/2000/svg'>
 					<g clip-path='url(#clip0_331_2)'>
 						<rect
-							width='30'
-							height='30'
+							width='32'
+							height='32'
+							fill='black'
+						/>
+						<rect
+							x='4'
+							y='20.0002'
+							width='8'
+							height='8'
 							fill='white'
 						/>
 						<rect
-							x='3'
-							y='19.0002'
+							x='4'
+							y='11.9998'
 							width='8'
 							height='8'
-							fill='black'
+							fill='white'
 						/>
 						<rect
-							x='3'
-							y='10.9998'
+							x='4'
+							y='4'
 							width='8'
 							height='8'
-							fill='black'
+							fill='white'
 						/>
 						<rect
-							x='3'
-							y='3'
+							x='12.0001'
+							y='11.9998'
 							width='8'
 							height='8'
-							fill='black'
+							fill='white'
 						/>
 						<rect
-							x='11.0001'
-							y='10.9998'
+							x='19.9999'
+							y='4'
 							width='8'
 							height='8'
-							fill='black'
-						/>
-						<rect
-							x='18.9999'
-							y='3'
-							width='8'
-							height='8'
-							fill='black'
+							fill='white'
 						/>
 					</g>
 					<defs>
 						<clipPath id='clip0_331_2'>
 							<rect
-								width='30'
-								height='30'
+								width='32'
+								height='32'
 								fill='white'
 							/>
 						</clipPath>

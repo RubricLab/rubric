@@ -3,7 +3,7 @@ import tailwindConfig from '../../tailwind.config'
 const lineAttributes = {
 	fill: 'none',
 	opacity: 0.2,
-	stroke: tailwindConfig.theme.colors['black'],
+	stroke: tailwindConfig.theme.colors['white'],
 	strokeWidth: 1
 }
 

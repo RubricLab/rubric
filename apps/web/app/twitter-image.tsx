@@ -24,7 +24,7 @@ export default async function Image({params}: Props) {
 			<div
 				style={{
 					alignItems: 'center',
-					background: colors['white'],
+					background: colors['black'],
 					display: 'flex',
 					flexDirection: 'column',
 					height: '100%',
@@ -39,8 +39,8 @@ export default async function Image({params}: Props) {
 						width: size.width
 					}}
 				/>
-				<div style={{fontSize: 200}}>Rubric</div>
-				<div style={{color: colors['black'], fontSize: 48}}>
+				<div style={{color: colors['white'], fontSize: 200}}>Rubric</div>
+				<div style={{color: colors['white'], fontSize: 48}}>
 					A digital studio making ai-first software.
 				</div>
 			</div>
