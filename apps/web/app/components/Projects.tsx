@@ -62,7 +62,7 @@ export default function Projects() {
 			</div>
 			<Button
 				body='Learn more'
-				variant='teal'
+				variant='light'
 				href='/projects'
 				className='w-fit'
 			/>

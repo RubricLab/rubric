@@ -5,7 +5,7 @@ import {cn} from '../../lib/utils'
 
 const variants = {
 	dark: 'border-2 border-black border-opacity-20 bg-[#121519] text-white',
-	light: 'bg-orange-100 text-black',
+	light: 'bg-white text-black',
 	teal: 'bg-teal text-black'
 }
 
