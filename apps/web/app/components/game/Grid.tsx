@@ -1,9 +1,8 @@
 interface Props {
 	grid: number[][]
-	onClick: (i: number, j: number) => void
 }
 
-export default function Grid({grid, onClick}: Props) {
+export default function Grid({grid}: Props) {
 	return (
 		<div>
 			{grid.map((row, i) => (
@@ -13,7 +12,6 @@ export default function Grid({grid, onClick}: Props) {
 					{row.map((cell, j) => (
 						<div
 							key={`${i},${j}`}
-							onClick={() => onClick(i, j)}
 							className={`aspect-square w-full border ${cell && 'bg-black'}`}
 						/>
 					))}

@@ -1,5 +1,4 @@
 'use client'
-
 import {useEffect, useState} from 'react'
 import Grid from './Grid'
 
@@ -23,6 +22,22 @@ function generateGrid(gridSize: GridSize) {
 	let grid: number[][] = []
 	for (let i = 0; i < gridSize.rows; i++)
 		grid.push(Array.from(Array(gridSize.cols), () => 0))
+
+	// Center of the grid
+	const centerRow = Math.floor(gridSize.rows / 2)
+	const centerCol = Math.floor(gridSize.cols / 2)
+
+	// Your pattern
+	const pattern = [
+		[1, 0, 1],
+		[1, 1, 0],
+		[1, 0, 0]
+	]
+
+	// Insert the pattern into the grid at the center
+	for (let i = 0; i < pattern.length; i++)
+		for (let j = 0; j < pattern[0].length; j++)
+			grid[centerRow - 1 + i][centerCol - 1 + j] = pattern[i][j]
 
 	return grid
 }
@@ -56,9 +71,8 @@ function getNeighbours(grid: number[][], i: number, j: number) {
 
 export default function Game() {
 	let min_width = 80 // Minimum width for a box in pixels
+	let speed = 50
 	const [running, setRunning] = useState(false)
-	const [gen, setGen] = useState(0)
-	const [speed, setSpeed] = useState(50)
 
 	// Calculate even grid dimensions based on screen size
 	const calculateEvenGridSize = (): GridSize => {
@@ -72,14 +86,8 @@ export default function Game() {
 		return {rows, cols}
 	}
 
-	const [gridSize, setGridSize] = useState<GridSize>(calculateEvenGridSize())
+	const [gridSize, setGridSize] = useState<GridSize>({cols: 40, rows: 20})
 	const [grid, setGrid] = useState(generateGrid(gridSize))
-
-	function handleToggleTile(i: number, j: number) {
-		let newGrid = copyGrid(grid)
-		newGrid[i][j] = newGrid[i][j] ? 0 : 1
-		setGrid(newGrid)
-	}
 
 	useEffect(() => {
 		// Recalculate grid size when window is resized
@@ -95,6 +103,11 @@ export default function Game() {
 	}, [])
 
 	useEffect(() => {
+		setGridSize(calculateEvenGridSize())
+		setGrid(generateGrid(calculateEvenGridSize()))
+	}, [])
+
+	useEffect(() => {
 		console.log(running)
 		if (!running) return
 		const timer = setInterval(
@@ -105,7 +118,6 @@ export default function Game() {
 
 					return getNextGen(current)
 				})
-				setGen(gen => gen + 1)
 			},
 			1000 - speed * 10
 		)
@@ -114,16 +126,10 @@ export default function Game() {
 	}, [running, speed])
 
 	return (
-		<div className='min-h-screen w-full'>
-			<Grid
-				grid={grid}
-				onClick={handleToggleTile}
-			/>
-			<button
-				color={running ? 'yellow' : 'green'}
-				onClick={() => setRunning(prev => !prev)}>
-				{running ? 'Stop' : 'Start'}
-			</button>
+		<div
+			className='absolute left-0 top-0 z-[-1] min-h-screen w-full'
+			onClick={() => setRunning(prev => !prev)}>
+			<Grid grid={grid} />
 		</div>
 	)
 }
