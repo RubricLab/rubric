@@ -4,8 +4,8 @@ import tailwindConfig from '../../tailwind.config'
 
 const lineAttributes = {
 	fill: 'none',
-	opacity: 0.2,
-	stroke: tailwindConfig.theme.colors['white'],
+	opacity: 0.3,
+	stroke: tailwindConfig.theme.colors['neutral']['500'],
 	strokeWidth: 1
 }
 
