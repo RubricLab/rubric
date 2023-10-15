@@ -24,7 +24,7 @@ export default function Contact() {
 	}
 
 	return (
-		<div className='flex min-h-screen flex-col items-center justify-center p-5 sm:px-10'>
+		<div className='flex min-h-screen flex-col items-center justify-center gap-8 p-5 sm:px-10'>
 			<h1>Get in touch</h1>
 			<div className='flex w-full max-w-sm flex-col gap-5'>
 				<input
@@ -39,6 +39,8 @@ export default function Contact() {
 					placeholder='Message'
 					onChange={e => setMessage(e.target.value)}
 				/>
+			</div>
+			<div className='flex flex-col gap-3'>
 				<Button
 					body='Submit'
 					variant='dark'

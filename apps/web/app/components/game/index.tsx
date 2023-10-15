@@ -76,7 +76,6 @@ export default function Game({
 	running: boolean
 	setRunning: Dispatch<SetStateAction<boolean>>
 }) {
-	console.log(running)
 	let min_width = 60 // Minimum width for a box in pixels
 	let speed = 50
 

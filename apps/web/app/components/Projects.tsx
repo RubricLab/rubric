@@ -12,7 +12,7 @@ function Card({
 	href: string
 }) {
 	return (
-		<div className='flex gap-3 rounded-xl border-2 border-neutral-500 bg-neutral-200 p-10 text-black text-black shadow-2xl dark:bg-neutral-950 dark:text-white sm:flex-row sm:items-center sm:gap-5'>
+		<div className='flex gap-3 rounded-xl border-2 border-neutral-500 bg-neutral-200 p-10 text-black shadow-2xl dark:bg-neutral-950 dark:text-white sm:flex-row sm:items-center sm:gap-5'>
 			<div className='flex flex-col items-center gap-3 sm:w-3/4 sm:flex-row sm:gap-5'>
 				<h1 className='text-5xl sm:w-1/3'>{title}</h1>
 				<p className='text-lg sm:w-2/3'>{desc}</p>
