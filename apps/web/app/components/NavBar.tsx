@@ -3,7 +3,7 @@ import Link from 'next/link'
 import {useRouter} from 'next/navigation'
 import {useEffect} from 'react'
 import Button from './Button'
-import Logo from './Logo'
+import Title from './Title'
 
 export default function NavBar() {
 	const router = useRouter()
@@ -24,7 +24,7 @@ export default function NavBar() {
 			<Link
 				href='/'
 				className='text-inherit'>
-				<Logo size='small' />
+				<Title size='small' />
 			</Link>
 			<Button
 				body='Get in touch'

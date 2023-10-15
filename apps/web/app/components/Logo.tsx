@@ -1,11 +1,22 @@
-export default function Logo({size}: {size: 'small' | 'full'}) {
+export default function Logo() {
+	const block = 'h-10 w-10 bg-black'
+	const invisible = 'h-10 w-10 bg-transparent'
 	return (
-		<p className='text-2xl font-semibold'>
-			<span>
-				R<span className='font-neue-bit text-4xl font-bold'>u</span>b
-				<span className='font-neue-bit text-4xl'>r</span>ic
-			</span>{' '}
-			{size === 'full' && <span>Labs</span>}
-		</p>
+		<div className='grid grid-cols-3 grid-rows-3'>
+			{/* First row */}
+			<span className={block} />
+			<span className={invisible} />
+			<span className={block} />
+
+			{/* Second row */}
+			<span className={block} />
+			<span className={block} />
+			<span className={invisible} />
+
+			{/* Third row */}
+			<span className={block} />
+			<span className={invisible} />
+			<span className={invisible} />
+		</div>
 	)
 }
