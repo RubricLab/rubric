@@ -5,10 +5,13 @@ import Title from './Title'
 
 const Footer = () => {
 	return (
-		<div className='z-20 flex w-screen items-start justify-between gap-8 bg-gradient-to-b from-[#1C1F23] to-[#14171A] px-5 py-20 text-white sm:items-center sm:gap-0 sm:px-10'>
+		<div className='z-20 flex w-screen items-start justify-between gap-8 bg-black px-5 py-20 text-white dark:bg-white dark:text-black sm:items-center sm:gap-0 sm:px-10'>
 			<div className='flex flex-col gap-3'>
 				<Link href='/'>
-					<Title size='full' />
+					<Title
+						invert
+						size='full'
+					/>
 				</Link>
 				<div className='flex flex-col gap-1'>
 					<p className='font-2xl'> Let&apos;s make something amazing, together.</p>

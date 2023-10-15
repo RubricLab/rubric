@@ -5,12 +5,12 @@
 @import '@rubriclab/ui/build.css';
 
 html {
-	@apply bg-white;
+	@apply bg-white dark:bg-black;
 }
 
 @layer base {
 	h1 {
-		@apply font-neue-bit text-6xl md:text-7xl;
+		@apply font-neue-bit text-6xl text-black dark:text-white md:text-7xl;
 	}
 	h2 {
 		@apply text-3xl;

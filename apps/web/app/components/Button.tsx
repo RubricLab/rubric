@@ -4,8 +4,8 @@ import Link from 'next/link'
 import {cn} from '../../lib/utils'
 
 const variants = {
-	dark: 'border-2 border-black border-opacity-20 bg-[#121519] text-white',
-	light: 'bg-white text-black',
+	dark: 'border-2 border-black border-opacity-20 bg-[#151617] text-white',
+	light: 'bg-neutral-100 text-black',
 	teal: 'bg-teal text-black'
 }
 

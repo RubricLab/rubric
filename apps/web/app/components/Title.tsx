@@ -1,11 +1,16 @@
-export default function Title({size}: {size: 'small' | 'full'}) {
+export default function Title({
+	size,
+	invert
+}: {
+	size: 'small' | 'full'
+	invert?: boolean
+}) {
 	return (
-		<p className='text-2xl font-semibold'>
-			<span>
-				R<span className='font-neue-bit text-4xl font-bold'>u</span>b
-				<span className='font-neue-bit text-4xl'>r</span>ic
-			</span>{' '}
-			{size === 'full' && <span>Labs</span>}
+		<p
+			className={`font-neue-bit mt-[3px] text-4xl ${
+				invert ? 'text-white dark:text-black' : 'text-black dark:text-white'
+			}`}>
+			<span>Rubric</span> {size === 'full' && <span>Labs</span>}
 		</p>
 	)
 }
