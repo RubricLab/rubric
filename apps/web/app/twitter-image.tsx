@@ -1,7 +1,6 @@
 import {ImageResponse} from 'next/server'
 import colors from 'tailwindcss/colors'
-import {MISC} from '../lib/constants'
-import config from '../tailwind.config'
+import {FONTS} from '../lib/constants'
 import BackgroundGrid from './components/BackgroundGrid'
 
 export const runtime = 'edge'
@@ -12,9 +11,6 @@ export const size = {
 	height: 630,
 	width: 1200
 }
-
-const backgroundColor = config.theme.colors['off-white']
-const fontImport = fetch(MISC.FONTS.calSansURL).then(res => res.arrayBuffer())
 
 type Props = {
 	params: object
@@ -28,7 +24,7 @@ export default async function Image({params}: Props) {
 			<div
 				style={{
 					alignItems: 'center',
-					background: backgroundColor,
+					background: colors['white'],
 					display: 'flex',
 					flexDirection: 'column',
 					height: '100%',
@@ -43,16 +39,18 @@ export default async function Image({params}: Props) {
 						width: size.width
 					}}
 				/>
-				<div style={{fontSize: 128}}>Rubric</div>
-				<div style={{color: colors['orange']['700'], fontSize: 48}}>We build software.</div>
+				<div style={{fontSize: 200}}>Rubric</div>
+				<div style={{color: colors['black'], fontSize: 48}}>
+					A digital studio making ai-first software.
+				</div>
 			</div>
 		),
 		{
 			...size,
 			fonts: [
 				{
-					data: await fontImport,
-					name: 'cal-sans'
+					data: await (await fetch(FONTS.neueBit)).arrayBuffer(),
+					name: 'neueBit'
 				}
 			]
 		}
