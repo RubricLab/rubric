@@ -31,7 +31,7 @@ const PostCard = ({post}: PostCardProps) => {
 	const date = parseDate(post.publishedAt)
 	return (
 		<Link
-			className='bg-off-white/90 duration-400 group relative flex flex-col rounded-md border border-stone-700/80 text-black transition-colors hover:bg-black/80'
+			className='bg-off-white/90 duration-400 group relative flex flex-col rounded-md border border-stone-700/80 text-black transition-colors hover:bg-opacity-80'
 			href={`/blog/${post.slug}`}
 			key={post._id}>
 			<ArrowUpRightIcon className='duration-400 absolute right-2 top-2 h-14 w-14 opacity-0 transition-opacity group-hover:opacity-100' />
@@ -47,8 +47,8 @@ const PostCard = ({post}: PostCardProps) => {
 			</div>
 			{/* Post details */}
 			<div className='flex flex-col p-5'>
-				<p className='text-base text-white'>{date}</p>
-				<h3 className='text-white'>{post.title}</h3>
+				<p className='text-base '>{date}</p>
+				<h3>{post.title}</h3>
 			</div>
 		</Link>
 	)
