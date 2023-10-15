@@ -1,7 +1,4 @@
 import {ImageResponse} from 'next/server'
-import colors from 'tailwindcss/colors'
-import {MISC} from '../lib/constants'
-import config from '../tailwind.config'
 
 export const runtime = 'edge'
 
@@ -14,29 +11,52 @@ export const size = {
 export default async function Icon() {
 	return new ImageResponse(
 		(
-			<div
-				style={{
-					alignItems: 'center',
-					background: colors['orange']['700'],
-					color: config.theme.colors['off-white'],
-					display: 'flex',
-					fontSize: 28,
-					height: '100%',
-					justifyContent: 'center',
-					paddingBottom: '5px',
-					width: '100%'
-				}}>
-				R
-			</div>
-		),
-		{
-			...size,
-			fonts: [
-				{
-					data: await (await fetch(MISC.FONTS.calSansURL)).arrayBuffer(),
-					name: 'cal-sans'
-				}
-			]
-		}
+			<svg
+				width='90'
+				height='90'
+				viewBox='0 0 9 9'
+				xmlns='http://www.w3.org/2000/svg'>
+				<rect
+					width='9'
+					height='9'
+					fill='black'
+				/>
+				<rect
+					x='3'
+					y='5'
+					width='1'
+					height='1'
+					fill='white'
+				/>
+				<rect
+					x='3'
+					y='4'
+					width='1'
+					height='1'
+					fill='white'
+				/>
+				<rect
+					x='3'
+					y='3'
+					width='1'
+					height='1'
+					fill='white'
+				/>
+				<rect
+					x='4'
+					y='4'
+					width='1'
+					height='1'
+					fill='white'
+				/>
+				<rect
+					x='5'
+					y='3'
+					width='1'
+					height='1'
+					fill='white'
+				/>
+			</svg>
+		)
 	)
 }
