@@ -5,8 +5,8 @@ import Title from './Title'
 
 const Footer = () => {
 	return (
-		<div className='z-20 flex w-screen items-start justify-between gap-8 bg-black px-5 py-20 text-white dark:bg-white dark:text-black sm:items-center sm:gap-0 sm:px-10'>
-			<div className='flex flex-col gap-3'>
+		<div className='z-20 flex w-screen flex-col-reverse items-center justify-between gap-10 bg-black px-5 py-20 text-white dark:bg-white dark:text-black sm:flex-row sm:items-start sm:items-center sm:gap-0 sm:px-10'>
+			<div className='flex flex-col items-center gap-5 sm:items-start'>
 				<Link href='/'>
 					<Title
 						invert
@@ -20,11 +20,11 @@ const Footer = () => {
 					body='Get in touch'
 					variant='dark'
 					href='/contact'
-					className='w-fit'
+					className='mt-2 w-fit'
 				/>
 			</div>
 
-			<div className='flex flex-col items-end'>
+			<div className='flex w-full flex-row items-end justify-center gap-10 sm:w-auto sm:flex-col sm:gap-5'>
 				<Link
 					className='underline-offset-4 transition-all duration-300 hover:underline'
 					href='/projects'>
