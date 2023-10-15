@@ -32,7 +32,7 @@ export default function Hero() {
 								We&apos;re a digital studio making{' '}
 								<span className='font-neue-bit text-7xl'>ai-first</span> software.
 							</p>
-							<p>
+							<p className='invisible sm:visible'>
 								Press{' '}
 								<span className='mx-1 rounded-md bg-black px-3 py-2 text-white dark:bg-white dark:text-black'>
 									R

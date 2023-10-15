@@ -9,7 +9,7 @@ const Footer = () => {
 			<div className='flex flex-col gap-3'>
 				<Link href='/'>
 					<Title
-						className='text-white dark:text-black'
+						invert
 						size='full'
 					/>
 				</Link>
