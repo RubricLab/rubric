@@ -23,7 +23,7 @@ export default function Services() {
 					<p>
 						Over our careers, we have built a framework for problem solving that
 						prioritizes simple, fast and scalable solutions to complex problems and
-						approch all of our projects with empathy for the people that use them.
+						approach all of our projects with empathy for the people that use them.
 					</p>
 					<p>
 						We want to sit down with you, skip the BS, break the rules and figure out
