@@ -3,7 +3,6 @@
 import {toast} from '@rubriclab/ui'
 import {useState} from 'react'
 import {copyToClipboard, sendSlackMessage} from '../../lib/utils'
-import Button from '../components/Button'
 
 export default function Contact() {
 	const [sending, setSending] = useState(false)
@@ -26,7 +25,7 @@ export default function Contact() {
 	return (
 		<div className='flex min-h-screen flex-col items-center justify-center gap-8 p-5 sm:px-10'>
 			<h1>Get in touch</h1>
-			<div className='flex w-full max-w-sm flex-col gap-5'>
+			{/* <div className='flex w-full max-w-sm flex-col gap-5'>
 				<input
 					placeholder='Name'
 					onChange={e => setName(e.target.value)}
@@ -39,15 +38,15 @@ export default function Contact() {
 					placeholder='Message'
 					onChange={e => setMessage(e.target.value)}
 				/>
-			</div>
+			</div> */}
 			<div className='flex flex-col gap-3'>
-				<Button
+				{/* <Button
 					body='Submit'
 					variant='dark'
 					onClick={() => handleSubmit()}
-				/>
+				/> */}
 				<p className='text-sm'>
-					Alternatively, feel free to email us at{' '}
+					Please email us at{' '}
 					<button
 						className='font-semibold underline-offset-4 hover:underline'
 						onClick={() => copyToClipboard('hello@rubriclab.com')}>
