@@ -32,38 +32,38 @@ export default async function Icon() {
 							fill='white'
 						/>
 						<rect
-							x='10'
-							y='16.6667'
-							width='3.33333'
-							height='3.33333'
+							x='3'
+							y='19.0002'
+							width='8'
+							height='8'
 							fill='black'
 						/>
 						<rect
-							x='10'
-							y='13.3333'
-							width='3.33333'
-							height='3.33333'
+							x='3'
+							y='10.9998'
+							width='8'
+							height='8'
 							fill='black'
 						/>
 						<rect
-							x='10'
-							y='10'
-							width='3.33333'
-							height='3.33333'
+							x='3'
+							y='3'
+							width='8'
+							height='8'
 							fill='black'
 						/>
 						<rect
-							x='13.3334'
-							y='13.3333'
-							width='3.33333'
-							height='3.33333'
+							x='11.0001'
+							y='10.9998'
+							width='8'
+							height='8'
 							fill='black'
 						/>
 						<rect
-							x='16.6666'
-							y='10'
-							width='3.33333'
-							height='3.33333'
+							x='18.9999'
+							y='3'
+							width='8'
+							height='8'
 							fill='black'
 						/>
 					</g>

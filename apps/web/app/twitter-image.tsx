@@ -1,7 +1,7 @@
 import {ImageResponse} from 'next/server'
 import colors from 'tailwindcss/colors'
 import {FONTS} from '../lib/constants'
-import BackgroundGrid from './components/BackgroundGrid'
+import BackgroundGrid from './components/BackgroundGrid.server'
 
 export const runtime = 'edge'
 
