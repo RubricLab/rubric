@@ -30,6 +30,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 		<html lang='en'>
 			<head>
 				<PlausibleProvider domain='rubriclab.com' />
+				<meta
+					name='twitter:image'
+					content='https://rubriclab.com/twitter-image?01'></meta>
 			</head>
 			<body
 				className={`${jakartaSans.className} ${neueBit.variable} relative flex h-full min-h-screen w-full flex-col items-center`}>
