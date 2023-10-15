@@ -1,8 +1,9 @@
 interface Props {
 	grid: number[][]
+	running: boolean
 }
 
-export default function Grid({grid}: Props) {
+export default function Grid({grid, running}: Props) {
 	return (
 		<div>
 			{grid.map((row, i) => (
@@ -12,7 +13,9 @@ export default function Grid({grid}: Props) {
 					{row.map((cell, j) => (
 						<div
 							key={`${i},${j}`}
-							className={`aspect-square w-full border ${cell && 'bg-black'}`}
+							className={`aspect-square w-full ${
+								cell && (running ? 'bg-neutral-200' : 'bg-black')
+							}`}
 						/>
 					))}
 				</div>

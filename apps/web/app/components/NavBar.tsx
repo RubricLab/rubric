@@ -28,7 +28,7 @@ export default function NavBar() {
 			</Link>
 			<Button
 				body='Get in touch'
-				variant='light'
+				variant='dark'
 				href='/contact'
 				className='w-fit'
 			/>

@@ -1,5 +1,5 @@
 'use client'
-import {useEffect, useState} from 'react'
+import {Dispatch, SetStateAction, useEffect, useState} from 'react'
 import Grid from './Grid'
 
 interface GridSize {
@@ -69,10 +69,16 @@ function getNeighbours(grid: number[][], i: number, j: number) {
 	return numNeighbours
 }
 
-export default function Game() {
-	let min_width = 80 // Minimum width for a box in pixels
+export default function Game({
+	running,
+	setRunning
+}: {
+	running: boolean
+	setRunning: Dispatch<SetStateAction<boolean>>
+}) {
+	console.log(running)
+	let min_width = 60 // Minimum width for a box in pixels
 	let speed = 50
-	const [running, setRunning] = useState(false)
 
 	// Calculate even grid dimensions based on screen size
 	const calculateEvenGridSize = (): GridSize => {
@@ -108,7 +114,6 @@ export default function Game() {
 	}, [])
 
 	useEffect(() => {
-		console.log(running)
 		if (!running) return
 		const timer = setInterval(
 			() => {
@@ -126,10 +131,11 @@ export default function Game() {
 	}, [running, speed])
 
 	return (
-		<div
-			className='absolute left-0 top-0 z-[-1] min-h-screen w-full'
-			onClick={() => setRunning(prev => !prev)}>
-			<Grid grid={grid} />
+		<div className='absolute left-0 top-0 z-[-1] min-h-screen w-full'>
+			<Grid
+				running={running}
+				grid={grid}
+			/>
 		</div>
 	)
 }
