@@ -4,7 +4,7 @@ export default function Services() {
 	return (
 		<div className='flex min-h-screen flex-col items-center justify-center bg-white p-8 dark:bg-black'>
 			<div className='flex flex-col gap-8'>
-				<div className='flex w-full flex-col gap-5 text-black dark:text-white'>
+				<div className='flex max-w-3xl flex-col gap-5 text-black dark:text-white'>
 					<h1 className='text-7xl'>A note to the builders.</h1>
 					<p>
 						Hello world! We&apos;re Rubric. A nomadic team of engineers and artists
