@@ -15,6 +15,9 @@ html {
 	h2 {
 		@apply text-3xl;
 	}
+	h3 {
+		@apply font-neue-bit text-3xl text-black dark:text-white;
+	}
 	input {
 		@apply w-full rounded-md border p-3 text-neutral-600 focus:outline-none;
 	}
@@ -22,7 +25,7 @@ html {
 		@apply h-32 w-full resize-none rounded-md border p-3 text-neutral-600 focus:outline-none;
 	}
 	code {
-		@apply border-stone-700/80 bg-orange-200/60;
+		@apply rounded-md border-stone-700/80 bg-neutral-950;
 	}
 	blockquote {
 		@apply border-stone-500/80;

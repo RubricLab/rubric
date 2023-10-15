@@ -1,7 +1,6 @@
 import {ComingSoonButton, Header} from '@rubriclab/ui'
 import {ArrowUpRightIcon} from 'lucide-react'
 import {Metadata} from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import {DEFAULT_META, META} from '../../lib/constants'
 import {parseDate} from '../../lib/utils'
@@ -32,24 +31,24 @@ const PostCard = ({post}: PostCardProps) => {
 	const date = parseDate(post.publishedAt)
 	return (
 		<Link
-			className='bg-off-white/90 duration-400 group relative flex flex-col rounded-md border border-stone-700/80 text-black transition-colors hover:bg-orange-400/80'
+			className='bg-off-white/90 duration-400 group relative flex flex-col rounded-md border border-stone-700/80 text-black transition-colors hover:bg-black/80'
 			href={`/blog/${post.slug}`}
 			key={post._id}>
 			<ArrowUpRightIcon className='duration-400 absolute right-2 top-2 h-14 w-14 opacity-0 transition-opacity group-hover:opacity-100' />
 			{/* Cover image */}
-			<div className='relative h-40 w-full'>
-				<Image
+			<div className='relative h-40 w-full bg-gradient-to-b from-black to-neutral-900'>
+				{/* <Image
 					alt='Blog cover image'
 					className='duration-400 rounded-t-md transition-opacity group-hover:opacity-0'
 					fill
 					src={post.mainImage}
 					style={{objectFit: 'cover', objectPosition: 'center'}}
-				/>
+				/> */}
 			</div>
 			{/* Post details */}
 			<div className='flex flex-col p-5'>
-				<p className='text-base text-stone-700'>{date}</p>
-				<h3>{post.title}</h3>
+				<p className='text-base text-white'>{date}</p>
+				<h3 className='text-white'>{post.title}</h3>
 			</div>
 		</Link>
 	)
