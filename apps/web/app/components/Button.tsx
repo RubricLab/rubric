@@ -14,13 +14,15 @@ export default function Button({
 	variant,
 	href,
 	onClick,
-	className
+	className,
+	disabled
 }: {
 	body: string
 	variant: 'dark' | 'light' | 'teal'
 	href?: string
 	onClick?: () => void
 	className?: string
+	disabled?: boolean
 }) {
 	// Link
 	if (href)
@@ -38,6 +40,7 @@ export default function Button({
 	if (onClick)
 		return (
 			<button
+				disabled={disabled}
 				onClick={onClick}
 				className={cn(
 					`group flex w-full items-center justify-between gap-20 rounded-md ${variants[variant]} px-4 py-2`,
