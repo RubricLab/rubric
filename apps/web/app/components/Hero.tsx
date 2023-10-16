@@ -1,15 +1,19 @@
 'use client'
 import {AnimatePresence, motion} from 'framer-motion'
+import {useRouter} from 'next/navigation'
 import {useEffect, useState} from 'react'
 import Announcement from './Announcement'
 import Game from './game'
 
 export default function Hero() {
+	const router = useRouter()
+
 	const [start, setStart] = useState(false)
 
 	useEffect(() => {
 		setTimeout(() => setStart(true), 1 * 1000)
 	}, [])
+
 	return (
 		<div className='flex min-h-screen flex-col items-center justify-center gap-5 p-8'>
 			<div className={''}>
@@ -34,7 +38,9 @@ export default function Hero() {
 							</p>
 							<p className='invisible sm:visible'>
 								Press{' '}
-								<span className='mx-1 rounded-md bg-black px-3 py-2 text-white dark:bg-white dark:text-black'>
+								<span
+									onClick={() => router.push('/contact')}
+									className='mx-1 cursor-pointer rounded-md bg-black px-3 py-2 text-white transition-opacity hover:opacity-80 dark:bg-white dark:text-black'>
 									R
 								</span>{' '}
 								anytime to get started
