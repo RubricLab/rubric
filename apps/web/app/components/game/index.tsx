@@ -77,7 +77,7 @@ export default function Game({
 	setRunning: Dispatch<SetStateAction<boolean>>
 }) {
 	let min_width = 60 // Minimum width for a box in pixels
-	let speed = 50
+	let speed = 75
 
 	// Calculate even grid dimensions based on screen size
 	const calculateEvenGridSize = (): GridSize => {
