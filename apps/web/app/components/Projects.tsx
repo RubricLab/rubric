@@ -36,7 +36,7 @@ const projects = [
 	},
 	{
 		title: 'Maige',
-		desc: 'A Bot that labels your GitHub issues using AI.',
+		desc: 'A bot that labels your GitHub issues using AI.',
 		href: 'https://maige.app/'
 	},
 	{
