@@ -12,6 +12,8 @@ export default function NavBar() {
 		// Get started with R
 		const handleKeyboardEvent = (event: KeyboardEvent) => {
 			if (['r', 'R'].includes(event.key)) router.push('/contact')
+			if (['b', 'B'].includes(event.key)) router.push('/blog')
+			if (['p', 'P'].includes(event.key)) router.push('/projects')
 		}
 
 		// Add event listener

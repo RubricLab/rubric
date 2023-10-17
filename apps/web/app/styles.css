@@ -9,6 +9,9 @@ html {
 }
 
 @layer base {
+	p {
+		@apply text-black dark:text-white;
+	}
 	h1 {
 		@apply font-neue-bit text-6xl text-black dark:text-white md:text-7xl;
 	}
