@@ -29,8 +29,8 @@ export default function ContactForm() {
 		}
 	}
 	return (
-		<div>
-			<div className='flex w-full max-w-sm flex-col gap-5'>
+		<div className='flex w-full max-w-sm flex-col gap-8'>
+			<div className='flex flex-col gap-5'>
 				<input
 					placeholder='Name'
 					onChange={e => setName(e.target.value)}
@@ -51,8 +51,8 @@ export default function ContactForm() {
 					variant='dark'
 					onClick={handleSubmit}
 				/>
-				<p className='text-sm'>
-					Please email us at{' '}
+				<p className='text-center text-sm'>
+					Alternatively, email us at{' '}
 					<button
 						className='font-semibold underline-offset-4 hover:underline'
 						onClick={() => copyToClipboard('hello@rubriclab.com')}>
