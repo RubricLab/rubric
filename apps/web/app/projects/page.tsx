@@ -30,7 +30,7 @@ export const revalidate = 60 // revalidate this page every 60 seconds
 const Projects = async () => {
 	const projects = await getProjects()
 	return (
-		<div className='mb-20 mt-20 flex w-full flex-col items-center px-5 sm:px-10 2xl:justify-center'>
+		<div className='mb-20 mt-28 flex w-full flex-col items-center px-5 sm:px-10 2xl:justify-center'>
 			<div className='flex h-full max-w-3xl flex-col gap-10'>
 				<h1>Projects</h1>
 				<div className='z-20 mx-auto flex max-w-xl flex-col items-center gap-10 py-10'>
