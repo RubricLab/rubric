@@ -1,7 +1,7 @@
 import {getMetadata} from '../lib/utils'
 import Hero from './components/Hero'
+import Letter from './components/Letter'
 import Projects from './components/Projects'
-import Services from './components/Services'
 
 export const metadata = getMetadata({title: 'Home'})
 
@@ -10,7 +10,7 @@ export default async function Home() {
 		<div className='flex flex-col'>
 			<Hero />
 			<Projects />
-			<Services />
+			<Letter />
 		</div>
 	)
 }

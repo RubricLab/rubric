@@ -28,22 +28,24 @@ export default async function Post({params}: PostProps) {
 	const slug = params.post
 	const post = await getPost(slug)
 	return (
-		<div className='mt-20 flex h-full flex-col gap-10 p-5 sm:px-10'>
-			{/* Cover image */}
-			<div className='relative h-40 w-full'>
-				<Image
-					alt='Blog cover image'
-					className='rounded-md'
-					fill
-					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-					src={post.mainImage}
-					style={{objectFit: 'cover', objectPosition: 'center'}}
-				/>
+		<main className='mt-20 flex h-full w-full flex-col items-center p-5 sm:px-10'>
+			<div className='flex max-w-3xl flex-col gap-10'>
+				{/* Cover image */}
+				<div className='relative h-40 w-full'>
+					<Image
+						alt='Blog cover image'
+						className='rounded-md'
+						fill
+						sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+						src={post.mainImage}
+						style={{objectFit: 'cover', objectPosition: 'center'}}
+					/>
+				</div>
+				<h2>{post.title}</h2>
+				<div className='flex flex-col gap-4'>
+					<PortableText value={post.body} />
+				</div>
 			</div>
-			<h2>{post.title}</h2>
-			<div className='flex flex-col gap-4'>
-				<PortableText value={post.body} />
-			</div>
-		</div>
+		</main>
 	)
 }
