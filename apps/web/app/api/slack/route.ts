@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
 	// 	)
 
 	// // Slack client
-	// const slack = new WebClient(process.env.SLACK_APP_KEY)
+	// const slack = new WebClient(process.env.SLACK_KEY)
 
 	// // Send slack message
 	// await slack.chat.postMessage({
