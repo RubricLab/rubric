@@ -1,5 +1,18 @@
 {
-  "redirects": [
-    {"source": "/brand", "destination": "https://rubric.notion.site/Brand-Guidelines-d2e47d1618e44258bd74185bfb901744?pvs=4"}
-  ]
+	"redirects": [
+		{
+			"source": "/brand",
+			"destination": "https://rubric.notion.site/Brand-Guidelines-d2e47d1618e44258bd74185bfb901744"
+		},
+		{
+			"source": "/test",
+			"has": [
+				{
+					"type": "host",
+					"value": "brand.rubric.sh"
+				}
+			],
+			"destination": "https://rubric.notion.site/Brand-Guidelines-d2e47d1618e44258bd74185bfb901744"
+		}
+	]
 }
