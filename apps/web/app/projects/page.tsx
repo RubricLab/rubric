@@ -30,21 +30,23 @@ export const revalidate = 60 // revalidate this page every 60 seconds
 const Projects = async () => {
 	const projects = await getProjects()
 	return (
-		<div className='mt-28 flex h-full flex-col gap-20 px-5 pb-20 sm:px-10 2xl:justify-center'>
-			<h1>Projects</h1>
-			<div className='z-20 mx-auto flex max-w-xl flex-col items-center gap-10 py-10'>
-				{projects.map((project: Project) => (
-					<ProjectCard
-						key={project._id}
-						project={project}
+		<div className='flex w-full flex-col items-center'>
+			<div className='mt-28 flex h-full max-w-3xl flex-col gap-10 px-5 pb-20 sm:px-10 2xl:justify-center'>
+				<h1>Projects</h1>
+				<div className='z-20 mx-auto flex max-w-xl flex-col items-center gap-10 py-10'>
+					{projects.map((project: Project) => (
+						<ProjectCard
+							key={project._id}
+							project={project}
+						/>
+					))}
+					<Button
+						className='mt-20'
+						body='Want to be on the list?'
+						variant='light'
+						href='/contact'
 					/>
-				))}
-				<Button
-					className='mt-20'
-					body='Want to be on the list?'
-					variant='light'
-					href='/contact'
-				/>
+				</div>
 			</div>
 		</div>
 	)

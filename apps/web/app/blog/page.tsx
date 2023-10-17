@@ -1,4 +1,4 @@
-import {ComingSoonButton, Header} from '@rubriclab/ui'
+import {ComingSoonButton} from '@rubriclab/ui'
 import {ArrowUpRightIcon} from 'lucide-react'
 import {Metadata} from 'next'
 import Link from 'next/link'
@@ -57,25 +57,27 @@ const PostCard = ({post}: PostCardProps) => {
 export default async function Blog() {
 	const posts = await getPosts()
 	return (
-		<div className='mt-20 flex h-full flex-col gap-10 p-5 sm:px-10 2xl:justify-center'>
-			<Header text='Blog' />
-			{/* "Coming soon" if there are no posts */}
-			{posts.length === 0 && (
-				<div>
-					<ComingSoonButton />
-				</div>
-			)}
-			{/* Posts */}
-			{posts.length > 0 && (
-				<div className='grid grid-cols-1 gap-6 sm:grid-cols-2'>
-					{posts.map(post => (
-						<PostCard
-							key={post._id}
-							post={post}
-						/>
-					))}
-				</div>
-			)}
+		<div className='flex w-full flex-col items-center'>
+			<div className='mt-20 flex h-full max-w-3xl flex-col gap-10 p-5 sm:px-10 2xl:justify-center'>
+				<h1>Blog</h1>
+				{/* "Coming soon" if there are no posts */}
+				{posts.length === 0 && (
+					<div>
+						<ComingSoonButton />
+					</div>
+				)}
+				{/* Posts */}
+				{posts.length > 0 && (
+					<div className='grid grid-cols-1 gap-6 sm:grid-cols-2'>
+						{posts.map(post => (
+							<PostCard
+								key={post._id}
+								post={post}
+							/>
+						))}
+					</div>
+				)}
+			</div>
 		</div>
 	)
 }

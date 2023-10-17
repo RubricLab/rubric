@@ -39,7 +39,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 				<NavBar />
 				<BackgroundGrid className='fixed z-0 h-full w-full' />
 				<ToastProvider />
-				<div className='z-10 w-full 2xl:max-w-6xl'>{children}</div>
+				<main className='z-10 w-full 2xl:max-w-6xl'>{children}</main>
 				<Footer />
 			</body>
 		</html>
