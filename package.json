@@ -14,6 +14,9 @@
 		"turbo": "^1.10.15",
 		"typescript": "^5.2.2"
 	},
+	"peerDependencies": {
+		"node": ">=18.3"
+	},
 	"name": "rubric",
 	"packageManager": "yarn@1.22.19",
 	"private": true,
