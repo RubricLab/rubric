@@ -2,7 +2,7 @@
 
 ### Home of Rubric Labs
 
-This repo contains Rubric's landing page, UI library, docs, and code config.
+This repo contains Rubric's, UI library, docs, and code config.
 
 This makes it easier to
 
@@ -17,8 +17,7 @@ This monorepo includes the following packages/apps:
 ### Apps and Packages
 
 - `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
+- `ui`: a stub React component library used by `docs` application
 - `@rubriclab/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 - `tailwind-config`: `tailwind.config.js` used throughout the monorepo
