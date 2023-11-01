@@ -1,5 +1,17 @@
 # @rubriclab/eslint-config
 
+## 1.1.4
+
+### Patch Changes
+
+- revert add next as dev dep
+
+## 1.1.3
+
+### Patch Changes
+
+- add next as dev dep
+
 ## 1.1.2
 
 ### Patch Changes
