@@ -1,5 +1,11 @@
 # @rubriclab/eslint-config
 
+## 1.1.1
+
+### Patch Changes
+
+- add babel eslint parser
+
 ## 1.0.0
 
 ### Major Changes
