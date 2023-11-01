@@ -1,5 +1,5 @@
 module.exports = {
-	extends: ['next', 'turbo', 'prettier', 'plugin:jsonc/base'],
+	extends: ['next', 'prettier', 'plugin:jsonc/base'],
 	parserOptions: {
 		babelOptions: {
 			presets: ['next/babel']
