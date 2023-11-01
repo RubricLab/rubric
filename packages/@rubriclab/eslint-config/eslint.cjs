@@ -1,10 +1,5 @@
 module.exports = {
-	extends: ['next', 'next/babel', 'prettier', 'plugin:jsonc/base'],
-	parserOptions: {
-		babelOptions: {
-			presets: ['next/babel']
-		}
-	},
+	extends: ['next', 'prettier', 'plugin:jsonc/base'],
 	plugins: ['react', 'sort-keys-fix'],
 	rules: {
 		'@next/next/no-html-link-for-pages': 'off',

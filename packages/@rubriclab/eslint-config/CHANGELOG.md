@@ -1,5 +1,11 @@
 # @rubriclab/eslint-config
 
+## 1.1.2
+
+### Patch Changes
+
+- remove babel
+
 ## 1.1.1
 
 ### Patch Changes
