@@ -4,7 +4,10 @@ module.exports = {
 	bracketSameLine: true,
 	bracketSpacing: false,
 	jsxSingleQuote: true,
-	plugins: [require.resolve('prettier-plugin-organize-imports'), require.resolve('prettier-plugin-tailwindcss')],
+	plugins: [
+		require.resolve('prettier-plugin-organize-imports'),
+		require.resolve('prettier-plugin-tailwindcss')
+	],
 	proseWrap: 'never',
 	semi: false,
 	singleAttributePerLine: true,
