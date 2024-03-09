@@ -1,5 +1,11 @@
 # @rubriclab/utils
 
+## 1.1.0
+
+### Minor Changes
+
+- Added Table Logger
+
 ## 1.0.0
 
 ### Major Changes
