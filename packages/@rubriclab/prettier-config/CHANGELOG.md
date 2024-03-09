@@ -1,5 +1,11 @@
 # @rubriclab/prettier-config
 
+## 1.1.1
+
+### Patch Changes
+
+- Bump version
+
 ## 1.1.0
 
 ### Minor Changes
