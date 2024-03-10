@@ -1,5 +1,35 @@
 # @rubriclab/ui
 
+## 1.2.0
+
+### Minor Changes
+
+- tsup configured
+
+## 1.1.3
+
+### Patch Changes
+
+- try to include css
+
+## 1.1.2
+
+### Patch Changes
+
+- css
+
+## 1.1.1
+
+### Patch Changes
+
+- exports
+
+## 1.1.0
+
+### Minor Changes
+
+- tsup
+
 ## 1.0.0
 
 ### Major Changes

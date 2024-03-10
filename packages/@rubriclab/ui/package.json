@@ -16,18 +16,17 @@
 		"tsup": "^7.2.0",
 		"typescript": "^5.1.6"
 	},
-	"exports": {
-		".": "./index.tsx",
-		"./build.css": "./build.css",
-		"./globals.css": "./globals.css"
-	},
+	"files": [
+		"dist"
+	],
 	"homepage": "https://github.com/RubricLab/rubric/tree/main/packages/@rubriclab/ui#readme",
 	"keywords": [
 		"rubric",
 		"ui"
 	],
 	"license": "MIT",
-	"main": "./index.tsx",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
 	"name": "@rubriclab/ui",
 	"publishConfig": {
 		"access": "public"
@@ -38,8 +37,9 @@
 		"url": "https://github.com/RubricLab/rubric.git"
 	},
 	"scripts": {
-		"build": "npx tailwindcss -i ./globals.css -o ./build.css --minify",
+		"build": "tsup",
 		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx"
 	},
-	"version": "1.0.0"
+	"types": "./dist/index.d.ts",
+	"version": "1.2.0"
 }
