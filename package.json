@@ -32,6 +32,7 @@
 		"format": "prettier --write .",
 		"lint": "dotenv -- turbo run lint",
 		"lint:fix": "dotenv -- turbo run lint -- --fix",
+		"prepublish-packages": "bun run build -- --scope @rubriclab/*",
 		"publish-packages": "changeset && changeset version && changeset publish"
 	},
 	"workspaces": [
