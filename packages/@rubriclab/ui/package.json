@@ -7,14 +7,14 @@
 	"devDependencies": {
 		"@rubriclab/tailwind-config": "*",
 		"@rubriclab/typescript-config": "*",
-		"@types/react": "^18.2.20",
-		"@types/react-dom": "^18.2.7",
-		"autoprefixer": "^10.4.15",
-		"eslint": "^8.47.0",
-		"postcss": "^8.4.28",
-		"tailwindcss": "^3.3.3",
-		"tsup": "^7.2.0",
-		"typescript": "^5.1.6"
+		"@types/react": "^18.2.64",
+		"@types/react-dom": "^18.2.21",
+		"autoprefixer": "^10.4.18",
+		"eslint": "^8.57.0",
+		"postcss": "^8.4.35",
+		"tailwindcss": "^3.4.1",
+		"tsup": "^8.0.2",
+		"typescript": "^5.4.2"
 	},
 	"files": [
 		"dist"
@@ -37,6 +37,7 @@
 		"url": "https://github.com/RubricLab/rubric.git"
 	},
 	"scripts": {
+		"bleed": "ncu -u && bun i",
 		"build": "tsup",
 		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx"
 	},

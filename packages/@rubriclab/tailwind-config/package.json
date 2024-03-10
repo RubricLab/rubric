@@ -17,6 +17,7 @@
 		"url": "https://github.com/RubricLab/rubric.git"
 	},
 	"scripts": {
+		"bleed": "ncu -u && bun i",
 		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx"
 	},
 	"version": "1.0.0"
