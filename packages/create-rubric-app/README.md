@@ -1,13 +1,5 @@
-# Create Rubric App CLI
+# Create Rubric App
 
-CLI for initializing projects
+This project has been moved to a new repository - [Create Rubric App](https://github.com/RubricLab/create-rubric-app).
 
-## Usage
-
-`npx create-rubric-app@latest`
-
-## Advanced Usage
-
-`npx create-rubric-app@latest --n my-cool-app --t fullstack`
-
-`npx create-rubric-app@latest -y`
+If you have any questions, feel free to email us at [hello@rubriclab.com](mailto:hello@rubriclab.com).
