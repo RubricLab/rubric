@@ -1,5 +1,17 @@
 # @rubriclab/ui
 
+## 1.2.2
+
+### Patch Changes
+
+- include css
+
+## 1.2.1
+
+### Patch Changes
+
+- include css
+
 ## 1.2.0
 
 ### Minor Changes
