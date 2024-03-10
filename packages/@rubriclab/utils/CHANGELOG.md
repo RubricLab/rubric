@@ -1,5 +1,29 @@
 # @rubriclab/utils
 
+## 1.2.0
+
+### Minor Changes
+
+- tsup
+
+## 1.1.3
+
+### Patch Changes
+
+- fix exports
+
+## 1.1.2
+
+### Patch Changes
+
+- fix exports
+
+## 1.1.1
+
+### Patch Changes
+
+- fix table
+
 ## 1.1.0
 
 ### Minor Changes

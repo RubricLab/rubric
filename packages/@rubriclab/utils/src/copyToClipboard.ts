@@ -2,7 +2,7 @@
  * Copy text to the clipboard.
  * Throws an error if clipboard is unavailable.
  */
-export default function copyToClipboard(
+export function copyToClipboard(
 	text: string,
 	{
 		onSuccess,

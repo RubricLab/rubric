@@ -1,10 +1,18 @@
 {
+	"devDependencies": {
+		"tsup": "^8.0.2"
+	},
+	"files": [
+		"dist"
+	],
 	"homepage": "https://github.com/RubricLab/rubric/tree/main/packages/@rubriclab/utils#readme",
 	"keywords": [
 		"rubric",
 		"utils"
 	],
 	"license": "MIT",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
 	"name": "@rubriclab/utils",
 	"publishConfig": {
 		"access": "public"
@@ -15,7 +23,10 @@
 		"url": "https://github.com/RubricLab/rubric.git"
 	},
 	"scripts": {
-		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx"
+		"build": "tsup",
+		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx",
+		"prepublish": "bun run build"
 	},
-	"version": "1.1.0"
+	"types": "./dist/index.d.ts",
+	"version": "1.2.0"
 }

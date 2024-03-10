@@ -1,12 +1,10 @@
-interface TableData {
+export function logTable(tableData: {
 	title: string
 	data: {
 		header: string
 		dataPoints: Record<string, string | number>
 	}[]
-}
-
-export default function logTable(tableData: TableData): void {
+}): void {
 	const {title, data} = tableData
 
 	if (!data.length) return
