@@ -10,7 +10,7 @@
 		"url": "https://github.com/RubricLab/rubric.git"
 	},
 	"scripts": {
-		"bleed": "npx yarn-upgrade-all -W",
+		"bleed": "ncu -u && bun i",
 		"build": "next build",
 		"dev": "next dev -p 3003",
 		"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.json,.ts,.tsx",

@@ -8,6 +8,7 @@
 		"autoprefixer": "^10.4.16",
 		"dotenv-cli": "^7.3.0",
 		"eslint": "^8.51.0",
+		"npm-check-updates": "^16.14.15",
 		"postcss": "^8.4.31",
 		"prettier": "^3.0.3",
 		"tailwindcss": "^3.3.3",
@@ -15,15 +16,14 @@
 		"typescript": "^5.2.2"
 	},
 	"name": "rubric",
-	"packageManager": "yarn@1.22.19",
 	"peerDependencies": {
 		"node": ">=18.3"
 	},
 	"private": true,
 	"scripts": {
-		"bleed": "bunx yarn-upgrade-all -W && turbo run bleed && bun install",
+		"bleed": "ncu -u && turbo run bleed && bun i",
 		"build": "dotenv -- turbo run build",
-		"clean": "yarn clean:next && yarn clean:packages && yarn clean:turbo && yarn clean:build",
+		"clean": "bun clean:next && bun clean:packages && bun clean:turbo && bun clean:build",
 		"clean:build": "find . -name 'dist' -type d -prune -exec rm -rf '{}' +",
 		"clean:next": "find . -name '.next' -type d -prune -exec rm -rf '{}' +",
 		"clean:packages": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
