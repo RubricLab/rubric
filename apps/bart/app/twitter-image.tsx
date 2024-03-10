@@ -34,7 +34,9 @@ export default async function Image({params}: Props) {
 					width: '100%'
 				}}>
 				<div style={{fontSize: 128}}>Bart</div>
-				<div style={{color: colors['orange']['700'], fontSize: 48}}>40.7005635,-73.9722209</div>
+				<div style={{color: colors['orange']['700'], fontSize: 48}}>
+					40.7005635,-73.9722209
+				</div>
 			</div>
 		),
 		{

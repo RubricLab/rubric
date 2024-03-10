@@ -1,7 +1,11 @@
 import {ChatPostMessageArguments} from '@slack/web-api'
 import slackClient from './slackClient'
 
-const updateMessage = async (payload: ChatPostMessageArguments['blocks'], channel: string, message_ts: string) => {
+const updateMessage = async (
+	payload: ChatPostMessageArguments['blocks'],
+	channel: string,
+	message_ts: string
+) => {
 	return await slackClient.chat.update({
 		blocks: payload,
 		channel: channel,

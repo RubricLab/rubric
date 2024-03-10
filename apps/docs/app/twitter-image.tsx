@@ -41,7 +41,9 @@ export default async function Image({params}: Props) {
 					}}
 				/>
 				<div style={{fontSize: 128}}>Docs</div>
-				<div style={{color: colors['orange']['700'], fontSize: 48}}>for Rubric Labs.</div>
+				<div style={{color: colors['orange']['700'], fontSize: 48}}>
+					for Rubric Labs.
+				</div>
 			</div>
 		),
 		{

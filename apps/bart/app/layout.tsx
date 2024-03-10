@@ -10,7 +10,8 @@ const simpsonFont = localFont({
 export default function RootLayout({children}: {children: React.ReactNode}) {
 	return (
 		<html lang='en'>
-			<body className={`${simpsonFont.variable} bg-simpson-yellow relative flex h-full min-h-screen w-full flex-col items-center justify-center`}>
+			<body
+				className={`${simpsonFont.variable} bg-simpson-yellow relative flex h-full min-h-screen w-full flex-col items-center justify-center`}>
 				<NextImage
 					alt='bart'
 					className='object-contain object-right-bottom'

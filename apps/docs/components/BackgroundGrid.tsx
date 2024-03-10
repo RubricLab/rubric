@@ -7,7 +7,13 @@ const lineAttributes = {
 	strokeWidth: 1
 }
 
-function BackgroundGrid({className, ...props}: {className?: string; [key: string]: any}) {
+function BackgroundGrid({
+	className,
+	...props
+}: {
+	className?: string
+	[key: string]: any
+}) {
 	return (
 		<svg
 			className={className}

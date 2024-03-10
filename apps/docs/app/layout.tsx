@@ -22,7 +22,8 @@ export const metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
 	return (
 		<html lang='en'>
-			<body className={`${calSans.variable} flex min-h-screen w-full flex-col items-center`}>
+			<body
+				className={`${calSans.variable} flex min-h-screen w-full flex-col items-center`}>
 				<ToastProvider />
 				<div className='z-10 h-full max-w-6xl p-5 pt-0'>{children}</div>
 			</body>

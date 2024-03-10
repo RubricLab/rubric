@@ -11,7 +11,10 @@ export async function POST(request: Request) {
 
 	const channel = json.channel.id
 
-	const threadUrl = json.message.blocks[0].text.text.split('<').slice(-1)[0].split('|')[0]
+	const threadUrl = json.message.blocks[0].text.text
+		.split('<')
+		.slice(-1)[0]
+		.split('|')[0]
 
 	const titleSection = json.message.blocks[2]
 
@@ -29,7 +32,15 @@ export async function POST(request: Request) {
 
 	const feedback = json.actions[0].value
 
-	if (!feedback || !body || !title || !summary || !bannerImgUrl || !bannerImgDescription) return new NextResponse('ok')
+	if (
+		!feedback ||
+		!body ||
+		!title ||
+		!summary ||
+		!bannerImgUrl ||
+		!bannerImgDescription
+	)
+		return new NextResponse('ok')
 
 	const blogPostContext = createBlogPostContext({
 		author,
@@ -40,13 +51,20 @@ export async function POST(request: Request) {
 		title
 	})
 
-	const blogPost = await generateBlogPostWithFeedback(blogPostContext, feedback, author)
+	const blogPost = await generateBlogPostWithFeedback(
+		blogPostContext,
+		feedback,
+		author
+	)
 
 	// const newBannerImgUrl = blogPost.changeBannerImg === 'true' ? (await generateImageFromDescription(blogPost.bannerImgDescription)).url : bannerImgUrl
 
 	const newBannerImgUrl = bannerImgUrl
 
-	const message = composeMessage({...blogPost, author, bannerImgUrl: newBannerImgUrl}, threadUrl)
+	const message = composeMessage(
+		{...blogPost, author, bannerImgUrl: newBannerImgUrl},
+		threadUrl
+	)
 
 	await updateMessage(message, channel, json.message.ts)
 

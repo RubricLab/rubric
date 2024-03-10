@@ -4,7 +4,11 @@ import BlogPost from '../types/BlogPost'
 import SimpleUser from '../types/SimpleUser'
 import openAiClient from './openAiClient'
 
-const generateBlogPostFromThread = async (threadContext: string, prompt: string, author: SimpleUser) => {
+const generateBlogPostFromThread = async (
+	threadContext: string,
+	prompt: string,
+	author: SimpleUser
+) => {
 	// System message
 	const messages = [
 		{
@@ -34,11 +38,13 @@ const generateBlogPostFromThread = async (threadContext: string, prompt: string,
 				parameters: {
 					properties: {
 						bannerImgDescription: {
-							description: 'A description of the banner image, which is a visual representation of themese in the blog post. Low fi, no text, abstract',
+							description:
+								'A description of the banner image, which is a visual representation of themese in the blog post. Low fi, no text, abstract',
 							type: 'string'
 						},
 						body: {
-							description: 'The body of the blog post in slack flavoured markdown. 4 paragraphs max.',
+							description:
+								'The body of the blog post in slack flavoured markdown. 4 paragraphs max.',
 							type: 'string'
 						},
 						emoji: {
@@ -65,7 +71,10 @@ const generateBlogPostFromThread = async (threadContext: string, prompt: string,
 
 	const json = await response.json()
 
-	const blogPost = json.choices[0].message.function_call.arguments.replace(/\n\n/g, '\\n\\n')
+	const blogPost = json.choices[0].message.function_call.arguments.replace(
+		/\n\n/g,
+		'\\n\\n'
+	)
 
 	try {
 		return JSON.parse(blogPost) as BlogPost

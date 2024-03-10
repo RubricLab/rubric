@@ -1,7 +1,12 @@
 import crypto from 'crypto'
 
-const verifySignature = (timestamp: number, body: string, signature: string) => {
-	if (Math.abs(Math.floor(new Date().getTime() / 1000) - timestamp) > 300) return false
+const verifySignature = (
+	timestamp: number,
+	body: string,
+	signature: string
+) => {
+	if (Math.abs(Math.floor(new Date().getTime() / 1000) - timestamp) > 300)
+		return false
 
 	const base = `v0:${timestamp}:${body}`
 

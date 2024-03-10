@@ -32,7 +32,9 @@ export async function POST(request: Request) {
 		return new NextResponse('ok')
 	}
 
-	const isReferenced = new RegExp(['blogit', 'blog it'].join('|'), 'i').test(text)
+	const isReferenced = new RegExp(['blogit', 'blog it'].join('|'), 'i').test(
+		text
+	)
 
 	const isMentioned = text.includes(`<@${process.env.SLACK_BOT_ID}>`)
 
@@ -72,7 +74,8 @@ export async function POST(request: Request) {
 
 	// blogPost.bannerImgUrl = bannerImg.url
 
-	blogPost.bannerImgUrl = 'https://cdn.sanity.io/images/98ffjfuo/production/c4f4b2b486832d595a2fb5fccef4b3a46740115d-907x907.png?w=2000&fit=max&auto=format&dpr=2'
+	blogPost.bannerImgUrl =
+		'https://cdn.sanity.io/images/98ffjfuo/production/c4f4b2b486832d595a2fb5fccef4b3a46740115d-907x907.png?w=2000&fit=max&auto=format&dpr=2'
 
 	const message = composeMessage({...blogPost, author}, threadUrl)
 

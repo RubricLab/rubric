@@ -4,16 +4,29 @@ import {Session} from 'next-auth'
 import type z from 'zod'
 import {fromZodError} from 'zod-validation-error'
 
-type ActionType<InputType extends z.ZodTypeAny, ResponseType> = (input: z.infer<InputType>, session: Session) => Promise<ResponseType>
+type ActionType<InputType extends z.ZodTypeAny, ResponseType> = (
+	input: z.infer<InputType>,
+	session: Session
+) => Promise<ResponseType>
 
-export type Action<InputType extends z.ZodTypeAny, ResponseType> = ActionType<InputType, ResponseType> & {
+export type Action<InputType extends z.ZodTypeAny, ResponseType> = ActionType<
+	InputType,
+	ResponseType
+> & {
 	definition: InputType
 	method: 'GET' | 'POST'
 	validate: (input: z.infer<InputType>, session: Session) => void
 }
 
-export function action<InputType extends z.ZodTypeAny>(procedure: 'public' | 'protected' | 'admin', method: 'GET' | 'POST', validator?: InputType, description?: string) {
-	return function <ResponseType>(action: ActionType<InputType, ResponseType>): Action<InputType, ResponseType> {
+export function action<InputType extends z.ZodTypeAny>(
+	procedure: 'public' | 'protected' | 'admin',
+	method: 'GET' | 'POST',
+	validator?: InputType,
+	description?: string
+) {
+	return function <ResponseType>(
+		action: ActionType<InputType, ResponseType>
+	): Action<InputType, ResponseType> {
 		const validate = (input: z.infer<InputType>) => {
 			if (validator) {
 				const result = validator.safeParse(input)
@@ -24,7 +37,10 @@ export function action<InputType extends z.ZodTypeAny>(procedure: 'public' | 'pr
 			}
 		}
 
-		const validatedAction = async (input: z.infer<InputType>, session: Session) => {
+		const validatedAction = async (
+			input: z.infer<InputType>,
+			session: Session
+		) => {
 			// const auth = await getServerSession(authOptions)
 			// if (procedure === 'protected' && !auth?.user) throw new Error('Unauthorized')
 			// if (procedure === 'admin' && auth?.user?.role !== 'admin') throw new Error('Unauthorized')

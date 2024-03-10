@@ -1,6 +1,12 @@
 'use client'
 
-import {Toast, ToastIcon, Toaster, toast as reactHotToast, resolveValue} from 'react-hot-toast'
+import {
+	Toast,
+	ToastIcon,
+	Toaster,
+	toast as reactHotToast,
+	resolveValue
+} from 'react-hot-toast'
 
 /**
  * Usage: simply import `toast` and call `toast.success("Your text")` in your component.
