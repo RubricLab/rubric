@@ -1,5 +1,0 @@
-{
-	"exclude": ["build", "dist", "node_modules"],
-	"extends": "@rubriclab/typescript-config/react-library",
-	"include": ["."]
-}
