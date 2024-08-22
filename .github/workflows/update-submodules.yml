@@ -9,6 +9,14 @@ jobs:
  update:
   runs-on: ubuntu-latest
   steps:
+   - name: Verify webhook signature
+     env:
+      WEBHOOK_SECRET: ${{ secrets.WEBHOOK_SECRET }}
+     run: |
+      echo "${{ github.event.client_payload.payload }}" > payload.json
+      echo "${{ github.event.client_payload.signature }}" > signature.txt
+      echo "$WEBHOOK_SECRET" | openssl dgst -sha256 -hmac - -verify signature.txt payload.json || exit 1
+
    - uses: actions/checkout@v3
      with:
       fetch-depth: 0
