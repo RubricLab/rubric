@@ -22,3 +22,9 @@
 [submodule "apps/rOS"]
 	path = apps/rOS
 	url = https://github.com/RubricLab/rOS
+[submodule "apps/maige"]
+	path = apps/maige
+	url = https://github.com/RubricLab/maige
+[submodule "apps/dashboard"]
+	path = apps/dashboard
+	url = https://github.com/RubricLab/dashboard
