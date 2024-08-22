@@ -9,17 +9,6 @@ jobs:
  update:
   runs-on: ubuntu-latest
   steps:
-   - name: Verify webhook signature
-     env:
-      WEBHOOK_SECRET: ${{ secrets.WEBHOOK_SECRET }}
-     run: |
-      echo "${{ toJson(github.event) }}" > payload.json
-      signature=$(echo -n "${{ toJson(github.event) }}" | openssl dgst -sha256 -hmac "$WEBHOOK_SECRET" | sed 's/^.* //')
-      if [ "${{ github.event.headers['X-Hub-Signature-256'] }}" != "sha256=$signature" ]; then
-        echo "Invalid signature"
-        exit 1
-      fi
-
    - name: Checkout repository
      uses: actions/checkout@v3
      with:
