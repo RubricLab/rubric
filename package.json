@@ -38,5 +38,6 @@
 	"workspaces": [
 		"apps/*",
 		"packages/*"
-	]
+	],
+	"packageManager": "bun@1.1.25"
 }
