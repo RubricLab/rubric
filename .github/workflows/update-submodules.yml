@@ -1,9 +1,14 @@
 name: Update Submodules
 
 on:
- repository_dispatch:
-  types: [push]
- workflow_dispatch: # Keeps manual trigger option
+ workflow_dispatch:
+  inputs:
+   repository:
+    description: 'Repository that triggered the update'
+    required: true
+   ref:
+    description: 'The branch or tag that was pushed'
+    required: true
 
 jobs:
  update:
@@ -26,6 +31,6 @@ jobs:
       git submodule update --remote
       git diff --exit-code || {
         git add .
-        git commit -m "Update submodules"
+        git commit -m "Update submodules (triggered by ${{ github.event.inputs.repository }})"
         git push
       }
