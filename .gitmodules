@@ -10,3 +10,12 @@
 [submodule "packages/tailwind-config"]
 	path = packages/tailwind-config
 	url = https://github.com/RubricLab/tailwind-config.git
+[submodule "packages/create-rubric-app"]
+	path = packages/create-rubric-app
+	url = https://github.com/RubricLab/create-rubric-app
+[submodule "apps/website"]
+	path = apps/website
+	url = https://github.com/RubricLab/website
+[submodule "apps/rOS"]
+	path = apps/rOS
+	url = https://github.com/RubricLab/rOS
