@@ -24,7 +24,7 @@ jobs:
    - name: Git config
      run: |
       git config user.name rubrot
-      git config user.email steeps.lackeys-0n@icloud.com
+      git config user.email ros@rubriclabs.com
 
    - name: Update submodules
      run: |
