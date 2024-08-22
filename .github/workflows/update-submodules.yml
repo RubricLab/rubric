@@ -1,9 +1,9 @@
 name: Update Submodules
 
 on:
- schedule:
-  - cron: '* * * * *' # Runs every 1 minute
- workflow_dispatch: # Allows manual triggering
+ repository_dispatch:
+  types: [submodule_push]
+ workflow_dispatch: # Keeps manual trigger option
 
 jobs:
  update:
