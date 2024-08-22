@@ -2,7 +2,7 @@ name: Update Submodules
 
 on:
  repository_dispatch:
-  types: [submodule_push]
+  types: [push]
  workflow_dispatch: # Keeps manual trigger option
 
 jobs:
@@ -13,11 +13,15 @@ jobs:
      env:
       WEBHOOK_SECRET: ${{ secrets.WEBHOOK_SECRET }}
      run: |
-      echo "${{ github.event.client_payload.payload }}" > payload.json
-      echo "${{ github.event.client_payload.signature }}" > signature.txt
-      echo "$WEBHOOK_SECRET" | openssl dgst -sha256 -hmac - -verify signature.txt payload.json || exit 1
+      echo "${{ toJson(github.event) }}" > payload.json
+      signature=$(echo -n "${{ toJson(github.event) }}" | openssl dgst -sha256 -hmac "$WEBHOOK_SECRET" | sed 's/^.* //')
+      if [ "${{ github.event.headers['X-Hub-Signature-256'] }}" != "sha256=$signature" ]; then
+        echo "Invalid signature"
+        exit 1
+      fi
 
-   - uses: actions/checkout@v3
+   - name: Checkout repository
+     uses: actions/checkout@v3
      with:
       fetch-depth: 0
       token: ${{ secrets.PAT }}
