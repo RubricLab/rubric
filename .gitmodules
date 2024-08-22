@@ -1,0 +1,12 @@
+[submodule "packages/typescript-config"]
+	path = packages/typescript-config
+	url = https://github.com/RubricLab/typescript-config.git
+[submodule "packages/eslint-config"]
+	path = packages/eslint-config
+	url = https://github.com/RubricLab/eslint-config.git
+[submodule "packages/prettier-config"]
+	path = packages/prettier-config
+	url = https://github.com/RubricLab/prettier-config.git
+[submodule "packages/tailwind-config"]
+	path = packages/tailwind-config
+	url = https://github.com/RubricLab/tailwind-config.git

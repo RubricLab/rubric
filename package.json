@@ -37,6 +37,6 @@
 	},
 	"workspaces": [
 		"apps/*",
-		"packages/@rubriclab/*"
+		"packages/*"
 	]
 }
