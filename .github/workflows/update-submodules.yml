@@ -23,8 +23,8 @@ jobs:
 
    - name: Git config
      run: |
-      git config user.name github-actions
-      git config user.email github-actions@github.com
+      git config user.name rubrot
+      git config user.email steeps.lackeys-0n@icloud.com
 
    - name: Update submodules
      run: |
