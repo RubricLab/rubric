@@ -34,6 +34,7 @@
 		"dev:dashboard": "dotenv -- turbo run dev --filter=dashboard",
 		"dev:maige": "dotenv -- turbo run dev --filter=maige",
 		"lint:fix": "dotenv -- turbo run lint -- --fix",
+		"git:checkout:main:all": "git submodule foreach git checkout main",
 		"prepublish-packages": "bun run build -- --scope @rubriclab/*",
 		"publish-packages": "changeset && changeset version && changeset publish"
 	},

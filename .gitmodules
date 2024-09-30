@@ -16,6 +16,9 @@
 [submodule "packages/create-rubric-app"]
 	path = packages/create-rubric-app
 	url = https://github.com/RubricLab/create-rubric-app
+[submodule "packages/package"]
+	path = packages/package
+	url = https://github.com/RubricLab/package
 [submodule "apps/website"]
 	path = apps/website
 	url = https://github.com/RubricLab/website
