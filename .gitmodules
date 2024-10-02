@@ -19,6 +19,9 @@
 [submodule "packages/package"]
 	path = packages/package
 	url = https://github.com/RubricLab/package
+[submodule "packages/memory"]
+	path = packages/memory
+	url = https://github.com/RubricLab/memory
 [submodule "apps/website"]
 	path = apps/website
 	url = https://github.com/RubricLab/website
