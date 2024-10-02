@@ -34,3 +34,6 @@
 [submodule "apps/dashboard"]
 	path = apps/dashboard
 	url = https://github.com/RubricLab/dashboard
+[submodule "apps/memo-demo"]
+	path = apps/memo-demo
+	url = https://github.com/RubricLab/memo-demo
