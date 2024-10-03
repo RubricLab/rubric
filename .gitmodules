@@ -43,3 +43,6 @@
 [submodule "packages/webhooks"]
 	path = packages/webhooks
 	url = https://github.com/RubricLab/webhooks
+[submodule "packages/.github"]
+	path = packages/.github
+	url = https://github.com/RubricLab/.github
