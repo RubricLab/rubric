@@ -1,19 +1,15 @@
 {
 	"devDependencies": {
-		"@changesets/cli": "^2.27.7",
-		"@turbo/gen": "^2.0.14",
-		"@types/node": "^22.5.0",
-		"@types/react": "^18.3.4",
+		"@turbo/gen": "^2.1.3",
+		"@types/node": "^22.7.4",
+		"@types/react": "^18.3.11",
 		"@types/react-dom": "^18.3.0",
 		"autoprefixer": "^10.4.20",
 		"dotenv-cli": "^7.4.2",
-		"eslint": "^9.9.0",
-		"npm-check-updates": "^17.1.0",
-		"postcss": "^8.4.41",
-		"prettier": "^3.3.3",
-		"tailwindcss": "^3.4.10",
-		"turbo": "^2.0.14",
-		"typescript": "^5.5.4"
+		"postcss": "^8.4.47",
+		"tailwindcss": "^3.4.13",
+		"turbo": "^2.1.3",
+		"typescript": "^5.6.2"
 	},
 	"name": "rubric",
 	"peerDependencies": {
@@ -21,26 +17,20 @@
 	},
 	"private": true,
 	"scripts": {
-		"bleed": "ncu -u && turbo run bleed && bun i",
-		"build": "dotenv -- turbo run build",
-		"clean": "bun clean:next && bun clean:packages && bun clean:turbo && bun clean:build",
-		"clean:build": "find . -name 'dist' -type d -prune -exec rm -rf '{}' +",
-		"clean:next": "find . -name '.next' -type d -prune -exec rm -rf '{}' +",
-		"clean:packages": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
-		"clean:turbo": "find . -name '.turbo' -type d -prune -exec rm -rf '{}' +",
-		"dev": "dotenv -- turbo run dev",
-		"dev:website": "dotenv -- turbo run dev --filter=website",
-		"dev:ros": "dotenv -- turbo run dev --filter=ros",
-		"dev:dashboard": "dotenv -- turbo run dev --filter=dashboard",
-		"dev:maige": "dotenv -- turbo run dev --filter=maige",
-		"lint:fix": "dotenv -- turbo run lint -- --fix",
-		"git:checkout:main:all": "git submodule foreach git checkout main",
-		"prepublish-packages": "bun run build -- --scope @rubriclab/*",
-		"publish-packages": "changeset && changeset version && changeset publish"
+		"bleed": "turbo run bleed",
+		"bleed:mono": "bun x npm-check-updates -u && i",
+		"build": "turbo run build",
+		"clean": "turbo run clean",
+		"clean:mono": "rm -rf .next && rm -rf node_modules && find . -name '.turbo' -type d -prune -exec rm -rf {} + && rm bun.lockb",
+		"dev": "turbo run dev",
+		"lint": "turbo run lint",
+		"lint:mono": "bun x biome check .",
+		"lint:fix": "turbo run lint:fix",
+		"lint:fix:mono": "bun x biome lint . --write --unsafe",
+		"format": "turbo run format",
+		"format:mono": "bun x biome format --write .",
+		"git:checkout:main:all": "git submodule foreach git checkout main"
 	},
-	"workspaces": [
-		"apps/*",
-		"packages/*"
-	],
-	"packageManager": "bun@1.1.25"
+	"workspaces": ["apps/*", "packages/*"],
+	"packageManager": "bun@1.1.29"
 }

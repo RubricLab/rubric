@@ -1,7 +1,6 @@
 {
 	"$schema": "https://turbo.build/schema.json",
 	"tasks": {
-		"bleed": {},
 		"build": {
 			"dependsOn": ["^build"],
 			"outputs": ["!.next/cache/**", ".next/**", "dist/**"]
@@ -10,6 +9,10 @@
 			"cache": false,
 			"persistent": true
 		},
-		"lint": {}
+		"lint": {},
+		"lint:fix": {},
+		"clean": {},
+		"bleed": {},
+		"format": {}
 	}
 }
