@@ -13,15 +13,13 @@
 	},
 	"name": "rubric",
 	"peerDependencies": {
-		"node": ">=20"
+		"node": ">=22"
 	},
 	"private": true,
 	"scripts": {
-		"bleed": "turbo run bleed",
-		"bleed:mono": "bun x npm-check-updates -u && i",
+		"bleed": "turbo run bleed && bun x npm-check-updates -u && bun i",
 		"build": "turbo run build",
-		"clean": "turbo run clean",
-		"clean:mono": "rm -rf .next && rm -rf node_modules && find . -name '.turbo' -type d -prune -exec rm -rf {} + && rm bun.lockb",
+		"clean": "turbo run clean && rm -rf .next && rm -rf node_modules && find . -name '.turbo' -type d -prune -exec rm -rf {} + && rm bun.lockb",
 		"dev": "turbo run dev",
 		"lint": "turbo run lint",
 		"lint:mono": "bun x biome check .",
@@ -32,5 +30,9 @@
 		"git:checkout:main:all": "git submodule foreach git checkout main"
 	},
 	"workspaces": ["apps/*", "packages/*"],
-	"packageManager": "bun@1.1.29"
+	"packageManager": "bun@1.1.29",
+	"dependencies": {
+		"biome": "^0.3.3",
+		"npm-check-updates": "^17.1.3"
+	}
 }
