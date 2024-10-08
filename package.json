@@ -27,7 +27,8 @@
 		"lint:fix:mono": "bun x biome lint . --write --unsafe",
 		"format": "turbo run format",
 		"format:mono": "bun x biome format --write .",
-		"git:checkout:main:all": "git submodule foreach git checkout main"
+		"git:checkout:main:all": "git submodule foreach git checkout main",
+		"git:pull:all": "git submodule foreach git pull origin main"
 	},
 	"workspaces": ["apps/*", "packages/*"],
 	"packageManager": "bun@1.1.29",
