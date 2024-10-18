@@ -17,5 +17,6 @@
 	},
 	"[prisma]": {
 		"editor.defaultFormatter": "Prisma.prisma"
-	}
+	},
+	"scm.repositories.visible": 0
 }
