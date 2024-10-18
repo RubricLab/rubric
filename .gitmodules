@@ -22,9 +22,9 @@
 [submodule "apps/maige"]
 	path = apps/maige
 	url = https://github.com/RubricLab/maige
-[submodule "apps/dashboard"]
-	path = apps/dashboard
-	url = https://github.com/RubricLab/dashboard
+[submodule "apps/x"]
+	path = apps/x
+	url = https://github.com/RubricLab/x
 [submodule "apps/memo-demo"]
 	path = apps/memo-demo
 	url = https://github.com/RubricLab/memo-demo
