@@ -49,3 +49,6 @@
 [submodule "packages/events"]
 	path = packages/events
 	url = https://github.com/RubricLab/events
+[submodule "packages/agents"]
+	path = packages/agents
+	url = https://github.com/RubricLab/agents.git
