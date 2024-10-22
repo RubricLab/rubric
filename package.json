@@ -48,6 +48,7 @@
 		"@rubriclab/package",
 		"@rubriclab/ui",
 		"@rubriclab/webhooks",
+		"@rubriclab/agents",
 		"create-rubric-app",
 		"maige",
 		"x",
