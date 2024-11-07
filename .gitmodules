@@ -52,3 +52,6 @@
 [submodule "packages/agents"]
 	path = packages/agents
 	url = https://github.com/RubricLab/agents.git
+[submodule "apps/coder-2"]
+	path = apps/coder-2
+	url = https://github.com/RubricLab/coder-2.git
