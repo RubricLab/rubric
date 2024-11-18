@@ -55,3 +55,6 @@
 [submodule "apps/coder-2"]
 	path = apps/coder-2
 	url = https://github.com/RubricLab/coder-2.git
+[submodule "apps/ui-demo"]
+	path = apps/ui-demo
+	url = https://github.com/RubricLab/ui-demo.git
