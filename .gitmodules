@@ -58,3 +58,6 @@
 [submodule "apps/ui-demo"]
 	path = apps/ui-demo
 	url = https://github.com/RubricLab/ui-demo.git
+[submodule "apps/agent-builder"]
+	path = apps/agent-builder
+	url = https://github.com/RubricLab/agent-builder.git
