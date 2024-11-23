@@ -1,69 +1,91 @@
 [submodule "packages/ui"]
 	path = packages/ui
 	url = https://github.com/RubricLab/ui
+	branch = main
 [submodule "packages/create-rubric-app"]
 	path = packages/create-rubric-app
 	url = https://github.com/RubricLab/create-rubric-app
+	branch = rewrite	
 [submodule "packages/package"]
 	path = packages/package
 	url = https://github.com/RubricLab/package
+	branch = main
 [submodule "packages/memory"]
 	path = packages/memory
 	url = https://github.com/RubricLab/memory
+	branch = main
 [submodule "packages/config"]
 	path = packages/config
 	url = https://github.com/RubricLab/config
+	branch = main
 [submodule "apps/website"]
 	path = apps/website
 	url = https://github.com/RubricLab/website
+	branch = main
 [submodule "apps/rOS"]
 	path = apps/rOS
 	url = https://github.com/RubricLab/rOS
+	branch = main
 [submodule "apps/maige"]
 	path = apps/maige
 	url = https://github.com/RubricLab/maige
+	branch = main
 [submodule "apps/x"]
 	path = apps/x
 	url = https://github.com/RubricLab/x
+	branch = main
 [submodule "apps/memo-demo"]
 	path = apps/memo-demo
 	url = https://github.com/RubricLab/memo-demo
+	branch = main
 [submodule "packages/blocks"]
 	path = packages/blocks
 	url = https://github.com/RubricLab/blocks
+	branch = main
 [submodule "packages/actions"]
 	path = packages/actions
 	url = https://github.com/RubricLab/actions
+	branch = main
 [submodule "packages/auth"]
 	path = packages/auth
 	url = https://github.com/RubricLab/auth
+	branch = main
 [submodule "packages/codegen"]
 	path = packages/codegen
 	url = https://github.com/RubricLab/codegen
+	branch = main
 [submodule "packages/webhooks"]
 	path = packages/webhooks
 	url = https://github.com/RubricLab/webhooks
+	branch = main
 [submodule "packages/.github"]
 	path = packages/.github
 	url = https://github.com/RubricLab/.github
+	branch = main
 [submodule "packages/events"]
 	path = packages/events
 	url = https://github.com/RubricLab/events
+	branch = main
 [submodule "packages/agents"]
 	path = packages/agents
 	url = https://github.com/RubricLab/agents.git
+	branch = main
 [submodule "apps/coder-2"]
 	path = apps/coder-2
 	url = https://github.com/RubricLab/coder-2.git
+	branch = main
 [submodule "apps/ui-demo"]
 	path = apps/ui-demo
 	url = https://github.com/RubricLab/ui-demo.git
+	branch = main
 [submodule "apps/agent-builder"]
 	path = apps/agent-builder
 	url = https://github.com/RubricLab/agent-builder.git
+	branch = main
 [submodule "apps/browser-agent"]
 	path = apps/browser-agent
 	url = https://github.com/RubricLab/browser-agent.git
+	branch = main
 [submodule "apps/r0"]
 	path = apps/r0
 	url = https://github.com/RubricLab/r0.git
