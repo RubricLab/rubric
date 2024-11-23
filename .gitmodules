@@ -64,3 +64,6 @@
 [submodule "apps/browser-agent"]
 	path = apps/browser-agent
 	url = https://github.com/RubricLab/browser-agent.git
+[submodule "apps/r0"]
+	path = apps/r0
+	url = https://github.com/RubricLab/r0.git
