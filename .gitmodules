@@ -89,3 +89,4 @@
 [submodule "apps/r0"]
 	path = apps/r0
 	url = https://github.com/RubricLab/r0.git
+	branch = main
