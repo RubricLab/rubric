@@ -30,7 +30,8 @@
 		"format": "turbo run format",
 		"format:mono": "bun x biome format --write .",
 		"git:checkout:main:all": "git submodule foreach git checkout main",
-		"git:pull:all": "git submodule foreach git pull origin main"
+		"git:pull:all": "git submodule foreach git pull origin main",
+		"git:clone:all": "git submodule update --init --recursive"
 	},
 	"workspaces": ["apps/*", "packages/*"],
 	"packageManager": "bun@1.1.29",
@@ -51,6 +52,7 @@
 		"@rubriclab/agents",
 		"create-rubric-app",
 		"maige",
+		"r0",
 		"x",
 		"@biomejs/biome"
 	]
