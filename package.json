@@ -30,7 +30,7 @@
 		"format": "turbo run format",
 		"format:mono": "bun x biome format --write .",
 		"git:checkout:main:all": "git submodule foreach git checkout main",
-		"git:pull:all": "git submodule foreach git pull origin main",
+		"git:pull:all": "git submodule foreach --quiet 'echo $path' | xargs -P 8 -I {} git -C {} pull origin main",
 		"git:clone:all": "git submodule update --init --recursive"
 	},
 	"workspaces": ["apps/*", "packages/*"],
