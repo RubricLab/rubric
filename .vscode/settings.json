@@ -18,5 +18,7 @@
 	"[prisma]": {
 		"editor.defaultFormatter": "Prisma.prisma"
 	},
-	"scm.repositories.visible": 0
+	"scm.repositories.visible": 0,
+	"git.repositoryScanMaxDepth": -1,
+	"git.detectSubmodulesLimit": 50
 }
