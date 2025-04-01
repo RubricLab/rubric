@@ -8,6 +8,10 @@
 	path = apps/browser-agent
 	url = https://github.com/RubricLab/browser-agent.git
 	branch = main
+[submodule "apps/chat"]
+	path = apps/chat
+	url = https://github.com/RubricLab/chat.git
+	branch = main
 [submodule "apps/coder-2"]
 	path = apps/coder-2
 	url = https://github.com/RubricLab/coder-2.git
