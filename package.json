@@ -47,6 +47,7 @@
 		"@rubriclab/events",
 		"@rubriclab/memory",
 		"@rubriclab/package",
+		"@rubriclab/state",
 		"@rubriclab/ui",
 		"@rubriclab/webhooks",
 		"@rubriclab/agents",
