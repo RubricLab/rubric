@@ -103,3 +103,7 @@
 	path = packages/webhooks
 	url = https://github.com/RubricLab/webhooks
 	branch = main
+[submodule "packages/state"]
+	path = packages/state
+	url = https://github.com/RubricLab/state
+	branch = main
