@@ -71,6 +71,10 @@
 	path = packages/blocks
 	url = https://github.com/RubricLab/blocks
 	branch = main
+[submodule "packages/cli"]
+	path = packages/cli
+	url = https://github.com/RubricLab/cli
+	branch = main
 [submodule "packages/codegen"]
 	path = packages/codegen
 	url = https://github.com/RubricLab/codegen
