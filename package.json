@@ -23,6 +23,7 @@
 		"build": "turbo run build",
 		"clean": "turbo run clean && rm -rf .next && rm -rf node_modules && find . -name '.turbo' -type d -prune -exec rm -rf {} + && rm bun.lockb",
 		"dev": "turbo run dev",
+		"github": "bun run scripts/github.ts",
 		"lint": "turbo run lint",
 		"lint:mono": "bun x biome check .",
 		"lint:fix": "turbo run lint:fix",
@@ -31,7 +32,8 @@
 		"format:mono": "bun x biome format --write .",
 		"git:checkout:main:all": "git submodule foreach git checkout main",
 		"git:pull:all": "git submodule foreach --quiet 'echo $path' | xargs -P 8 -I {} git -C {} pull origin main",
-		"git:clone:all": "git submodule update --init --recursive"
+		"git:clone:all": "git submodule update --init --recursive",
+		"git:submodule:add:all": "git submodule add  --force --branch main"
 	},
 	"workspaces": ["apps/*", "packages/*"],
 	"packageManager": "bun@1.1.29",
