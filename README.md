@@ -18,33 +18,31 @@ This monorepo includes the following packages and apps:
 
 Core framework packages for building agentic applications:
 
-- `@rubriclab/actions`: Type-safe API primitives that can be chained together, designed for both developers and AI systems
-- `@rubriclab/agents`: Core agent functionality and types
-- `@rubriclab/blocks`: UI components for generative interfaces
-- `@rubriclab/memory`: Vector-based memory system for AI agents with support for graph memory
-- `@rubriclab/state`: Real-time state management with WebSocket support and SSR capabilities
+- [@rubriclab/actions](https://github.com/RubricLab/actions): Type-safe API primitives that can be chained together, designed for both developers and AI systems
+- [@rubriclab/agents](https://github.com/RubricLab/agents): Core agent functionality and types
+- [@rubriclab/blocks](https://github.com/RubricLab/blocks): UI components for generative interfaces
+- [@rubriclab/chains](https://github.com/RubricLab/chains): Type-safe chaining primitives for structured outputs
+- [@rubriclab/events](https://github.com/RubricLab/events): Type-safe event system
+- [@rubriclab/auth](https://github.com/RubricLab/auth): Agent-native authentication and authorization
+- [@rubriclab/ui](https://github.com/RubricLab/ui): React component library with modern design system
+- [@rubriclab/webhooks](https://github.com/RubricLab/webhooks): Webhook handling utilities
+- [@rubriclab/memory](https://github.com/RubricLab/memory): Flexible fact-keeping system for AI agents
 
 Development and tooling:
 
-- `@rubriclab/cli`: Type-safe CLI framework built with Zod
-- `@rubriclab/codegen`: Code generation tools for type-safe file watching and template generation
-- `@rubriclab/create-rubric-app`: Scaffold new AI-powered applications with our opinionated stack
-- `@rubriclab/package`: Tools for scaffolding and publishing NPM packages
-- `@rubriclab/config`: Shared ESLint, TypeScript, and other configurations
-- `@rubriclab/events`: Type-safe event system
-- `@rubriclab/auth`: Authentication providers and utilities
-- `@rubriclab/ui`: React component library with modern design system
-- `@rubriclab/webhooks`: Webhook handling utilities
+- [@rubriclab/cli](https://github.com/RubricLab/cli): Type-safe CLI framework built with Zod
+- [@rubriclab/codegen](https://github.com/RubricLab/codegen): Code generation tools for type-safe file watching and template generation
+- [@rubriclab/create-rubric-app](https://github.com/RubricLab/create-rubric-app): Scaffold new AI-powered applications with our opinionated stack
+- [@rubriclab/package](https://github.com/RubricLab/package): Tools for scaffolding and publishing NPM packages
+- [@rubriclab/config](https://github.com/RubricLab/config): Shared Biome, TypeScript, Tailwind, and other configurations
 
 ### Apps
 
 Notable applications built with our framework:
 
-- `rOS`: Operating system for AI agents
-- `chat`: Real-time chat application
-- `x`: Core agent system with iOS integration
-- `maige`: AI-powered code review and generation
-- `browser-agent`: Web browsing automation
+- [rOS](https://github.com/RubricLab/rOS): Operating system for AI agents
+- [chat](https://github.com/RubricLab/chat): Real-time chat application
+- [x](https://github.com/RubricLab/x): Core agent system with iOS integration
 - And more experimental applications
 
 ### Build

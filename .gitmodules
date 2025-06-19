@@ -1,44 +1,12 @@
 # Apps
 
-[submodule "apps/agent-builder"]
-	path = apps/agent-builder
-	url = https://github.com/RubricLab/agent-builder.git
-	branch = main
-[submodule "apps/browser-agent"]
-	path = apps/browser-agent
-	url = https://github.com/RubricLab/browser-agent.git
-	branch = main
 [submodule "apps/chat"]
 	path = apps/chat
 	url = https://github.com/RubricLab/chat.git
 	branch = main
-[submodule "apps/coder-2"]
-	path = apps/coder-2
-	url = https://github.com/RubricLab/coder-2.git
-	branch = main
-[submodule "apps/image-generator"]
-	path = apps/image-generator
-	url = https://github.com/RubricLab/image-generator.git
-	branch = main
-[submodule "apps/maige"]
-	path = apps/maige
-	url = https://github.com/RubricLab/maige
-	branch = main
-[submodule "apps/memo-demo"]
-	path = apps/memo-demo
-	url = https://github.com/RubricLab/memo-demo
-	branch = main
-[submodule "apps/r0"]
-	path = apps/r0
-	url = https://github.com/RubricLab/r0.git
-	branch = main
 [submodule "apps/rOS"]
 	path = apps/rOS
 	url = https://github.com/RubricLab/rOS
-	branch = main
-[submodule "apps/ui-demo"]
-	path = apps/ui-demo
-	url = https://github.com/RubricLab/ui-demo.git
 	branch = main
 [submodule "apps/website"]
 	path = apps/website
