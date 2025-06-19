@@ -8,33 +8,48 @@ This makes it easier to
 
 - Share code across projects
 - Coordinate global style changes with a single PR
-- Skip common setup in new projects: Tailwind, ESLint, Typescript, etc.
+- Skip common setup in new projects: Tailwind, Biome, Typescript, etc.
 
 ## What's inside?
 
-This monorepo includes the following packages/apps:
+This monorepo includes the following packages and apps:
 
-### Apps and Packages
+### Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library used by `docs` application
-- `@rubriclab/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
-- `tailwind-config`: `tailwind.config.js` used throughout the monorepo
+Core framework packages for building agentic applications:
 
-Each package/app is 100% [Typescript](https://www.typescriptlang.org/).
+- `@rubriclab/actions`: Type-safe API primitives that can be chained together, designed for both developers and AI systems
+- `@rubriclab/agents`: Core agent functionality and types
+- `@rubriclab/blocks`: UI components for generative interfaces
+- `@rubriclab/memory`: Vector-based memory system for AI agents with support for graph memory
+- `@rubriclab/state`: Real-time state management with WebSocket support and SSR capabilities
 
-### Utilities
+Development and tooling:
 
-This Turborepo has some additional tools already setup for you:
+- `@rubriclab/cli`: Type-safe CLI framework built with Zod
+- `@rubriclab/codegen`: Code generation tools for type-safe file watching and template generation
+- `@rubriclab/create-rubric-app`: Scaffold new AI-powered applications with our opinionated stack
+- `@rubriclab/package`: Tools for scaffolding and publishing NPM packages
+- `@rubriclab/config`: Shared ESLint, TypeScript, and other configurations
+- `@rubriclab/events`: Type-safe event system
+- `@rubriclab/auth`: Authentication providers and utilities
+- `@rubriclab/ui`: React component library with modern design system
+- `@rubriclab/webhooks`: Webhook handling utilities
 
-- [Typescript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+### Apps
+
+Notable applications built with our framework:
+
+- `rOS`: Operating system for AI agents
+- `chat`: Real-time chat application
+- `x`: Core agent system with iOS integration
+- `maige`: AI-powered code review and generation
+- `browser-agent`: Web browsing automation
+- And more experimental applications
 
 ### Build
 
-To build all apps and packages, run the following command:
+To build all apps and packages, run:
 
 ```sh
 bun build
@@ -42,50 +57,42 @@ bun build
 
 ### Develop
 
-To develop all apps and packages, run the following command:
+To develop all apps and packages:
 
 ```sh
 bun dev
 ```
 
-To develop a subrepo, run:
+To develop a specific app:
 
 ```sh
-cd apps/[subrepo_name]
+cd apps/[app_name]
 bun run dev
 ```
 
-To add a dependency to a subrepo, run:
+### Dependencies
+
+To add a dependency to a specific app:
 
 ```sh
-cd apps/[subrepo_name]
+cd apps/[app_name]
 bun i dependency
 ```
 
-To add a global dependency, run:
+To add a global dependency:
 
 ```sh
 bun add -W dependency
 ```
 
-### Remote Caching
+## Technologies
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share build artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+- [Bun.js](https://bun.sh) for fast JavaScript runtime and package management
+- [TypeScript](https://www.typescriptlang.org/) for static type checking
+- [Next.js](https://nextjs.org) for full-stack React applications
+- [Turborepo](https://turbo.build/repo) for monorepo management
+- [Biome](https://biomejs.dev) for fast, modern code linting and formatting
 
-By default, Turborepo will cache locally. Remote Caching has also been configured with Vercel by running:
+## License
 
-```sh
-npx turbo login
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+MIT
