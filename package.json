@@ -27,17 +27,13 @@
 		"build": "turbo run build",
 		"clean": "turbo run clean && rm -rf .next && rm -rf node_modules && find . -name '.turbo' -type d -prune -exec rm -rf {} + && rm bun.lockb",
 		"dev": "turbo run dev",
-		"format": "turbo run format",
-		"format:mono": "bun x biome format --write .",
 		"git:checkout:main:all": "git submodule foreach git checkout main",
 		"git:clone:all": "git submodule update --init --recursive",
 		"git:pull:all": "git submodule foreach --quiet 'echo $path' | xargs -P 8 -I {} git -C {} pull origin main",
 		"git:submodule:add:all": "git submodule add  --force --branch main",
 		"github": "bun run scripts/github.ts",
-		"lint": "turbo run lint",
-		"lint:fix": "turbo run lint:fix",
-		"lint:fix:mono": "bun x biome lint . --write --unsafe",
-		"lint:mono": "bun x biome check ."
+		"format": "turbo run format",
+		"format:mono": "bun x biome check --write ."
 	},
 	"trustedDependencies": [
 		"@rubriclab/actions",

@@ -9,8 +9,6 @@
 			"cache": false,
 			"persistent": true
 		},
-		"lint": {},
-		"lint:fix": {},
 		"clean": {},
 		"bleed": {},
 		"format": {}
