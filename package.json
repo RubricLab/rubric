@@ -1,6 +1,9 @@
 {
+	"dependencies": {
+		"npm-check-updates": "^17.1.3"
+	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
+		"@biomejs/biome": "^2.0.6",
 		"@turbo/gen": "^2.1.3",
 		"@types/node": "^22.7.4",
 		"@types/react": "^18.3.11",
@@ -8,12 +11,13 @@
 		"autoprefixer": "^10.4.20",
 		"dotenv-cli": "^7.4.2",
 		"postcss": "^8.4.47",
+		"simple-git-hooks": "^2.11.1",
 		"tailwindcss": "^3.4.13",
 		"turbo": "^2.1.3",
-		"typescript": "^5.6.2",
-		"simple-git-hooks": "^2.11.1"
+		"typescript": "^5.6.2"
 	},
 	"name": "rubric",
+	"packageManager": "bun@1.1.29",
 	"peerDependencies": {
 		"node": ">=22"
 	},
@@ -23,22 +27,17 @@
 		"build": "turbo run build",
 		"clean": "turbo run clean && rm -rf .next && rm -rf node_modules && find . -name '.turbo' -type d -prune -exec rm -rf {} + && rm bun.lockb",
 		"dev": "turbo run dev",
-		"github": "bun run scripts/github.ts",
-		"lint": "turbo run lint",
-		"lint:mono": "bun x biome check .",
-		"lint:fix": "turbo run lint:fix",
-		"lint:fix:mono": "bun x biome lint . --write --unsafe",
 		"format": "turbo run format",
 		"format:mono": "bun x biome format --write .",
 		"git:checkout:main:all": "git submodule foreach git checkout main",
-		"git:pull:all": "git submodule foreach --quiet 'echo $path' | xargs -P 8 -I {} git -C {} pull origin main",
 		"git:clone:all": "git submodule update --init --recursive",
-		"git:submodule:add:all": "git submodule add  --force --branch main"
-	},
-	"workspaces": ["apps/*", "packages/*"],
-	"packageManager": "bun@1.1.29",
-	"dependencies": {
-		"npm-check-updates": "^17.1.3"
+		"git:pull:all": "git submodule foreach --quiet 'echo $path' | xargs -P 8 -I {} git -C {} pull origin main",
+		"git:submodule:add:all": "git submodule add  --force --branch main",
+		"github": "bun run scripts/github.ts",
+		"lint": "turbo run lint",
+		"lint:fix": "turbo run lint:fix",
+		"lint:fix:mono": "bun x biome lint . --write --unsafe",
+		"lint:mono": "bun x biome check ."
 	},
 	"trustedDependencies": [
 		"@rubriclab/actions",
@@ -58,5 +57,9 @@
 		"r0",
 		"x",
 		"@biomejs/biome"
+	],
+	"workspaces": [
+		"apps/*",
+		"packages/*"
 	]
 }
