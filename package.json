@@ -1,20 +1,6 @@
 {
-	"dependencies": {
-		"npm-check-updates": "^17.1.3"
-	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.0.6",
-		"@turbo/gen": "^2.1.3",
-		"@types/node": "^22.7.4",
-		"@types/react": "^18.3.11",
-		"@types/react-dom": "^18.3.0",
-		"autoprefixer": "^10.4.20",
-		"dotenv-cli": "^7.4.2",
-		"postcss": "^8.4.47",
-		"simple-git-hooks": "^2.11.1",
-		"tailwindcss": "^3.4.13",
-		"turbo": "^2.1.3",
-		"typescript": "^5.6.2"
+		"@turbo/gen": "^2.1.3"
 	},
 	"name": "rubric",
 	"packageManager": "bun@1.1.29",
@@ -27,13 +13,13 @@
 		"build": "turbo run build",
 		"clean": "turbo run clean && rm -rf .next && rm -rf node_modules && find . -name '.turbo' -type d -prune -exec rm -rf {} + && rm bun.lockb",
 		"dev": "turbo run dev",
+		"format": "turbo run format",
+		"format:mono": "bun x biome check --write .",
 		"git:checkout:main:all": "git submodule foreach git checkout main",
 		"git:clone:all": "git submodule update --init --recursive",
 		"git:pull:all": "git submodule foreach --quiet 'echo $path' | xargs -P 8 -I {} git -C {} pull origin main",
 		"git:submodule:add:all": "git submodule add  --force --branch main",
-		"github": "bun run scripts/github.ts",
-		"format": "turbo run format",
-		"format:mono": "bun x biome check --write ."
+		"github": "bun run scripts/github.ts"
 	},
 	"trustedDependencies": [
 		"@rubriclab/actions",
