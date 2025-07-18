@@ -83,3 +83,7 @@
 	path = packages/state
 	url = https://github.com/RubricLab/state
 	branch = main
+[submodule "packages/shapes"]
+	path = packages/shapes
+	url = https://github.com/RubricLab/shapes
+	branch = main
