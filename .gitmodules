@@ -16,6 +16,10 @@
 	path = apps/x
 	url = https://github.com/RubricLab/x
 	branch = main
+[submodule "apps/fabric"]
+	path = apps/fabric
+	url = https://github.com/RubricLab/fabric
+	branch = main
 
 # Packages
 
