@@ -12,18 +12,17 @@
 		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"editor.codeActionsOnSave": {
-		"quickfix.biome": "explicit",
 		"source.fixAll.biome": "explicit",
 		"source.organizeImports.biome": "explicit"
 	},
-	"npm.packageManager": "bun",
 	"editor.defaultFormatter": "biomejs.biome",
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
+	"git.detectSubmodules": true,
 	"git.detectSubmodulesLimit": 100,
 	"git.repositoryScanMaxDepth": -1,
-	"git.detectSubmodules": true,
 	"git.scanRepositories": ["."],
-	"scm.repositories.visible": 0,
-	"scm.repositories.sortOrder": "path"
+	"npm.packageManager": "bun",
+	"scm.repositories.sortOrder": "path",
+	"scm.repositories.visible": 0
 }

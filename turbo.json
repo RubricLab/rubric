@@ -1,16 +1,16 @@
 {
 	"$schema": "https://turbo.build/schema.json",
 	"tasks": {
+		"bleed": {},
 		"build": {
 			"dependsOn": ["^build"],
 			"outputs": ["!.next/cache/**", ".next/**", "dist/**"]
 		},
+		"clean": {},
 		"dev": {
 			"cache": false,
 			"persistent": true
 		},
-		"clean": {},
-		"bleed": {},
 		"format": {}
 	}
 }
