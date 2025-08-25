@@ -16,10 +16,14 @@
 		"source.fixAll.biome": "explicit",
 		"source.organizeImports.biome": "explicit"
 	},
+	"npm.packageManager": "bun",
 	"editor.defaultFormatter": "biomejs.biome",
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
-	"git.detectSubmodulesLimit": 50,
+	"git.detectSubmodulesLimit": 100,
 	"git.repositoryScanMaxDepth": -1,
-	"scm.repositories.visible": 0
+	"git.detectSubmodules": true,
+	"git.scanRepositories": ["."],
+	"scm.repositories.visible": 0,
+	"scm.repositories.sortOrder": "path"
 }

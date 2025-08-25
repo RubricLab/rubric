@@ -1,5 +1,6 @@
 {
 	"devDependencies": {
+		"@rubriclab/config": "*",
 		"@turbo/gen": "^2.1.3"
 	},
 	"name": "rubric",
@@ -34,10 +35,12 @@
 		"@rubriclab/ui",
 		"@rubriclab/webhooks",
 		"@rubriclab/agents",
+		"@rubriclab/fabric-ui",
 		"create-rubric-app",
 		"maige",
 		"r0",
 		"x",
+		"fabric",
 		"@biomejs/biome"
 	],
 	"workspaces": [
