@@ -20,6 +20,10 @@
 	path = apps/fabric
 	url = https://github.com/RubricLab/fabric
 	branch = main
+[submodule "apps/radio"]
+	path = apps/radio
+	url = https://github.com/RubricLab/radio
+	branch = main
 
 # Packages
 
