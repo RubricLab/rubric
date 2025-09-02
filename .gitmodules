@@ -25,6 +25,11 @@
 	url = https://github.com/RubricLab/radio
 	branch = main
 
+[submodule "apps/warehouse"]
+	path = apps/warehouse
+	url = https://github.com/RubricLab/warehouse
+	branch = main
+
 # Packages
 
 [submodule "packages/.github"]
