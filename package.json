@@ -45,6 +45,7 @@
 	],
 	"workspaces": [
 		"apps/*",
-		"packages/*"
+		"packages/*",
+		"!apps/fabric"
 	]
 }
